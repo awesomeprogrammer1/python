@@ -5,6 +5,8 @@ def encrypt(text,key):
         if letter in alphabet:
             position=alphabet.find(letter)
             new_position=position+key
+            if new_position >= 26:
+                new_position=new_position-26
             result+=alphabet[new_position]
         else:
             result+=letter
@@ -26,8 +28,10 @@ def decrypt(text,key):
 
 
 
+
+
 if __name__ == "__main__":
-   my_original_text = 'Hedgie'
+   my_original_text = 'Hedgiez'
    print(my_original_text)
    my_encrypted_text = encrypt(my_original_text, 1)
    print(my_encrypted_text)
