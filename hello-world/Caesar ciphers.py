@@ -28,11 +28,11 @@ def decrypt(text,key):
 
 
 if __name__ == "__main__":
-   my_original_text = 'Hedgiez'
+   my_original_text = 'abcdefghijklmnopqrstuvwxyz'
    print(my_original_text)
-   my_encrypted_text = encrypt(my_original_text, 1)
+   my_encrypted_text = encrypt(my_original_text, 27)
    print(my_encrypted_text)
-   my_decrypted_text = decrypt(my_encrypted_text,1)
+   my_decrypted_text = decrypt(my_encrypted_text,3)
    print(my_decrypted_text)
 
 
