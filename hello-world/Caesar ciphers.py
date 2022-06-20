@@ -10,3 +10,8 @@ def encrypt(text,key):
             result+=letter
     return(result)
     
+if __name__ == "__main__":
+   my_text = 'Hedgie'
+   print(my_text)
+   my_encrypted_text = encrypt(my_text, 1)
+   print(my_encrypted_text)
