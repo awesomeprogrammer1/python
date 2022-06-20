@@ -19,15 +19,12 @@ def decrypt(text,key):
             position=alphabet.find(letter)
             new_position=position+key
             original_position= position-key
+            if original_position >= 26:
+                original_position=original_position+26
             result+=alphabet[original_position]
         else:
             result+=letter
     return(result)
-
-
-
-
-
 
 
 if __name__ == "__main__":
