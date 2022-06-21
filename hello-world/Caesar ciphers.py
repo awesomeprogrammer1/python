@@ -1,4 +1,7 @@
 alphabet= 'abcdefghijklmnopqrstuvwxyz'
+
+scramble_amount = int(input('By how many spaces will each letter move? '))
+
 def encrypt(text,key):
     result=''
     for letter in text:
@@ -30,9 +33,9 @@ def decrypt(text,key):
 if __name__ == "__main__":
    my_original_text = 'abcdefghijklmnopqrstuvwxyz'
    print(my_original_text)
-   my_encrypted_text = encrypt(my_original_text, 27)
+   my_encrypted_text = encrypt(my_original_text, scramble_amount-26)
    print(my_encrypted_text)
-   my_decrypted_text = decrypt(my_encrypted_text,3)
+   my_decrypted_text = decrypt(my_encrypted_text, scramble_amount-26)
    print(my_decrypted_text)
 
 
