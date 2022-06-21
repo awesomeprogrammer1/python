@@ -24,7 +24,7 @@ def decrypt(text,key):
             new_position=position+key
             original_position= position-key
             if original_position >= alphabet_size:
-                original_position=original_position+alphabet_size
+                original_position=original_position-alphabet_size
             result+=alphabet[original_position]
         else:
             result+=letter
