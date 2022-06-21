@@ -1,5 +1,5 @@
 alphabet = 'abcdefghijklmnopqrstuvwxyz'
-alphabet_size = 26
+alphabet_size = len(alphabet)
 
 scramble_amount = int(input('By how many spaces will each letter move? '))
 
