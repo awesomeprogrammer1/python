@@ -1,3 +1,6 @@
+from timeit import repeat
+
+
 alphabet = 'abcdefghijklmnopqrstuvwxyz'
 alphabet_size = len(alphabet)
 
@@ -11,6 +14,7 @@ def encrypt(text,key):
             new_position=position+key
             if new_position >= alphabet_size:
                 new_position=new_position-alphabet_size
+                continue
             result+=alphabet[new_position]
         else:
             result+=letter
