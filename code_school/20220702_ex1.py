@@ -6,8 +6,8 @@ import time
 
 mail = "admin@admin.com"
 password = "qwerty12345"
-extra_seconds = 1
-place_holder = -10
+login_errors = 1
+lock_time = 10
 while True:
     for i in range(5):
         user_mail = input("What is your email? ")
@@ -18,16 +18,16 @@ while True:
                 exit()
             else:
                 print("Error Code 278: Password incorrect")
-                extra_seconds = extra_seconds + 1
+                login_errors = login_errors + 1
         else:
             print("Error Code 421: Mail incorrect")
-            extra_seconds = extra_seconds + 1
-        if extra_seconds >= 10:
-            place_holder = place_holder - 5
+            login_errors = login_errors + 1
+        if login_errors >= 10:
+            lock_time = lock_time + 5 
     print("Account locked temporarily")
-    for i in range(place_holder, 0):
-        print(-i)
+    for i in range(lock_time, 0, -1):
+        print(i)
         time.sleep(1)
-        place_holder = place_holder
-        extra_seconds = extra_seconds
+        lock_time = lock_time
+        login_errors = login_errors
     print("Account Unlocked")
