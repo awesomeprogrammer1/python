@@ -1,7 +1,12 @@
 import time
 
+# homework
+# 1) count down instead of up when we lock the account
+# 2) increase the lock time if we keep providing wrong information
+
 mail = "admin@admin.com"
 password = "qwerty12345"
+lock_time = 10
 while True:
     for i in range(5):
         user_mail = input("What is your email? ")
@@ -11,11 +16,12 @@ while True:
                 print("Welcome")
                 exit()
             else:
-                print("Error Code 278; Password incorrect")
+                print("Error Code 278: Password incorrect")
         else:
-            print("Error Code 421; Mail incorrect")
-    print("Account locked for ten seconds")
-    for i in range(1, 11):
+            print("Error Code 421: Mail incorrect")
+    print("Account locked temporarily")
+    for i in range(lock_time, 0, -1):
         print(i)
         time.sleep(1)
     print("Account Unlocked")
+    lock_time += 5
