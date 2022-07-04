@@ -21,11 +21,9 @@ while True:
         else:
             print("Error Code 421: Mail incorrect")
         login_errors += 1
-        print(login_errors)
-        if login_errors >= 10:
-            lock_time += 5
     print("Account locked temporarily")
     for i in range(lock_time, 0, -1):
         print(i)
         time.sleep(1)
     print("Account Unlocked")
+    lock_time += 5
