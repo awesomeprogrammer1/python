@@ -20,8 +20,8 @@ while True:
                 print("Error Code 278: Password incorrect")
         else:
             print("Error Code 421: Mail incorrect")
-            login_errors += 1
-        print(login_errors)    
+        login_errors += 1
+        print(login_errors)
         if login_errors >= 10:
             lock_time += 5
     print("Account locked temporarily")
