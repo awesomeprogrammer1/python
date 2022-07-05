@@ -20,7 +20,7 @@ print(list)
 list[3] = "Andrew"
 print(list)
 
-# operation: presented with a list. the for statement runs until there are 100 zeros in the list.
+# inserts 100 zeros between the first and last integers
 list = [1, 1]
 for i in range(100):
     list.insert(1, 0)
@@ -33,7 +33,7 @@ for i in range(2, 101, 2):
 print(list)
 
 
-# list asks for a name, if the input matches something in the list, it executes a piece of code. If it doesn't it runs different piece of code
+# asks for a name. if the name is on the list, the person is admitted. If not, they are rejected
 list = ["Alex", "Sergey", "Andrew"]
 name = enterbox("Hello! What is your name? ")
 if name in list:
@@ -41,13 +41,13 @@ if name in list:
 else:
     msgbox("sorry, not today")
 
-# operation: presented with a list: we are multiplying every even number by two
+# presented with a list: we are multiplying every even number by two
 list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 for i in range(1, 10, 2):
     list[i] = list[i] * 2
 print(list)
 
-# checking if a condition holds true. If it is true, that data is sorted to the new list.
+# prints numbers that are less than 3 and/or greater than 7
 for i in list:
     if i < 3 or i > 7:
         print(i)
