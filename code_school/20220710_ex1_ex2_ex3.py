@@ -1,6 +1,10 @@
 a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
 from easygui import *
 
+# assignment 1: print all numbers that are less than 5
+# assignment 2: print the sum of the elements less than 10 and bigger than 30
+# assignment 3: learn about averages and print the average of elements in the list
+
 # assignment 1
 
 # for i in a:
