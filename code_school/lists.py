@@ -80,3 +80,12 @@ a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
 #     sum2 += i
 # average = sum2 / len(newestList)
 # print(sum2, average)
+
+
+# assignment 3
+
+# sum = 0
+# for i in a:
+#     sum += i
+# average = sum / len(a)
+# print(sum, average) 
