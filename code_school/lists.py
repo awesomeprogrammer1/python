@@ -26,7 +26,7 @@ for i in range(100):
     list.insert(1, 0)
 print(list)
 
-# this piece of code prints every even number from 2 to one hundred
+# prints every even number from 2 to one hundred
 list = []
 for i in range(2, 101, 2):
     list.append(i)
@@ -41,13 +41,13 @@ if name in list:
 else:
     msgbox("sorry, not today")
 
-# :we are multiplying every even number by two
+# we are multiplying every even number by two
 list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 for i in range(1, 10, 2):
     list[i] = list[i] * 2
 print(list)
 
-# prints elemts of the list that are less than 3 and/or greater than 7
+# prints elements of the list that are less than 3 and/or greater than 7
 for i in list:
     if i < 3 or i > 7:
         print(i)
