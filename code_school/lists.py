@@ -20,7 +20,7 @@ print(list)
 list[3] = "Andrew"
 print(list)
 
-# inserts 100 zeros between the first and last integers
+# inserts 100 zeros between the first and last elements of the list
 list = [1, 1]
 for i in range(100):
     list.insert(1, 0)
@@ -41,13 +41,13 @@ if name in list:
 else:
     msgbox("sorry, not today")
 
-# presented with a list: we are multiplying every even number by two
+# :we are multiplying every even number by two
 list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 for i in range(1, 10, 2):
     list[i] = list[i] * 2
 print(list)
 
-# prints numbers that are less than 3 and/or greater than 7
+# prints elemts of the list that are less than 3 and/or greater than 7
 for i in list:
     if i < 3 or i > 7:
         print(i)
