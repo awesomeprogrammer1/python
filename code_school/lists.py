@@ -11,7 +11,7 @@ a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
 # list.append(6) # operation: adds 6 to the list
 # print(list)
 
-# list.insert(3, "Alex") # operation: changes the integer '3' with "Alex"
+# list.insert(3, "Alex") # operation: inserts "Alex" into the index 3 and shifts the character already there
 # print(list)
 
 # list.remove(3) # operation: Removes the integer "3" from the list
@@ -58,27 +58,51 @@ a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
 
 # assignment 2
 
+newList = []
+newerList = []
+for i in a:
+    if i < 10 or i > 30:
+        newList.append(i)
+print(newList)
+for i in a:
+    if i < 10:
+        newList.remove(i)
+        newerList.append(i)
+print(newerList)
+print(newList)
 
-# for i in a:
-#     if i < 10 or i > 30:
-#         print(i)
-# newList = a[:6] + a[8:]
-# print(newList)
-# newList[6:7]
-# newerList = newList[6:9]
-# print(newerList)
-# newestList = newList[1:6]
-# print(newestList)
+
+# b = a[:6] + a[8:]
+# print(b)
+# b[6:7]
+# c = b[6:9]
+# print(c)
+# d = b[1:6]
+# print(d)
+
+
+sum1= sum(newerList)
+print(sum1)
+
+sum2= sum(newList)
+print(sum2)
+
+
 # sum1 = 0
-# for i in newerList:
+# for i in b:
 #     sum1 += i
-# average = sum1 / len(newerList)
+
+# print(sum1)
+
+
+# sum1 += i
+# average = sum1 / len(c)
 # print(sum1, average)
 
 # sum2 = 0
-# for i in newestList:
-#     sum2 += i
-# average = sum2 / len(newestList)
+
+# sum2 += i
+# average = sum2 / len(d)
 # print(sum2, average)
 
 
@@ -88,4 +112,4 @@ a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
 # for i in a:
 #     sum += i
 # average = sum / len(a)
-# print(sum, average) 
+# print(sum, average)
