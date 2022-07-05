@@ -20,20 +20,20 @@ print(list)
 list[3] = "Andrew"
 print(list)
 
-# operation: inserts the integer "0" 100 times by running a for statement which runs 100 times
+# operation: presented with a list. the for statement runs until there are 100 zeros in the list.
 list = [1, 1]
 for i in range(100):
     list.insert(1, 0)
 print(list)
 
-# prints all the even numbers in the list by skip counting by two
+# this piece of code prints every even number from 2 to one hundred
 list = []
 for i in range(2, 101, 2):
     list.append(i)
 print(list)
 
 
-# list that checks an input and executes a piece of code depending on the data
+# list asks for a name, if the input matches something in the list, it executes a piece of code. If it doesn't it runs different piece of code
 list = ["Alex", "Sergey", "Andrew"]
 name = enterbox("Hello! What is your name? ")
 if name in list:
@@ -41,13 +41,13 @@ if name in list:
 else:
     msgbox("sorry, not today")
 
-# operation: multiplies every second number in the list by two repeatedly using a for statement
+# operation: presented with a list: we are multiplying every even number by two
 list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 for i in range(1, 10, 2):
     list[i] = list[i] * 2
 print(list)
 
-# checks the condition that if i is less than three of greater than 7. If the condition holds true, it prints the integer
+# checking if a condition holds true. If it is true, that data is sorted to the new list.
 for i in list:
     if i < 3 or i > 7:
         print(i)
