@@ -2,7 +2,7 @@ from easygui import *
 
 list = [1, 2, 3, 4, 5]
 
-list.append(6)  # operation: adds 6 to the list
+list.append(6)  # operation: adds 6 to the end of the list
 print(list)
 
 list.insert(3, "Alex")  # operation: inserts "Alex" at the index 3
