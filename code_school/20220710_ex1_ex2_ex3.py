@@ -14,35 +14,17 @@ for i in a:
 
 # assignment 2
 
-filteredList = []
-List = []
+filtered_list = []
 for i in a:
     if i < 10 or i > 30:
-        filteredList.append(i)
-print(filteredList)
-for i in a:
-    if i < 10:
-        filteredList.remove(i)
-        List.append(i)
-print(List)
-print(filteredList)
+        filtered_list.append(i)
+print('Filtered list:')        
+print(filtered_list)
 
-
-
-
-
-sum1 = sum(List)
-print(sum1)
-
-sum2 = sum(filteredList)
-print(sum2)
-
-
+sum_filtered_list = sum(filtered_list)
+print(f"sum_filtered_list={sum_filtered_list}")
 
 # assignment 3
 
-sum = 0
-for i in a:
-    sum += i
-average = sum / len(a)
-print(sum, average)
+average_filtered_list = sum_filtered_list / len(filtered_list)
+print(f"average_filtered_list={average_filtered_list}")
