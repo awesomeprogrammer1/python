@@ -18,14 +18,15 @@ input()
 dict = {"Hello": "Привет", "Car": "Машина", "Dog": "Собака"}
 
 # add/remove an element
-dict[
-    "Cat"
-] = "kot"  # adds a new element to the dictionary with the key "cat" and value "kot"
+
+
+# adds a new element to the dictionary with the key "cat" and value "kot"
+dict["Cat"] = "kot"
 print(dict)
 
-dict.pop(
-    "Car"
-)  # Removes the specified key from the dictionary. If the key does not exist, there is an error
+
+# Removes the specified key from the dictionary. If the key does not exist, there is an error
+dict.pop("Car")
 print(dict)
 
 input()
@@ -45,7 +46,9 @@ input()
 
 ###################################################
 
-#  all the elements of the list are put into the dictionary. The keys are then divided by two, thus giving us the values
+# We are adding things to the dictionary.
+# We add the elements into the dictionary.
+# We get the value of the element by dividing the key by two.
 list = [1, 2, 5, 473, 987, 560, 35]
 dict = {}
 for i in list:
@@ -62,7 +65,13 @@ input()
 
 ####################################################
 
-dict = {}
+
+# we create an new empty dictionary
+# we prompt the user for a string
+# we fill the dictionary with the letters that were in the string
+# if the letter in the string appears more than once, we count how many times it appears in the string
+# and display it
+dict = {} 
 
 user_string = input("Enter a string: ")
 
