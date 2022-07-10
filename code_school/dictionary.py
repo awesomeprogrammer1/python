@@ -17,7 +17,7 @@ input()
 
 dict = {"Hello": "Привет", "Car": "Машина", "Dog": "Собака"}
 
-# add/remove an element
+# add/remove an element to/from the dictionary
 
 
 # adds a new element to the dictionary with the key "cat" and value "kot"
@@ -46,16 +46,17 @@ input()
 
 ###################################################
 
-# We are adding things to the dictionary.
-# We add the elements into the dictionary.
+# We add elements to the dictionary.
 # We get the value of the element by dividing the key, which is the number in the list, by two.
 list = [1, 2, 5, 473, 987, 560, 35]
 dict = {}
 for i in list:
     dict[i] = i / 2
 
-# all the elements are put into the dictionary. Then, all the keys that are even are multiplied by two
-# in order to obtain the value of the element
+# we add even numbers from the list to the dictionary.
+# the key of each element is the number from the list.
+# the value of each dictionary element is the number multiplied by two
+dict = {}
 for i in list:
     if i % 2 == 0:
         dict[i] = i * 2
@@ -69,14 +70,12 @@ input()
 # we create an new empty dictionary
 # we prompt the user for a string
 # we fill the dictionary with the letters that were in the string
-# if there is a character that appears more than once (ex. 6 times)
-# we don't add it again, but we add it to the total amount of identical characters there are in the string
-# ex: 'a' = 6
+
 dict = {} 
 
 user_string = input("Enter a string: ")
 
 for letter in user_string:
     if not letter in dict.keys():
-        dict[letter] = user_string.count(letter)
+        dict    = user_string.count(letter)
 print(dict)
