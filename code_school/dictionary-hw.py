@@ -20,12 +20,15 @@ dict = {
 print(dict)
 
 for i in range(3):
-    guess = input("Guess what I enjoy! Be careful! You do not have many guesses: ")
+    guess = input("Guess what I enjoy! Be careful! You do not have many guesses")
+    guess = guess.lower()
     if dict.get(guess) == "like":
         print("Correct! You Know Me Very Well")
         exit()
     if dict.get(guess) == "don't like":
         print("I do not like that thing")
+    if i == 2:
+        print('You have run out of guesses')
     else:
-        print("I do not have an opinion on that thing. Check for a typo and make sure that all letters are lowercase. Try again next guess")
-print("Tough luck! You ran out of guesses. Try again next time!")
+        print("I do not have an opinion on that thing. Try to guess again!")
+print("Try again next time!")
