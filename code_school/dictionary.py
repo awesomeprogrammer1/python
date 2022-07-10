@@ -48,7 +48,7 @@ input()
 
 # We are adding things to the dictionary.
 # We add the elements into the dictionary.
-# We get the value of the element by dividing the key by two.
+# We get the value of the element by dividing the key, which is the number in the list, by two.
 list = [1, 2, 5, 473, 987, 560, 35]
 dict = {}
 for i in list:
@@ -69,8 +69,9 @@ input()
 # we create an new empty dictionary
 # we prompt the user for a string
 # we fill the dictionary with the letters that were in the string
-# if the letter in the string appears more than once, we count how many times it appears in the string
-# and display it
+# if there is a character that appears more than once (ex. 6 times)
+# we don't add it again, but we add it to the total amount of identical characters there are in the string
+# ex: 'a' = 6
 dict = {} 
 
 user_string = input("Enter a string: ")
