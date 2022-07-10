@@ -1,9 +1,12 @@
+# intro to dictionaries
+
 dict = {
    "Hello": "Привет",
     "Car": "Машина",
     "Dog": "Собака"
 }
 
+# get an element
 print(dict["Hello"]) #
 print(dict.get("Hello")) #
 print(dict.setdefault("Hello")) #
