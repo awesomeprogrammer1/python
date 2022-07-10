@@ -45,13 +45,14 @@ input()
 
 ###################################################
 
-#  all the elements of the list are taken into the dictionary, which are the keys. The keys are then divided by two, thus giving us the values
+#  all the elements of the list are put into the dictionary. The keys are then divided by two, thus giving us the values
 list = [1, 2, 5, 473, 987, 560, 35]
 dict = {}
 for i in list:
     dict[i] = i / 2
 
-# all the elements of the list that are even are put into the dictionary as keys and then multiplied by two for the values
+# all the elements are put into the dictionary. Then, all the keys that are even are multiplied by two
+# in order to obtain the value of the element
 for i in list:
     if i % 2 == 0:
         dict[i] = i * 2
