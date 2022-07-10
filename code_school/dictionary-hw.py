@@ -27,5 +27,5 @@ for i in range(3):
     if dict.get(guess) == "don't like":
         print("I do not like that thing")
     else:
-        print("I do not have an opinion on that thing. Check for a typo and make sure that all letters are lowercase. Try again next time! ")
-print("You ran out of guesses. Try again next time!")
+        print("I do not have an opinion on that thing. Check for a typo and make sure that all letters are lowercase. Try again next guess")
+print("Tough luck! You ran out of guesses. Try again next time!")
