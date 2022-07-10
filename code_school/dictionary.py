@@ -1,16 +1,7 @@
 # intro to dictionaries
 # dict[key] = value
 
-dict = {"Hello": "Привет", "Car": "Машина", "Dog": "Собака"}
-
-# get an element
-print(
-    dict["Hello"]
-)  # looks into the dictionary for the specified key and returns the value
-print(dict.get("Hello"))  # Returns the value of the specified key
-print(
-    dict.setdefault("Hello")
-)  # Returns the value of the specified key. If the key does not exist then insert the key with the specified value
+ 
 print(dict)
 
 input()
@@ -27,7 +18,7 @@ print(dict)
 
 dict.pop(
     "Car"
-)  # removes the element with the specified key. If such element does not exist, it returns the last inserted key-value pair
+)  # Removes the specified key from the dictionary. If the key does not exist, there is an error
 print(dict)
 
 input()
