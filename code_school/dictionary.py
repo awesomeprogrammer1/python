@@ -9,7 +9,7 @@ dict = {"Hello": "Привет", "Car": "Машина", "Dog": "Собака"}
 print(dict["Hello"])
 # returns the value if the key exists. If it doesn't it returns "None"
 print(dict.get("Hello"))  
-# returns the value and adds the key to the dictionary if it exists. If 9it doesnt, it returns "None" and adds
+# returns the value and adds the key to the dictionary if it exists. If it doesnt, it returns "None" and adds it to the list
 print(dict.setdefault("Hello"))
 input()
 
