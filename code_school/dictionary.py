@@ -8,9 +8,9 @@ dict = {
 }
 
 # get an element
-print(dict["Hello"]) # get element from list and print
-print(dict.get("Hello")) # returns the value for the key if the key is in the dictionary, if it isnt, print default
-print(dict.setdefault("Hello")) # Returns the value of the specified key.
+print(dict["Hello"]) # returns the value for the specified key. If there is no key specified, it prints default.
+print(dict.get("Hello")) # returns the value for the specified key. If there is no key specified, it prints default.
+print(dict.setdefault("Hello")) # Returns the value of the specified key. If the key does not exist then insert the key with the specified value
 print(dict)
 
 input()
@@ -25,10 +25,10 @@ dict = {
 
 
 # add/remove an element
-dict["Cat"] = "kot" # adds a new element to the dictionary
+dict["Cat"] = "kot" # adds a new element to the dictionary with the key "cat" and value "kot"
 print(dict)
 
-dict.pop("Car") # removes a current existing element
+dict.pop("Car") # removes the element with the specified key
 print(dict)
 
 input()
