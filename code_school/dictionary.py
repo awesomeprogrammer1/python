@@ -10,7 +10,7 @@ dict = {
 # get an element
 print(dict["Hello"]) # get element from list and print
 print(dict.get("Hello")) # returns the value for the key if the key is in the dictionary, if it isnt, print default
-print(dict.setdefault("Hello")) # sets hello as the default element
+print(dict.setdefault("Hello")) # Returns the value of the specified key.
 print(dict)
 
 input()
