@@ -5,7 +5,7 @@
 print(dict)
 dict = {"Hello": "Привет", "Car": "Машина", "Dog": "Собака"}
 
-# returns the value if the key exists. If it doesn't there is an error
+# returns the value if the key exists. If it doesn't, there is an error
 print(dict["Hello"])
 # returns the value if the key exists. If it doesn't, the method returns "None"
 print(dict.get("Hello"))  
