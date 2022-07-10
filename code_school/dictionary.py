@@ -1,4 +1,5 @@
 # intro to dictionaries
+# dict[key] = value
 
 dict = {
    "Hello": "Привет",
@@ -7,9 +8,9 @@ dict = {
 }
 
 # get an element
-print(dict["Hello"]) #
-print(dict.get("Hello")) #
-print(dict.setdefault("Hello")) #
+print(dict["Hello"]) # get element from list and print
+print(dict.get("Hello")) # returns the value for the key if the key is in the dictionary, if it isnt, print default
+print(dict.setdefault("Hello")) # sets hello as the default element
 print(dict)
 
 input()
@@ -22,10 +23,12 @@ dict = {
     "Dog": "Собака"
 }
 
-dict["Cat"] = "kot" # dict[key] = value
+
+# add/remove an element
+dict["Cat"] = "kot" # adds a new element to the dictionary
 print(dict)
 
-dict.pop("Car") #
+dict.pop("Car") # removes a current existing element
 print(dict)
 
 input()
