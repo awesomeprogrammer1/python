@@ -8,8 +8,8 @@ dict = {
 }
 
 # get an element
-print(dict["Hello"]) # returns the value for the specified key. If there is no key specified, it prints default.
-print(dict.get("Hello")) # returns the value for the specified key. If there is no key specified, it prints default.
+print(dict["Hello"]) # looks into the dictionary for the specified key and returns the value
+print(dict.get("Hello")) # Returns the value of the specified key
 print(dict.setdefault("Hello")) # Returns the value of the specified key. If the key does not exist then insert the key with the specified value
 print(dict)
 
@@ -23,12 +23,11 @@ dict = {
     "Dog": "Собака"
 }
 
-
 # add/remove an element
 dict["Cat"] = "kot" # adds a new element to the dictionary with the key "cat" and value "kot"
 print(dict)
 
-dict.pop("Car") # removes the element with the specified key
+dict.pop("Car") # removes the element with the specified key. If such element does not exist, it returns the last inserted key-value pair
 print(dict)
 
 input()

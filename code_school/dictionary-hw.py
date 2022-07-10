@@ -5,39 +5,27 @@
 
 # First Assignment Complete in dictionary.py
 
-
 # Assignment 2:
 
-
-
-
 dict = {
-    "Ice Cream": "Like",
+    "ice cream": "Like",
     "broccoli": "don't like",
     "hockey": "Like",
     "figure skating": "don't like",
     "staying up late": "Like",
     "waking up early": "don't like",
-    "fruits" : "Like",
-    "vegetables" : "don't like"
-
+    "fruits": "Like",
+    "vegetables": "don't like",
 }
 print(dict)
-# thisdict = dict.fromkeys(dict, "Like")
-# thatdict = dict.fromkeys(dict, "don't like")
 
-testdict = dict.values()
-print(testdict)
-
-guess = input("Guess what I enjoy! ")
-
-
-if dict.setdefault(guess) == "Like":
-    print("Correct! You Know Me Very Well")
-    exit()
-if dict.setdefault(guess) == "don't like":
-    print("I do not like that thing")
-    exit()
-else:
-    print('I do not have an opinion on that thing, or you may have had a typo. Try again, there may be a problem with capital letters at the start')
-
+for i in range(3):
+    guess = input("Guess what I enjoy! Be careful! You do not have many guesses: ")
+    if dict.get(guess) == "Like":
+        print("Correct! You Know Me Very Well")
+        exit()
+    if dict.get(guess) == "don't like":
+        print("I do not like that thing")
+    else:
+        print("I do not have an opinion on that thing. Check for a typo and make sure that all letters are lowercase. Otherwise, try again!")
+print("You ran out of guesses. Try again!")
