@@ -23,7 +23,7 @@ for i in range(3):
     guess = input("Guess what I enjoy! Be careful! You do not have many guesses")
     guess = guess.lower()
     if dict.get(guess) == "like":
-        print("Correct! You Know Me Very Well")
+        print("Correct! You know me very well")
         exit()
     if dict.get(guess) == "don't like":
         print("I do not like that thing")
