@@ -5,11 +5,11 @@
 print(dict)
 dict = {"Hello": "Привет", "Car": "Машина", "Dog": "Собака"}
 
-# returns the value if the key exists. If it doesn't there is an error
+# returns the value if the key exists. If it doesn't, there is an error
 print(dict["Hello"])
-# returns the value if the key exists. If it doesn't it returns "None"
+# returns the value if the key exists. If it doesn't, the method returns "None"
 print(dict.get("Hello"))  
-# returns the value and adds the key to the dictionary if it exists. If it doesnt, it returns "None" and adds it to the list
+# returns the value and adds the key to the dictionary if it exists. If it doesnt, it returns "None" and adds the key to the list with value "None"
 print(dict.setdefault("Hello"))
 input()
 
@@ -34,7 +34,9 @@ input()
 
 dict = {}
 
-# the for statement inserts elements between one and one hundred, which are the keys. Then, the keys are multiplied by two to get the values
+# Add 100 elements to the dictionary
+# with all keys being a number from 1-100.
+# The value of the element is the key multiplied by two
 for i in range(1, 101):
     dict[i] = i * 2
 print(dict)
