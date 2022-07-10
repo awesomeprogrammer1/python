@@ -17,7 +17,7 @@ input()
 
 dict = {"Hello": "Привет", "Car": "Машина", "Dog": "Собака"}
 
-# add/remove an element
+# add/remove an element to/from the dictionary
 
 
 # adds a new element to the dictionary with the key "cat" and value "kot"
