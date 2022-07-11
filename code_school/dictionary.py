@@ -77,5 +77,5 @@ user_string = input("Enter a string: ")
 
 for letter in user_string:
     if not letter in dict.keys():
-        dict    = user_string.count(letter)
+        dict[letter] = user_string.count(letter)
 print(dict)
