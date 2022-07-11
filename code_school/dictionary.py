@@ -67,7 +67,7 @@ input()
 ####################################################
 
 
-# we create an new empty dictionary
+# we create a new empty dictionary
 # we prompt the user for a string
 # we fill the dictionary with the letters that were in the string
 
