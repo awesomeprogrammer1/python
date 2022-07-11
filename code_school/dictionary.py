@@ -66,10 +66,10 @@ input()
 ####################################################
 
 
-# we create a new empty dictionary
 # we prompt the user for a string
 # we fill the dictionary with the letters that were in the string
-
+# the keys are characters that appear in the string
+# the values are the number of times the character has appeared in the string
 dict = {}
 
 user_string = input("Enter a string: ")
