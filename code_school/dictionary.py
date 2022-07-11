@@ -1,14 +1,14 @@
 # intro to dictionaries
 # dict[key] = value
 
- 
+
 print(dict)
 dict = {"Hello": "Привет", "Car": "Машина", "Dog": "Собака"}
 
 # returns the value if the key exists. If it doesn't, there is an error
 print(dict["Hello"])
 # returns the value if the key exists. If it doesn't, the method returns "None"
-print(dict.get("Hello"))  
+print(dict.get("Hello"))
 # returns the value and adds the key to the dictionary if it exists. If it doesnt, it returns "None" and adds the key to the list with value "None"
 print(dict.setdefault("Hello"))
 input()
@@ -71,7 +71,7 @@ input()
 # we prompt the user for a string
 # we fill the dictionary with the letters that were in the string
 
-dict = {} 
+dict = {}
 
 user_string = input("Enter a string: ")
 
