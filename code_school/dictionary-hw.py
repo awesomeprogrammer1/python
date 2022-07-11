@@ -22,7 +22,6 @@ print(dict)
 for i in range(3):
     guess = input("Guess what I enjoy! Be careful! You do not have many guesses").lower()
 
-
     if dict.get(guess) == "like":
         print("Correct! You know me very well")
         exit()
