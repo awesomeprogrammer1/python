@@ -31,4 +31,5 @@ for i in range(3):
         print("You have run out of guesses")
     else:
         print("I do not have an opinion on that thing. Try to guess again!")
+
 print("Try again next time!")
