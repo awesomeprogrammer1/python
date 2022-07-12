@@ -1,0 +1,33 @@
+
+# assignment 1: ask the user for two words of the same length.
+# create a dictionary where the keys are the letters from the first word 
+# and the values are the letters of the second word
+# assignment 2: ask the user to enter two sentences
+# each sentence has the same number of words
+# create a dictionary where the keys are the words from the first sentence
+# and the values are the words from the second sentence
+# hint: use the split method
+# assignment 3: ask three users for their names
+# and ask them for their emails and phone numbers {"Admin": {"email":"admin@gmail.com", "phone": "+1111111"}}
+
+
+# assignment 1
+
+from typing import KeysView
+
+
+a = input('Enter a word: ')
+b = input('Enter a second word which has the same length as the first: ')
+
+dict = {}
+keys_that_exist = dict.keys()
+
+for i in range(len(a)): 
+    keys_that_exist = dict.keys()
+    if a in keys_that_exist:
+        dict.get(a)  
+    dict[a[i]] = b[i]
+print(dict) 
+
+
+
