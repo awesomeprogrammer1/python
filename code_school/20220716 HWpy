@@ -13,8 +13,6 @@
 
 # assignment 1
 
-from typing import KeysView
-
 
 a = input('Enter a word: ')
 b = input('Enter a second word which has the same length as the first: ')
