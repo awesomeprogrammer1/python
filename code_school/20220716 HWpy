@@ -18,16 +18,45 @@ a = input('Enter a word: ')
 b = input('Enter a second word which has the same length as the first: ')
 
 dict = {}
+dict_in_dict = {}
 keys_that_exist = dict.keys()
 list = []
 
 for i in range(len(a)): 
     keys_that_exist = dict.keys()
     if a in keys_that_exist:
-        dict.get(a) 
-         
+        dict.get(a)
+        list[0] = a  
     dict[a[i]] = b[i]
 print(dict) 
+
+# assignment 2
+
+
+# assignment 3 
+
+dict = {}
+user_contact_information = {}
+names = []
+emails = []
+numbers = []
+
+for i in range(3):
+    name = input('Enter Your Names: ').lower()
+    names.append(name)
+    email = input('Enter Your Emails: ')
+    emails.append(email)
+    number = input('Enter Your Phone Numbers: ')
+    numbers.append(number)
+    user_contact_information[emails[i]] = numbers[i]
+    dict[names[len(names)]] = user_contact_information[len(names)]
+print(names)
+print(emails)
+print(numbers)
+print(dict)
+    
+    
+        
 
 
 
