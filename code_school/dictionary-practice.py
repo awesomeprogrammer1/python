@@ -1,4 +1,4 @@
-import easygui
+
 
 # assignment 1: ask the user for two words of the same length.
 # create a dictionary where the keys are the letters from the first word 
@@ -31,7 +31,7 @@ dict = {} #{"Andry": ["ball", "stick", "laptop"], "Sergey": ["1", "2","3"],}
 
 
 for i in range(3):
-    name = easygui.enterbox('What is your name? ')
+    name = input('What is your name? ')
     # list = [easygui.enterbox('1 '), easygui.enterbox('2 '), easygui.enterbox('3 ')]
     # list = easygui.multenterbox("Enter your items","Game", ["1 item", "2 item", "3 item"])
     # list = []
