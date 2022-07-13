@@ -19,11 +19,13 @@ b = input('Enter a second word which has the same length as the first: ')
 
 dict = {}
 keys_that_exist = dict.keys()
+list = []
 
 for i in range(len(a)): 
     keys_that_exist = dict.keys()
     if a in keys_that_exist:
-        dict.get(a)  
+        dict.get(a) 
+         
     dict[a[i]] = b[i]
 print(dict) 
 
