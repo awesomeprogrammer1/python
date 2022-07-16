@@ -39,17 +39,19 @@ from itertools import count
 
 dict = {}
 
-sentence1 = input("Enter a sentence: ").split()
-sentence2 = input(
-    "Enter a sentence with the same amount of words as the first one: "
-).split()
+sentence1_words = input("Enter a sentence: ").split()
+sentence2_words = input("Enter a sentence with the same amount of words as the first one: ").split()
 
 
-print(sentence1)
-print(sentence2)
+print(sentence1_words)
+print(sentence2_words)
 
-dict[sentence1] = sentence2
+for i in range(len(sentence1_words)):
+    print(len(sentence1_words))
+    dict[sentence1_words[i]] = sentence2_words[i]
+#     dict[word] = sentence2_words[word]
 print(dict)
+
 # dict = {
 #     'I': 'I',
 #     'love' : 'love',
