@@ -14,23 +14,24 @@
 # assignment 1
 
 
-# a = input('Enter a word: ')
-# b = input('Enter a second word which has the same length as the first: ')
+a = input('Enter a word: ')
+b = input('Enter a second word which has the same length as the first: ')
 
-# dict = {}
-# dict_in_dict = {}
-# keys_that_exist = dict.keys()
-# list = []
+dict = {}
+dict_in_dict = {}
+keys_that_exist = dict.keys()
+list = []
 
-# for i in range(len(a)): 
-#     keys_that_exist = dict.keys()
-#     if a in keys_that_exist:
-#         dict.get(a)
-#         list[0] = a  
-#     dict[a[i]] = b[i]
-# print(dict) 
+for i in range(len(a)): 
+    keys_that_exist = dict.keys()
+    values_that_exist = dict.values()
+    if a in keys_that_exist:
+        dict.get(a)
+        dict[a] = b
+    dict[a[i]] = b[i]
+print(dict) 
 
-# assignment 2
+#assignment 2
 
 
 # assignment 3 
