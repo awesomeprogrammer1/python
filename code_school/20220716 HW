@@ -18,39 +18,39 @@ import string
 from itertools import count
 
 
-# a = input('Enter a word: ')
-# b = input('Enter a second word which has the same length as the first: ')
+word1 = input("Enter a word: ")
+word2 = input("Enter a second word which has the same length as the first: ")
 
-# dict = {}
-# dict_in_dict = {}
-# keys_that_exist = dict.keys()
-# list = []
+dict = {}
+dict_in_dict = {}
+keys_that_exist = []
+list = []
+i = 0
 
-# for i in range(len(a)):
-#     keys_that_exist = dict.keys()
-#     values_that_exist = dict.values()
-#     dict[a[i]] = b[i]
-#     if a in keys_that_exist:
-#         dict[a] = b
-#     print(dict)
-# print(dict)
+for i in range(len(word2)):
+    if word1 in keys_that_exist:
+        dict[word1[i]] = word2[i]
+    else: 
+        dict[word1[i]] = word2[i]
+    keys_that_exist.append(word1)
+    print(dict)
+print(dict)
 
 # assignment 2
 
-dict = {}
+# dict = {}
 
-sentence1_words = input("Enter a sentence: ").split()
-sentence2_words = input("Enter a sentence with the same amount of words as the first one: ").split()
+# sentence1_words = input("Enter a sentence: ").split()
+# sentence2_words = input("Enter a sentence with the same amount of words as the first one: ").split()
 
 
-print(sentence1_words)
-print(sentence2_words)
+# print(sentence1_words)
+# print(sentence2_words)
 
-for i in range(len(sentence1_words)):
-    print(len(sentence1_words))
-    dict[sentence1_words[i]] = sentence2_words[i]
-#     dict[word] = sentence2_words[word]
-print(dict)
+# for i in range(len(sentence1_words)):
+#     print(len(sentence1_words))
+#     dict[sentence1_words[i]] = sentence2_words[i]
+# print(dict)
 
 # dict = {
 #     'I': 'I',
