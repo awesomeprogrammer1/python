@@ -15,42 +15,63 @@ import string
 # assignment 1
 
 
-from itertools import count
+# from itertools import count
 
 
-word1 = input("Enter a word: ")
-word2 = input("Enter a second word which has the same length as the first: ")
-
-dict = {}
-dict_in_dict = {}
-keys_that_exist = []
-list = []
-i = 0
-
-for i in range(len(word2)):
-    if word1 in keys_that_exist:
-        dict[word1[i]] = word2[i]
-    else: 
-        dict[word1[i]] = word2[i]
-    keys_that_exist.append(word1)
-    print(dict)
-print(dict)
-
-# assignment 2
+# word1 = input("Enter a word: ")
+# word2 = input("Enter a second word which has the same length as the first: ")
 
 # dict = {}
+# dict_in_dict = {}
+# keys_that_exist = []
+# list = []
+# i = 0
 
-# sentence1_words = input("Enter a sentence: ").split()
-# sentence2_words = input("Enter a sentence with the same amount of words as the first one: ").split()
-
-
-# print(sentence1_words)
-# print(sentence2_words)
-
-# for i in range(len(sentence1_words)):
-#     print(len(sentence1_words))
-#     dict[sentence1_words[i]] = sentence2_words[i]
+# for i in range(len(word2)):
+#     if word1 in keys_that_exist:
+#         dict[word1[i]] = word2[i]
+#     else:
+#         dict[word1[i]] = word2[i]
+#     keys_that_exist.append(word1)
+#     print(dict)
 # print(dict)
+
+# word1 = input("Enter a word: ")
+# word2 = input("Enter a second word which has the same length as the first: ")
+# dict = {}
+# if len(word1) != len(word2):
+#     print("Error")
+#     exit()
+# for i in range(len(word2)):
+#     dict[word1[i]] = word2[i]
+# print(dict)
+
+
+# assignment 2
+dict = {}
+
+sentence1_words = input("Enter a sentence: ").split()
+sentence2_words = input("Enter a sentence with the same amount of words as the first one: ").split()
+
+
+if len(sentence1_words) != len(sentence2_words):
+    print('Error')
+    exit()
+for i in range(len(sentence1_words)):
+    if sentence1_words[i] in dict.keys():
+        dict[sentence1_words[i]] =  dict[sentence1_words[i]] + ", " + sentence2_words[i]
+    else:    
+        dict[sentence1_words[i]] = sentence2_words[i]
+print(dict)
+
+
+# for word in sentence1_words:
+#     if word in sentence2_words:
+#         print('Error')
+#     print(word)
+
+
+
 
 # dict = {
 #     'I': 'I',
@@ -80,3 +101,16 @@ print(dict)
 # print(names)
 # print(emails)
 # print(numbers)
+# dict = {}
+# for i in range(1):
+
+#     user_contact_information = {}
+#     name = input("Enter Your Names: ").lower()
+#     email = input("Enter Your Emails: ") 
+#     number = input("Enter Your Phone Numbers: ")
+#     user_contact_information["email"] = email
+#     user_contact_information["number"] = number
+#     dict[name] = user_contact_information
+# print(dict)
+# dict = {'andrew': {'email': 'admin@admin.com', 'number': '1-298-483-8429'}}
+# print(dict["andrew"]["number"])
