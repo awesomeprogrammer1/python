@@ -1,24 +1,35 @@
 # assignment 1
 
+
 dict = {}
 
-sentence1_words = input("Enter a sentence: ").split()
+sentence1_words = input("Enter a sentence: ").split()  # ["1 word", "2 word", "3 word"]
 sentence2_words = input(
     "Enter a sentence with the same amount of words as the first one: "
 ).split()
-extra_words = []
 
 
 if len(sentence1_words) != len(sentence2_words):
     print("Error")
-    exit()
-for i in range(len(sentence1_words)):
-    extra_words = []
-    extra_words.append(sentence1_words)
-    extra_words.append(sentence2_words)
-    
-    dict[sentence1_words[i]] = extra_words
-print(dict)
+else:
+    for i in range(len(sentence1_words)):
+        # if sentence1_words[i] in dict.keys():
+        #     dict[sentence1_words[i]] =  dict[sentence1_words[i]] + ", " + sentence2_words[i]
+        #
 
+        # list = []
+        # list.append(sentence2_words[i])
+        # dict[sentence1_words[i]] = list
 
-# assignment 2
+        if sentence1_words[i] in dict.keys():
+            list = dict[sentence1_words[i]]
+            list.append(sentence2_words[i])
+            dict[sentence1_words[i]] = list
+        else:
+            list = []
+            list.append(sentence2_words[i])
+            dict[sentence1_words[i]] = list
+
+    print(dict)
+
+#
