@@ -27,8 +27,6 @@ else:
             list.append(sentence2_words[i])
             dict[sentence1_words[i]] = list
         else:
-            list = []
-            list.append(sentence2_words[i])
             dict[sentence1_words[i]] = sentence2_words[i]
 
     print(dict)
