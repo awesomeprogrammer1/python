@@ -22,13 +22,14 @@ else:
         # dict[sentence1_words[i]] = list
 
         if sentence1_words[i] in dict.keys():
-            list = dict[sentence1_words[i]]
+            list = []
+            list.append(dict[sentence1_words[i]])
             list.append(sentence2_words[i])
             dict[sentence1_words[i]] = list
         else:
             list = []
             list.append(sentence2_words[i])
-            dict[sentence1_words[i]] = list
+            dict[sentence1_words[i]] = sentence2_words[i]
 
     print(dict)
 
