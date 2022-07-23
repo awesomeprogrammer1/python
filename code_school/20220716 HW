@@ -1,0 +1,116 @@
+import string
+
+# assignment 1: ask the user for two words of the same length.
+# create a dictionary where the keys are the letters from the first word
+# and the values are the letters of the second word
+# assignment 2: ask the user to enter two sentences
+# each sentence has the same number of words
+# create a dictionary where the keys are the words from the first sentence
+# and the values are the words from the second sentence
+# hint: use the split method
+# assignment 3: ask three users for their names
+# and ask them for their emails and phone numbers {"Admin": {"email":"admin@gmail.com", "phone": "+1111111"}}
+
+
+# assignment 1
+
+
+# from itertools import count
+
+
+# word1 = input("Enter a word: ")
+# word2 = input("Enter a second word which has the same length as the first: ")
+
+# dict = {}
+# dict_in_dict = {}
+# keys_that_exist = []
+# list = []
+# i = 0
+
+# for i in range(len(word2)):
+#     if word1 in keys_that_exist:
+#         dict[word1[i]] = word2[i]
+#     else:
+#         dict[word1[i]] = word2[i]
+#     keys_that_exist.append(word1)
+#     print(dict)
+# print(dict)
+
+# word1 = input("Enter a word: ")
+# word2 = input("Enter a second word which has the same length as the first: ")
+# dict = {}
+# if len(word1) != len(word2):
+#     print("Error")
+#     exit()
+# for i in range(len(word2)):
+#     dict[word1[i]] = word2[i]
+# print(dict)
+
+
+# assignment 2
+dict = {}
+
+sentence1_words = input("Enter a sentence: ").split()
+sentence2_words = input("Enter a sentence with the same amount of words as the first one: ").split()
+
+
+if len(sentence1_words) != len(sentence2_words):
+    print('Error')
+    exit()
+for i in range(len(sentence1_words)):
+    if sentence1_words[i] in dict.keys():
+        dict[sentence1_words[i]] =  dict[sentence1_words[i]] + ", " + sentence2_words[i]
+    else:    
+        dict[sentence1_words[i]] = sentence2_words[i]
+print(dict)
+
+
+# for word in sentence1_words:
+#     if word in sentence2_words:
+#         print('Error')
+#     print(word)
+
+
+
+
+# dict = {
+#     'I': 'I',
+#     'love' : 'love',
+#     'hedgie': 'sharkie'
+# }
+# print(dict)
+
+# assignment 3
+
+# dict = {}
+# user_contact_information = {}
+# names = []
+# emails = []
+# numbers = []
+
+# for i in range(3):
+#     name = input("Enter Your Names: ").lower()
+#     names.append(name)
+#     email = input("Enter Your Emails: ")
+#     emails.append(email)
+#     number = input("Enter Your Phone Numbers: ")
+#     numbers.append(number)
+# user_contact_information[emails] = numbers
+# dict[names] = user_contact_information
+# dict[user_contact_information] = numbers
+# print(names)
+# print(emails)
+# print(numbers)
+# dict = {}
+# for i in range(1):
+
+#     user_contact_information = {}
+#     name = input("Enter Your Names: ").lower()
+#     email = input("Enter Your Emails: ") 
+#     number = input("Enter Your Phone Numbers: ")
+#     user_contact_information["email"] = email
+#     user_contact_information["number"] = number
+#     dict[name] = user_contact_information
+# print(dict)
+# dict = {'andrew': {'email': 'admin@admin.com', 'number': '1-298-483-8429'}}
+# print(dict["andrew"]["number"])

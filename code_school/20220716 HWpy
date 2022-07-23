@@ -1,0 +1,80 @@
+import string
+
+# assignment 1: ask the user for two words of the same length.
+# create a dictionary where the keys are the letters from the first word
+# and the values are the letters of the second word
+# assignment 2: ask the user to enter two sentences
+# each sentence has the same number of words
+# create a dictionary where the keys are the words from the first sentence
+# and the values are the words from the second sentence
+# hint: use the split method
+# assignment 3: ask three users for their names
+# and ask them for their emails and phone numbers {"Admin": {"email":"admin@gmail.com", "phone": "+1111111"}}
+
+
+# assignment 1
+
+
+from itertools import count
+
+
+# a = input('Enter a word: ')
+# b = input('Enter a second word which has the same length as the first: ')
+
+# dict = {}
+# dict_in_dict = {}
+# keys_that_exist = dict.keys()
+# list = []
+
+# for i in range(len(a)):
+#     keys_that_exist = dict.keys()
+#     values_that_exist = dict.values()
+#     dict[a[i]] = b[i]
+#     if a in keys_that_exist:
+#         dict[a] = b
+#     print(dict)
+# print(dict)
+
+# assignment 2
+
+dict = {}
+
+sentence1 = input("Enter a sentence: ").split()
+sentence2 = input(
+    "Enter a sentence with the same amount of words as the first one: "
+).split()
+
+
+print(sentence1)
+print(sentence2)
+
+dict[sentence1] = sentence2
+print(dict)
+# dict = {
+#     'I': 'I',
+#     'love' : 'love',
+#     'hedgie': 'sharkie'
+# }
+# print(dict)
+
+# assignment 3
+
+# dict = {}
+# user_contact_information = {}
+# names = []
+# emails = []
+# numbers = []
+
+# for i in range(3):
+#     name = input("Enter Your Names: ").lower()
+#     names.append(name)
+#     email = input("Enter Your Emails: ")
+#     emails.append(email)
+#     number = input("Enter Your Phone Numbers: ")
+#     numbers.append(number)
+# user_contact_information[emails] = numbers
+# dict[names] = user_contact_information
+# dict[user_contact_information] = numbers
+# print(names)
+# print(emails)
+# print(numbers)
