@@ -69,3 +69,29 @@ a = (
     + castle[7][0][0][0][0]
 )
 print(a)
+
+message = [
+    ("We ",),
+    "rec",
+    {"r": "o"},
+    {"o": "r"},
+    {"m1": "ded "},
+    {"m3": ["a "], "m4": {"m5": "UFO"}},
+]
+print(message)
+print(message[2]["r"])
+print(message[3])
+
+
+b = "" + message[0][0] + "" + message[1] + message[2]['r'] + message[3]['o'] + message[4]['m1'] + "" + message[5]['m3'][0] + "" + message[5]['m4']['m5']
+    # + message[3]
+    # + message[2]["r"]
+    # + message[3]["o"]
+    # + message[4]["m1"]
+    # + ""
+    # + message[5]["m3"][0]
+    # + ""
+    # + message[6]["m4"]["m5"]
+
+
+print(b)
