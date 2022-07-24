@@ -41,13 +41,12 @@ while True:
             textbox("Error, Contact Does Not Exist.")
             interface = ""
         else:
-            new_contact = multenterbox(
-                "Please Edit The Existing Contact Info",
+            new_contact = enterbox(
+                "Please Edit The Existing Phone Number",
                 "Edit Contact",
-                ["name", "phone number"],
             )
             dict.pop(edit_contact)
-            dict[new_contact[0]] = new_contact[1]
+            dict[edit_contact] = new_contact
             textbox(dict)
             interface = ""
     if interface == "search":
@@ -59,7 +58,7 @@ while True:
             textbox("Error: Contact Does Not Exist")
             interface = ""
         else:
-            textbox(dict[search_contact], "Andrews Number:")
+            textbox(dict[search_contact], 'Users Phone Number')
             interface = ""
     if interface == "exit":
         textbox('Hit "OK" to close the Contact Book')
