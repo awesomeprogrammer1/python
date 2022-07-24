@@ -13,14 +13,14 @@ while True:
             "Contact Book",
             ["add", "remove", "edit", "search", "exit"],
         )
-    if interface == "add":
+    elif interface == "add":
         contact_info = multenterbox(
             "Please Enter Contact Information ", "Add Contact", ["name", "phone number"]
         )
         dict[contact_info[0]] = contact_info[1]
         textbox(dict)
         interface = ""
-    if interface == "remove":
+    elif interface == "remove":
         remove_contact = enterbox(
             "Please Enter The Name of the Contact ",
             "Remove Contact",
@@ -32,7 +32,7 @@ while True:
             dict.pop(remove_contact)
             textbox(dict)
             interface = ""
-    if interface == "edit":
+    elif interface == "edit":
         edit_contact = enterbox(
             "Please Enter The Name Of The Contact You Would Like To Edit ",
             "Edit Contact",
@@ -49,7 +49,7 @@ while True:
             dict[edit_contact] = new_contact
             textbox(dict)
             interface = ""
-    if interface == "search":
+    elif interface == "search":
         search_contact = enterbox(
             "Enter the Name of the Contact That You Would Like To Search",
             "Search Contact",
@@ -60,6 +60,6 @@ while True:
         else:
             textbox(dict[search_contact], 'Users Phone Number')
             interface = ""
-    if interface == "exit":
+    elif interface == "exit":
         textbox('Hit "OK" to close the Contact Book')
         exit()
