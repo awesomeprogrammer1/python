@@ -1,19 +1,15 @@
 from easygui import *
 
 dict = {}
-interface = buttonbox(
+
+while True:
+
+    interface = buttonbox(
     "What do you want to do? ",
     "Contact Book",
     ["add", "remove", "edit", "search", "exit"],
-)
-while True:
-    if interface == "":
-        interface = buttonbox(
-            "Choose to function",
-            "Contact Book",
-            ["add", "remove", "edit", "search", "exit"],
-        )
-    elif interface == "add":
+    )
+    if interface == "add":
         contact_info = multenterbox(
             "Please Enter Contact Information ", "Add Contact", ["name", "phone number"]
         )
@@ -61,5 +57,4 @@ while True:
             textbox(dict[search_contact], 'Users Phone Number')
             interface = ""
     elif interface == "exit":
-        textbox('Hit "OK" to close the Contact Book')
         exit()
