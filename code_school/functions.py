@@ -32,6 +32,17 @@
 # print(strlength(input('Write Anything: ')))
 
 # P= 123, Area=123
-def perimeter_area_rectangle(width, height):
+dict = {}
+def print_perimeter_area_rectangle(width, height):
     area = width * height; perimeter = (width+height)*2 ; result = f'P = {perimeter}, Area = {area}' ; return result
-print(perimeter_area_rectangle(5,4))
+print(print_perimeter_area_rectangle(5,4))
+
+
+def perimeter_area_rectangle_dict(width, height):
+    area = width * height 
+    perimeter = (width+height)*2  
+    dict[area] = perimeter
+    result = dict
+    return result
+print('Area : Perimeter')
+print(perimeter_area_rectangle_dict(9,5))
