@@ -9,5 +9,5 @@ def test_perimeter_area_rectangle_dict():
 def test_print_perimeter_area_rectangle():
     assert (
         print_perimeter_area_rectangle_dict(perimeter_area_rectangle_dict(6, 7))
-        == "Perimter = 26, Area = 42"
+        == "Perimeter = 26, Area = 42"
     )
