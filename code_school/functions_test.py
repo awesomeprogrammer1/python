@@ -1,0 +1,13 @@
+from functions import perimeter_area_rectangle_dict
+from functions import print_perimeter_area_rectangle
+
+
+def test_perimeter_area_rectangle_dict():
+    assert perimeter_area_rectangle_dict(6, 7) == {"Area": 42, "P": 26}
+
+
+def test_print_perimeter_area_rectangle():
+    assert (
+        print_perimeter_area_rectangle(perimeter_area_rectangle_dict(6, 7))
+        == "P = 26, Area = 42"
+    )
