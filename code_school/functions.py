@@ -44,5 +44,16 @@ def perimeter_area_rectangle_dict(width, height):
     dict[area] = perimeter
     result = dict
     return result
-print('Area : Perimeter')
-print(perimeter_area_rectangle_dict(9,5))
+
+
+def print_perimeter_area_rectangle_dict(dict):
+    """
+    This function returns the same content as print_perimeter_area_rectangle(width, height),
+    but instead of width and height, it should take a dictionary as an argument (in the same format
+    as returned by perimeter_area_rectangle_dict)
+    """
+    pass
+
+
+print("Area : Perimeter")
+print(perimeter_area_rectangle_dict(9, 5))
