@@ -36,16 +36,17 @@ dict = {}
 
 
 def print_perimeter_area_rectangle(width, height):
-    result = f"P = {(width+height)*2}, Area = {width * height}"
+    result = f"Perimeter = {(width+height)*2}, Area = {width * height}"
     return result
+    ""
 
 
 print(print_perimeter_area_rectangle(5, 4))
 
 
 def perimeter_area_rectangle_dict(width, height):
-    dict["area"] = width * height
-    dict["perimeter"] = (width + height) * 2
+    dict["Area"] = width * height
+    dict["Perimeter"] = (width + height) * 2
     result = dict
     return result
 
@@ -60,3 +61,4 @@ def print_perimeter_area_rectangle_dict(dict):
 
 
 print(perimeter_area_rectangle_dict(6, 7))
+print(print_perimeter_area_rectangle(6, 7))
