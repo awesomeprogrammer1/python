@@ -9,18 +9,21 @@
 dict = {}
 
 
-def sun(time: str) -> str:
-    subtracting_number = 600
-    if time < 601 or time > 1800:
-        return f"Time = {time}, Angle = {0}"
+def sun(hours: int, minutes: int) -> str:
+    if hours > 18 or 6 > hours:
+        return "The Sun Is Down"
+    elif minutes >= 60 or hours >= 24:
+        return "Error, Invalid Input"
+    if minutes == 00:
+        dict[hours] = '00'
+        angle_by_hour = (hours - 6) * 15
+        angle_by_minutes = (minutes) * 0.25
+        return f"Time = {dict}, Angle Of The Sun = {angle_by_hour+angle_by_minutes}"
     else:
-        while time > subtracting_number:
-            divisor = 4
-            angle = (time - subtracting_number) / divisor
-            subtracting_number += 100
-            if time - subtracting_number >
-            angle += 15
-        return f"Time = {time}, Angle = {angle}"
+        dict[hours] = minutes
+        angle_by_hour = (hours - 6) * 15
+        angle_by_minutes = (minutes) * 0.25
+        return f"Time = {dict}, Angle Of The Sun = {angle_by_hour+angle_by_minutes}"
 
 
-print(sun(1000))
+print(sun(7, 00))
