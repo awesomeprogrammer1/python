@@ -44,8 +44,6 @@
 # def print_perimeter_area_rectangle(width, height):
 #     return f"Perimeter = {(width+height)*2}, Area = {width * height}"
 
-
-
 # print(print_perimeter_area_rectangle(5, 4))
 
 
