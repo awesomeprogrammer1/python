@@ -21,8 +21,6 @@ def sun2(hours: int, minutes: int) -> str:
         angle_by_hour = (hours - 6) * 15
         angle_by_minutes = (minutes) * 0.25
         return f"Time = {'7:15'}, Angle Of The Sun = {angle_by_hour+angle_by_minutes}"
-            
-        
 
 
 def sun(time: str) -> str:

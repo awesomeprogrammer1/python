@@ -78,7 +78,7 @@ def width_height_area_dict(width, height):
     return f"Perimeter = {perimeter}, Area = {area}"
 
 dict = {"width": 50, "height": 70}
-def get_width_height_area_from_dict(width, height):
+def get_parameters_from_dict(width, height):
     area = dict[width] * dict[height]
     perimeter = (dict[width]+dict[height])*2
     return f"Perimeter = {perimeter}, Area = {area}"
