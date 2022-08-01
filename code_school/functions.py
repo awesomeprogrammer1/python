@@ -49,11 +49,11 @@
 # print(print_perimeter_area_rectangle(5, 4))
 
 
-# def perimeter_area_rectangle_dict(width, height):
-#     dict = {}
-#     dict["Area"] = width * height
-#     dict["Perimeter"] = (width + height) * 2
-#     return dict
+def perimeter_area_rectangle_dict(width, height):
+    dict = {}
+    dict["Area"] = width * height
+    dict["Perimeter"] = (width + height) * 2
+    return dict
 
 
 def print_perimeter_area_rectangle_dict(dict: dict):

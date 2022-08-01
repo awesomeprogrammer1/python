@@ -8,10 +8,6 @@
 # "06:00"-0, "12:00"- 90, "18:00"-180,
 
 
-dict = {}
-list = []
-
-
 def sun2(hours: int, minutes: int) -> str:
     if hours > 18 or 6 > hours:
         return "The Sun Is Down"
@@ -20,7 +16,7 @@ def sun2(hours: int, minutes: int) -> str:
     else:
         angle_by_hour = (hours - 6) * 15
         angle_by_minutes = (minutes) * 0.25
-        return f"Time = {'7:15'}, Angle Of The Sun = {angle_by_hour+angle_by_minutes}"
+        return f"Time = {'7:15'}, Angle Of The Sun = {angle_by_hour + angle_by_minutes}"
 
 
 def sun(time: str) -> str:
