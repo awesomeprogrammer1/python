@@ -7,6 +7,7 @@ from functions_sun import sun
     [
         ("7:15", "Time = 7:15, Angle Of The Sun = 18.75"),
         ("2:00", "Time = 2:00, The Sun Is Down"),
+        ("18:00", "Time = 18:00, Angle Of The Sun = 180.0"),
         ("18:01", "Time = 18:01, The Sun Is Down"),
         ("5:59", "Time = 5:59, The Sun Is Down"),
         ("6:00", "Time = 6:00, Angle Of The Sun = 0.0"),
