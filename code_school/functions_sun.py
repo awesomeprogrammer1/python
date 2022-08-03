@@ -1,7 +1,6 @@
 # sun(time), time: "06:00", "11:30",
 # return an angle-str  ,
 # "06:00"-0, "12:00"- 90, "18:00"-180,
-alphabet = "abcdefghijklmnopqrstuvwxyz"
 
 
 def get_angle(hours: int, minutes: int) -> str:
@@ -25,5 +24,6 @@ def sun(time: str) -> str:
     return f"Time = {time}, {angle}"
 
 
+# only run the commands in the if when you are executing this file
 if __name__ == "__main__":
     print(sun("abc"))
