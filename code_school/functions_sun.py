@@ -17,8 +17,9 @@ def sun(time: str) -> str:
     try:
         hours_and_minutes = time.split(":")
         hours = int(hours_and_minutes[0])
+        minutes = int(hours_and_minutes[1])
     except ValueError:
-        return "Error, Invalid Input"    
+        return "Error, Invalid Input"
     if minutes <= -1 or hours <= -1:
         return "Error, Invalid Input"
     if minutes >= 60 or hours >= 24:
