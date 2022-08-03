@@ -25,4 +25,5 @@ def sun(time: str) -> str:
     return f"Time = {time}, {angle}"
 
 
-print(sun("abc"))
+if __name__ == "__main__":
+    print(sun("abc"))
