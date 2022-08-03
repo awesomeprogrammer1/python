@@ -1,3 +1,5 @@
+# assignment 2 for 2022-08-03
+# implement function sun
 # sun(time), time: "06:00", "11:30",
 # return an angle-str  ,
 # "06:00"-0, "12:00"- 90, "18:00"-180,

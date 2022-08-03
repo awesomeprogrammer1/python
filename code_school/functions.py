@@ -12,13 +12,6 @@
 # assignment 4:
 # learn about assert
 
-# assignment 1:
-# create a function which takes parameter {"width": 50, "height": 70} and
-# returns a string that shows area and perimeter
-# assignment 2:
-# implement function sun
-
-
 # def math(a, b):
 #     return a+b
 
@@ -73,10 +66,4 @@ print(print_perimeter_area_rectangle_dict(dict))
 def width_height_area_dict(width, height):
     area = width * height
     perimeter = (width+height)*2
-    return f"Perimeter = {perimeter}, Area = {area}"
-
-dict = {"width": 50, "height": 70}
-def get_parameters_from_dict(width, height):
-    area = dict[width] * dict[height]
-    perimeter = (dict[width]+dict[height])*2
     return f"Perimeter = {perimeter}, Area = {area}"
