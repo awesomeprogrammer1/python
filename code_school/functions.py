@@ -12,7 +12,6 @@
 # assignment 4:
 # learn about assert
 
-
 # def math(a, b):
 #     return a+b
 
@@ -32,15 +31,13 @@
 # print(strlength(input('Write Anything: ')))
 
 # P= 123, Area=123
-dict = {}
+# dict = {}
 
 
-def print_perimeter_area_rectangle(width, height):
-    return f"Perimeter = {(width+height)*2}, Area = {width * height}"
+# def print_perimeter_area_rectangle(width, height):
+#     return f"Perimeter = {(width+height)*2}, Area = {width * height}"
 
-
-
-print(print_perimeter_area_rectangle(5, 4))
+# print(print_perimeter_area_rectangle(5, 4))
 
 
 def perimeter_area_rectangle_dict(width, height):
@@ -50,11 +47,23 @@ def perimeter_area_rectangle_dict(width, height):
     return dict
 
 
-def print_perimeter_area_rectangle_dict(dictionary):
+def print_perimeter_area_rectangle_dict(dict: dict):
     area = dict["Area"]
     perimeter = dict["Perimeter"]
     return f"Perimeter = {perimeter}, Area = {area}"
 
 
-print(perimeter_area_rectangle_dict(6, 7))
-print(print_perimeter_area_rectangle_dict(1))
+# print(perimeter_area_rectangle_dict(6, 7))
+dict = {
+    "Area": 56,
+    "Perimeter": 30
+}
+print(print_perimeter_area_rectangle_dict(dict))
+
+# assignment 1
+
+
+def width_height_area_dict(width, height):
+    area = width * height
+    perimeter = (width+height)*2
+    return f"Perimeter = {perimeter}, Area = {area}"
