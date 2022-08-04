@@ -14,19 +14,31 @@ def get_angle(hours: int, minutes: int) -> str:
         return f"Angle Of The Sun = {angle_by_hour+angle_by_minutes}"
 
 
-def sun(time: str) -> str: #create 
+def sun(time: str) -> str:
+    # splits the characters in the string by a colon
     hours_and_minutes = time.split(":")
     try:
+        # splits the characters in the string by a colon
         hours_and_minutes = time.split(":")
+        # converts "hours" from a string to an integer
         hours = int(hours_and_minutes[0])
+        # converts "minutes" from a string to an integer
         minutes = int(hours_and_minutes[1])
+    # If there is a typeError or a ValueError this message is returned
     except (TypeError, ValueError):
         return "Error, Invalid Input"
+    # Checks if the numbers are negative
     if minutes <= -1 or hours <= -1:
         return "Error, Invalid Input"
+    # checks if minutes is equal to or over 60
+    # and does the same thing with hours
+    # if either condition holds true
+    # the program raises an exception
     if minutes >= 60 or hours >= 24:
         return "Error, Invalid Input"
+    # gets the angle with the help of the other function
     angle = get_angle(hours, minutes)
+    # returns the formatted string
     return f"Time = {time}, {angle}"
 
 
