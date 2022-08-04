@@ -61,7 +61,7 @@ dict = {
 print(print_perimeter_area_rectangle_dict(dict))
 
 # assignment 1
-
+# "Perimeter = 40", "Area = 100"
 
 def width_height_area_dict(width, height):
     area = width * height

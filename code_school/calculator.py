@@ -1,5 +1,10 @@
 from easygui import *
 
+# assignment 1
+# And add an exponent operation
+# Also handle division by zero
+
+
 while True:
     calculator = buttonbox(
         "Choose to add, subtract, multiply, or divide",

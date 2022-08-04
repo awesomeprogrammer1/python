@@ -20,6 +20,7 @@ from functions_sun import sun
         ("3:-24", "Error, Invalid Input"),
         ("abc", "Error, Invalid Input"),
         ("ab:cd", "Error, Invalid Input"),
+        ("27:93", "Error, Invalid Input"),
     ],
 )
 def test_sun(test_input: str, expected: str):

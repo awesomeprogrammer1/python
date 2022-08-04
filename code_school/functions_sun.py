@@ -14,7 +14,7 @@ def get_angle(hours: int, minutes: int) -> str:
         return f"Angle Of The Sun = {angle_by_hour+angle_by_minutes}"
 
 
-def sun(time: str) -> str:
+def sun(time: str) -> str: #create 
     hours_and_minutes = time.split(":")
     try:
         hours_and_minutes = time.split(":")
