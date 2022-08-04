@@ -6,6 +6,13 @@
 
 
 def get_angle(hours: int, minutes: int) -> str:
+    # checks to make sure that the sun isnt down
+    # if the sun is down, it returns the string
+    # "The Sun is Down"
+    # Otherwise, it runs a program which calculates
+    # the angle of the sun, dependant on the parameters
+    # given to the program by the user
+    # the data is then returned to the main program sun
     if (hours >= 18 and minutes > 0) or (hours <= 5 and minutes <= 59):
         return "The Sun Is Down"
     else:
