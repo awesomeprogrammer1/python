@@ -11,6 +11,7 @@ s = "fdfw"
 # for loop prints out the same string a certain amount of times
 # (to be specific, it prints out the string the amount of times equal to the amount of characters in the string)
 # the second loop prints out each individual letter
+# additionally, i is an integer, while "e" is a string
 for i in range(len(s)):
     print(s)
 for e in s:
