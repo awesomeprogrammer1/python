@@ -1,3 +1,5 @@
+from typing import Tuple
+
 # assignment 1:
 # write the perimeter_area_rectangle function in one line
 # assignment 2:
@@ -64,7 +66,7 @@ print(print_perimeter_area_rectangle_dict(dict))
 # "Perimeter = 40", "Area = 100"
 
 
-def width_height_area_dict(width, height)
+def width_height_area_dict(width, height):
     area = width * height
     perimeter = (width + height) * 2
     return f"Perimeter = {perimeter}, Area = {area}"
@@ -72,6 +74,7 @@ def width_height_area_dict(width, height)
 
 print(width_height_area_dict(10, 10))
 
-def get_perimeter_area_tuple(height: int, width: int) -> tuple(str, str):
+
+def get_perimeter_area_tuple(height: int, width: int) -> Tuple[str, str]:
     area = width * height
-    perimeter = (width+height)*2
+    perimeter = (width + height) * 2
