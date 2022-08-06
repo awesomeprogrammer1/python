@@ -48,11 +48,15 @@ while True:
         divided_numbers = int(divide_numbers[0]) / int(divide_numbers[1])
         textbox(divided_numbers)
     elif calculator == "exponentiate":
-        exponent_numbers = multenterbox(
-            "Write two numbers to perform an exponential equation",
-            "Calculator",
-            ["first number", "second number"],
-        )
+        try:
+            exponent_numbers = multenterbox(
+                "Write two numbers to perform an exponential equation",
+                "Calculator",
+                ["first number", "second number"],
+            )
+            exponented_numbers = int(exponent_numbers[0]) ** int(exponent_numbers[1])
+        except (ZeroDivisionError):
+            textbox('Error code 293: Exponentiating by zero')
         exponented_numbers = int(exponent_numbers[0]) ** int(exponent_numbers[1])
         textbox(exponented_numbers)
     elif calculator == "exit":
