@@ -72,12 +72,11 @@ def width_height_area_dict(width, height):
 # print(width_height_area_dict(10, 10))
 
 
-
 def get_perimeter_area_tuple(height: int, width: int) -> Tuple[str, str]:
     area = width * height
     perimeter = (width + height) * 2
-    area_perimeter_tuple = (area, perimeter)
+    area_perimeter_tuple = str(f"Perimeter = {perimeter}, Area = {area} ")
     return area_perimeter_tuple
 
 
-print(get_perimeter_area_tuple(10, 10))
+print(str(get_perimeter_area_tuple(1, 10)))
