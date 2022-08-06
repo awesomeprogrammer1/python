@@ -53,7 +53,7 @@ while True:
             "Calculator",
             ["first number", "second number"],
         )
-        exponented_numbers = int(exponent_numbers[0]) ^ int(exponent_numbers[1])
+        exponented_numbers = int(exponent_numbers[0]) ** int(exponent_numbers[1])
         textbox(exponented_numbers)
     elif calculator == "exit":
         exit()
