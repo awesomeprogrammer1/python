@@ -40,6 +40,9 @@
 # print(print_perimeter_area_rectangle(5, 4))
 
 
+from turtle import width
+
+
 def perimeter_area_rectangle_dict(width, height):
     dict = {}
     dict["Area"] = width * height
@@ -54,16 +57,20 @@ def print_perimeter_area_rectangle_dict(dict: dict):
 
 
 # print(perimeter_area_rectangle_dict(6, 7))
-dict = {
-    "Area": 56,
-    "Perimeter": 30
-}
+dict = {"Area": 56, "Perimeter": 30}
 print(print_perimeter_area_rectangle_dict(dict))
 
 # assignment 2
 # "Perimeter = 40", "Area = 100"
 
-def width_height_area_dict(width, height):
+
+def width_height_area_dict(width, height)
+    area = width * height
+    perimeter = (width + height) * 2
+    return f"Perimeter = {perimeter}, Area = {area}"
+
+
+print(width_height_area_dict(10, 10))
+def width_height_area_tuple(height: int, width: int) -> tuple(str, str):
     area = width * height
     perimeter = (width+height)*2
-    return f"Perimeter = {perimeter}, Area = {area}"
