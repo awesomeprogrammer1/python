@@ -43,7 +43,7 @@ while True:
                 ["first number", "second number"],
             )
             divided_numbers = int(divide_numbers[0]) / int(divide_numbers[1])
-        except (ZeroDivisionError): 
+        except (ZeroDivisionError):
                textbox('Error Code 0, DivisionByZero')
         divided_numbers = int(divide_numbers[0]) / int(divide_numbers[1])
         textbox(divided_numbers)
