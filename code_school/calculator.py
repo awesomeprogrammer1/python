@@ -36,26 +36,24 @@ while True:
         multiplied_numbers = int(multiply_numbers[0]) * int(multiply_numbers[1])
         textbox(multiplied_numbers)
     elif calculator == "divide":
-        divide_numbers = multenterbox(
-            "Write Two Numbers To Divide",
-            "Calculator",
-            ["first number", "second number"],
-        )
-        if divide_numbers[0] or divide_numbers[1] == 0:
-            textbox("Error code 000: One or more numbers equivilant to zero")
-        else:
+        try:
+            divide_numbers = multenterbox(
+                "Write Two Numbers To Divide",
+                "Calculator",
+                ["first number", "second number"],
+            )
             divided_numbers = int(divide_numbers[0]) / int(divide_numbers[1])
-            textbox(divided_numbers)
+        except (ZeroDivisionError): 
+               textbox('Error Code 0, DivisionByZero')
+        divided_numbers = int(divide_numbers[0]) / int(divide_numbers[1])
+        textbox(divided_numbers)
     elif calculator == "exponentiate":
         exponent_numbers = multenterbox(
             "Write two numbers to perform an exponential equation",
             "Calculator",
             ["first number", "second number"],
         )
-        if exponent_numbers[0] or exponent_numbers[1] == 0:
-            textbox("Error code 000: One or more numbers equivilant to zero")
-        else:
-            exponented_numbers = int(exponent_numbers[0]) ^ int(exponent_numbers[1])
-            textbox(exponented_numbers)
+        exponented_numbers = int(exponent_numbers[0]) ^ int(exponent_numbers[1])
+        textbox(exponented_numbers)
     elif calculator == "exit":
         exit()
