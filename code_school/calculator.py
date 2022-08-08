@@ -1,8 +1,17 @@
-from tkinter import messagebox
 from easygui import *
 
 # assignment 1
 # fix all errors in the calculator
+# assignment 2
+# learn about lambda functions and make
+# a presentation on lambda
+# to sergei and sasha who have somehow
+# both managed to forget everything they know
+# about python
+# assignment 3:
+# see function secret and create a function that returns the missing element
+# assignment 4 (if you have time):
+# redo contact_book so that each operation is done with the help of functions
 
 
 while True:
@@ -12,28 +21,37 @@ while True:
         ["add", "subtract", "multiply", "divide", "exponentiate", "exit"],
     )
     if calculator == "add":
-        add_numbers = multenterbox(
-            "Write Two Numbers To Add Together",
-            "Calculator",
-            ["first number", "second number"],
-        )
-        added_numbers = int(add_numbers[0]) + int(add_numbers[1])
+        try:
+            add_numbers = multenterbox(
+                "Write Two Numbers To Add Together",
+                "Calculator",
+                ["first number", "second number"],
+            )
+            added_numbers = int(add_numbers[0]) + int(add_numbers[1])
+        except ValueError:
+            msgbox("Error Code 931: Invalid Input; expected number(s), got letter(s)")
         msgbox(added_numbers)
     elif calculator == "subtract":
-        subtract_numbers = multenterbox(
+        try:
+            subtract_numbers = multenterbox(
             "Write Two Numbers To Subtract from one another",
             "Calculator",
             ["first number", "second number"],
-        )
-        subtracted_numbers = int(subtract_numbers[0]) - int(subtract_numbers[1])
+            )
+            subtracted_numbers = int(subtract_numbers[0]) - int(subtract_numbers[1])
+        except ValueError:
+            msgbox("Error Code 931: Invalid Input; expected number(s), got letter(s)")
         msgbox(subtracted_numbers)
     elif calculator == "multiply":
-        multiply_numbers = multenterbox(
-            "Write Two Numbers To Multiply Together",
-            "Calculator",
-            ["first number", "second number"],
-        )
-        multiplied_numbers = int(multiply_numbers[0]) * int(multiply_numbers[1])
+        try:
+            multiply_numbers = multenterbox(
+                "Write Two Numbers To Multiply Together",
+                "Calculator",
+                ["first number", "second number"],
+            )
+            multiplied_numbers = int(multiply_numbers[0]) * int(multiply_numbers[1])
+        except ValueError:
+            msgbox("Error Code 731: Invalid Input; cannot multiply letters")
         msgbox(multiplied_numbers)
     elif calculator == "divide":
         try:
