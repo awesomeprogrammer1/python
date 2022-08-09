@@ -1,7 +1,6 @@
 from easygui import *
 
-dict = {}
-
+dict = {} 
 while True:
 
     interface = buttonbox(
