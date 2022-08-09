@@ -1,8 +1,9 @@
 from easygui import *
 
-dict = {} 
-while True:
+dict = {}
 
+
+while True:
     interface = buttonbox(
     "What do you want to do? ",
     "Contact Book",
