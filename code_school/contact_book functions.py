@@ -61,7 +61,7 @@ while True:
         ["add", "remove", "edit", "search", "exit"],
     )
     if interface == "add":
-       add_contact("add")
+        add_contact("add")
     elif interface == "remove":
         remove_contact("remove")
     elif interface == "edit":

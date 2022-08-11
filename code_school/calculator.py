@@ -28,20 +28,20 @@ while True:
                 ["first number", "second number"],
             )
             added_numbers = int(add_numbers[0]) + int(add_numbers[1])
-        except ValueError:
-            msgbox("Error Code 931: Invalid Input; expected number(s), got letter(s)")
-        msgbox(added_numbers)
+            msgbox(added_numbers)
+        except (ValueError, TypeError):
+            msgbox("Error Code 931: Invalid Input, please retry")
     elif calculator == "subtract":
         try:
             subtract_numbers = multenterbox(
-            "Write Two Numbers To Subtract from one another",
-            "Calculator",
-            ["first number", "second number"],
+                "Write Two Numbers To Subtract from one another",
+                "Calculator",
+                ["first number", "second number"],
             )
             subtracted_numbers = int(subtract_numbers[0]) - int(subtract_numbers[1])
-        except ValueError:
-            msgbox("Error Code 931: Invalid Input; expected number(s), got letter(s)")
-        msgbox(subtracted_numbers)
+            msgbox(subtracted_numbers)
+        except (ValueError, TypeError):
+            msgbox("Error Code 931: Invalid Input, please retry")
     elif calculator == "multiply":
         try:
             multiply_numbers = multenterbox(
@@ -50,9 +50,9 @@ while True:
                 ["first number", "second number"],
             )
             multiplied_numbers = int(multiply_numbers[0]) * int(multiply_numbers[1])
-        except ValueError:
-            msgbox("Error Code 731: Invalid Input; cannot multiply letters")
-        msgbox(multiplied_numbers)
+            msgbox(multiplied_numbers)
+        except (ValueError, TypeError):
+            msgbox("Error Code 931: Invalid Input, please retry")
     elif calculator == "divide":
         try:
             divide_numbers = multenterbox(
@@ -77,5 +77,7 @@ while True:
             msgbox(exponented_numbers)
         except (ZeroDivisionError):
             msgbox("Error code 293: Exponentiating by zero")
+        except (ValueError, TypeError):
+            msgbox("Error Code 931: Invalid Input, please retry")
     elif calculator == "exit":
         exit()

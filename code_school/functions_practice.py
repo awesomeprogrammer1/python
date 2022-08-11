@@ -2,23 +2,20 @@ from random import randint
 
 
 def secret(a: list) -> list:
-    a.pop(randint(0, len(a) - 1))
-    return a
+    list_var = a.copy()
+    list_var.pop(randint(0, len(a) - 1))
+    return list_var
 
 
-list_variable = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-check_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-list_difference = []
-
-
-def secret_fix(a: list) -> int:
+def secret_fix(a: list) -> tuple:
+    # for element in a:
+    #     if element not in list_variable:
+    #         list_difference.append(element)
+    #         return list_difference[0]
+    local_var = secret(a)
     for element in a:
-        if element not in list_variable:
-            list_difference.append(element)
-            return list_difference[0]
+        if element not in local_var:
+            return a, element
 
 
-print(secret(list_variable))
-
-
-print(secret_fix(check_list))
+print(secret_fix([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
