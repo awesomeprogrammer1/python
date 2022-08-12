@@ -5,24 +5,29 @@ dict = {}
 
 def add_contact(interface_choice):
     if interface_choice == "add":
-        contact_info = multenterbox(
-            "Please Enter Contact Information ", "Add Contact", ["name", "phone number"]
+        try:
+            contact_info = multenterbox(
+                "Please Enter Contact Information ", "Add Contact", ["name", "phone number"]
         )
-        dict[contact_info[0]] = contact_info[1]
-        return textbox(dict)
-
+            dict[contact_info[0]] = contact_info[1]
+            return textbox(dict)
+        except TypeError:
+            return textbox("Error: Please close to return to calculator")
 
 def remove_contact(interface_choice):
     if interface_choice == "remove":
-        remove_contact = enterbox(
-            "Please Enter The Name of the Contact ",
-            "Remove Contact",
-        )
-        if remove_contact not in dict:
-            return textbox("Error: Contact does not Exist, please try again ")
-        else:
-            dict.pop(remove_contact)
-            return textbox(dict)
+        try:
+            remove_contact = enterbox(
+                "Please Enter The Name of the Contact ",
+                "Remove Contact",
+            )
+            if remove_contact not in dict:
+                return textbox("Error: Contact does not Exist, please try again ")
+            else:
+                dict.pop(remove_contact)
+                return textbox(dict)
+        except TypeError:
+            return textbox("Error: Please close to return to calculator")
 
 
 def edit_contact(interface_choice):
