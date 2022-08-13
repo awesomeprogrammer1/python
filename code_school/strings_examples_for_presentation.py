@@ -3,6 +3,12 @@ print("Hello")
 a = "Hello"
 print(a)
 
+k = "Hello, World!"
+print(k)
+k = k.replace("H", "J")
+print(k)
+
+
 b = """Lorem ipsum dolor sit amet,
 consectetur adipiscing elit,
 sed do eiusmod tempor incididunt
@@ -63,5 +69,5 @@ q = "World"
 r = p + " " + q
 print(r)
 
-s = 'We are the so-called \"Vikings\" from the north.'
+s = 'We are the so-called "Vikings" from the north.'
 print(s)
