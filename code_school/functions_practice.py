@@ -15,7 +15,7 @@ def secret_fix(a: list) -> tuple:
     local_var = secret(a)
     for element in a:
         if element not in local_var:
-            return secret(a), element
+            return local_var, element
 
 
 print(secret_fix([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
