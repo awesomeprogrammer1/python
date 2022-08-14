@@ -9,10 +9,6 @@
 # 5. finish contact_book
 
 
-
-
-
-
 print("Hello")
 
 a = "Hello"
@@ -89,3 +85,10 @@ print(s)
 
 t = "Hello, Andrew"
 print(t[-5:-2])
+
+u = "Hello, user"
+print(u.capitalize())
+print(u.casefold())
+print(u.rindex(""))
+print(u.index(""))
+print(u.swapcase())
