@@ -1,3 +1,6 @@
+'''
+This is the wrong way to implement contact book with functions
+'''
 from easygui import *
 
 dict = {}
@@ -35,10 +38,16 @@ def edit_contact():
 
 
 def search_contact():
+    '''
+    search contact dictionary search_contact = enterbox(
+        "Enter the Name of the Contact That You Would Like To Search",
+        "Search Contact",
+    )
+    '''
     if search_contact not in dict:
         return textbox("Error: Contact Does Not Exist")
     else:
-        return textbox(dict[search_contact], "Users Phone Number")
+        return textbox(dict[searching_contact], "Users Phone Number")
 
 
 while True:
@@ -65,7 +74,10 @@ while True:
         )
         edit_contact()
     elif interface == "search":
-
+        searching_contact = enterbox(
+            "Enter the Name of the Contact That You Would Like To Search",
+            "Search Contact",
+        )
         search_contact()
     elif interface == "exit":
         exit()

@@ -1,3 +1,18 @@
+# Homework
+# 1. Implement function replace(s: str) -> str,
+# s in 1 char, don't use python standard library functions
+# 2. Implement operator in (create function in(s: str) -> bool),
+# s is 1 char long, don't use python standard library functions
+# 3. Explain the difference between commenting with #
+# and with multi-line strings
+# 4. Finish the string methods presentation
+# 5. finish contact_book
+
+
+
+
+
+
 print("Hello")
 
 a = "Hello"
@@ -71,3 +86,6 @@ print(r)
 
 s = 'We are the so-called "Vikings" from the north.'
 print(s)
+
+t = "Hello, Andrew"
+print(t[-5:-2])

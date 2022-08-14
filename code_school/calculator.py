@@ -16,7 +16,7 @@ from easygui import *
 
 while True:
     calculator = buttonbox(
-        "Choose to add, subtract, multiply, or divide",
+        "Choose to add, subtract, multiply, divide, or exponentiate",
         "Calculator",
         ["add", "subtract", "multiply", "divide", "exponentiate", "exit"],
     )
@@ -76,7 +76,7 @@ while True:
             exponented_numbers = int(exponent_numbers[0]) ** int(exponent_numbers[1])
             msgbox(exponented_numbers)
         except (ZeroDivisionError):
-            msgbox("Error code 293: Exponentiating by zero")
+            msgbox("Error code 1: Exponentiating by zero")
         except (ValueError, TypeError):
             msgbox("Error Code 931: Invalid Input, please retry")
     elif calculator == "exit":
