@@ -6,11 +6,12 @@ def replace(s: str, old_char: str, new_char: str) -> str:
 
     return s
 
-def copy(s: str) -> str:
-    str_copy = s
+def function_in(s: str, char: str) -> bool:
+    
 
 str_var = "Hello, World"
 print(str_var)
 
 str_var = replace(str_var, "H", "J")
 print(str_var)
+
