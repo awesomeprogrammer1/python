@@ -6,12 +6,13 @@ def replace(s: str, old_char: str, new_char: str) -> str:
 
     return s
 
+
 def function_in(s: str, char: str) -> bool:
-    
+    for x in s:
+        if x == char:
+            return True
+    return False
 
-str_var = "Hello, World"
-print(str_var)
 
-str_var = replace(str_var, "H", "J")
-print(str_var)
-
+if __name__ == "__main__":
+    print(function_in("hedgie", "d"))
