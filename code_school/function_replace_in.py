@@ -1,10 +1,15 @@
-def replace(s: str, old_char: str, new_char: str) -> str:
+from operator import index
 
+
+def replace(s: str, old_char: str, new_char: str) -> str:
+    new_s = ""
     for x in s:
         if x == old_char:
             x = new_char
-
-    return s
+            new_s += x
+        else:
+            new_s += x
+    return new_s
 
 
 def function_in(s: str, char: str) -> bool:
@@ -15,4 +20,4 @@ def function_in(s: str, char: str) -> bool:
 
 
 if __name__ == "__main__":
-    print(function_in("hedgie", "d"))
+    print(replace("Hello", "H", "Y"))
