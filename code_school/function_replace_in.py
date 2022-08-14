@@ -5,8 +5,7 @@ def replace(s: str, old_char: str, new_char: str) -> str:
     new_s = ""
     for x in s:
         if x == old_char:
-            x = new_char
-            new_s += x
+            new_s += new_char
         else:
             new_s += x
     return new_s
