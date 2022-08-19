@@ -9,7 +9,6 @@
 # 5. finish contact_book
 
 
-
 print("Hello")
 
 a = "Hello"
@@ -62,14 +61,14 @@ print(h.upper())
 i = "Hello, World!"
 print(i.lower())
 
-j = " Hello, World! "
-print(j.strip())
+j = "Hello, World!"
+print(j.strip("H"))
 
 k = "Hello, World!"
 print(k.replace("H", "J"))
 
-l = "Hello, World!"
-print(l.split(","))
+z = "Hello, World!"
+print(z.split(","))
 
 m = "Hello"
 n = "World"
