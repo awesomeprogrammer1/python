@@ -19,7 +19,11 @@ def test_function_in(source_str: str, char: str, expected_result: bool):
 
 @pytest.mark.parametrize(
     "source_str, old_char, new_char, expected_result",
-    [("Hello", "H", "Y", "Yello"), ("Hello", "He", "Yo", "Yollo")],
+    [
+        ("Hello", "H", "Y", "Yello"),
+        ("Hello", "He", "Yo", "Yollo"),
+        ("Hello", "ll", "mm", "Hemmo"),
+    ],
 )
 def test_replace(source_str: str, old_char: str, new_char: str, expected_result: str):
     assert replace(source_str, old_char, new_char) == expected_result

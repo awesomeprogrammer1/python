@@ -20,12 +20,13 @@ string_var = "Hello, World!"
 
 
 # method strip
-# removes a certain letter from the string
+# creates a copy of the string without a certain character(s)
 # print(string_var.strip("H") # ello, World!
 
 
 # method replace
-# exchanges one letter already in the string for another letter
+# returns a copy of the string in which a certain character(s)
+
 # print(string_var.replace("H", "J")) # Jello, World!
 
 
@@ -58,3 +59,24 @@ string_var = "Hello, World!"
 # seperates the string into parts by a given
 # character
 # print(string_var.partition("l")) # ('He', 'l', 'lo, World!')
+
+# function len
+# returns the amount of items in the string or list in question
+# print(len(string_var)) # 13
+
+# method isupper, islower, and istitle
+# all of these methods return True/False (bool)
+# for istitle, we can normally print it out
+# string_var_txt = string_var.istitle()
+# print(string_var_txt) # True
+# for isupper and islower, we can use a for loop
+# to better demonstrate the capabilities
+
+for element in string_var:
+    element_upper = element.isupper()
+    element_lower = element.islower()
+    if element_upper == True:
+        print("Letter is upper case")
+    if element_lower == True:
+        print("Letter is lower case")
+        

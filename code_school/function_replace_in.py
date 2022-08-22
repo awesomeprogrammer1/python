@@ -2,16 +2,21 @@ def replace(s: str, old_char: str, new_char: str) -> str:
     new_s = ""
     for element in s:
         if element in old_char:
-            if new_s == new_char:
+            if new_s in new_char:
                 if element in old_char:
-                    pass
+                    if new_s == new_char:
+                        new_s += element
                 else:
-                    new_s += element
+                    pass
             else:
-                new_s += new_char
+                if new_s == new_char:
+                    new_s += new_char
+                else:
+                    new_s += new_char
         else:
             new_s += element
-    return new_s
+    newest_s = new_s.replace(old_char, new_char)
+    return newest_s
 
 
 def function_in(s: str, char: str) -> bool:
@@ -22,4 +27,4 @@ def function_in(s: str, char: str) -> bool:
 
 
 if __name__ == "__main__":
-    print(replace("Hello", "He", "Yo"))
+    print(replace("Hello", "ll", "mm"))
