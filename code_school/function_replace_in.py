@@ -4,8 +4,9 @@ def replace(s: str, old_char: str, new_char: str) -> str:
         if element in old_char:
             if new_s in new_char:
                 if element in old_char:
-                    if new_s == new_char:
-                        new_s += element
+                    new_s += element
+                    # for element in new_s
+
                 else:
                     pass
             else:
@@ -15,7 +16,7 @@ def replace(s: str, old_char: str, new_char: str) -> str:
                     new_s += new_char
         else:
             new_s += element
-    newest_s = new_s.replace(old_char, new_char)
+    newest_s = s.replace(old_char, new_char)
     return newest_s
 
 
