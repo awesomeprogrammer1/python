@@ -1,21 +1,27 @@
 def replace(s: str, old_char: str, new_char: str) -> str:
-    new_s = ""
     for element in s:
-        if element in old_char:
-            if new_s in new_char:
-                if element in old_char:
-                    new_s += element
-                    # for element in new_s
-                else:
-                    pass
+        if old_char in s:
+            if len(old_char) > 2:
+                s_split = s.split(old_char)
+                for i in range(len(s_split)):
+                    if s_split[i] == "":
+                        s_split.insert(i, new_char)
+                        s_join = "".join(s_split)
+                        return s_join
             else:
-                if new_s == new_char:
-                    new_s += new_char
-                else:
-                    new_s += new_char
+                if element in old_char:
+                    s_split2 = s.split(old_char)
+                    for i in range(len(s_split2)):
+                        if s_split2[i] == "":
+                            s_split2.insert(i, new_char)
+                            s_join2 = "".join(s_split2)
+                            return s_join2
+                    else:
+                        s_split2.insert(i, new_char)
+                        s_join2 = "".join(s_split2)
+                        return s_join2
         else:
-            new_s += element
-    return new_s
+            return s
 
 
 def function_in_papa(s: str, find: str) -> bool:
@@ -31,3 +37,5 @@ def function_in_papa(s: str, find: str) -> bool:
 
 if __name__ == "__main__":
     print(function_in_papa("Andrew", "An"))
+    print(replace("Hello", "He", "Yo"))
+    print(replace("Hello", "ll", "mm"))
