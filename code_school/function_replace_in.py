@@ -6,7 +6,6 @@ def replace(s: str, old_char: str, new_char: str) -> str:
                 if element in old_char:
                     new_s += element
                     # for element in new_s
-
                 else:
                     pass
             else:
@@ -16,8 +15,7 @@ def replace(s: str, old_char: str, new_char: str) -> str:
                     new_s += new_char
         else:
             new_s += element
-    newest_s = s.replace(old_char, new_char)
-    return newest_s
+    return new_s
 
 
 def function_in(s: str, char: str) -> bool:

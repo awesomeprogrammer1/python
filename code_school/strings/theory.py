@@ -75,8 +75,15 @@ string_var = "Hello, World!"
 for element in string_var:
     element_upper = element.isupper()
     element_lower = element.islower()
-    if element_upper == True:
+    if element_upper is True:
         print("Letter is upper case")
-    if element_lower == True:
+    if element_lower is True:
         print("Letter is lower case")
-        
+
+# method join
+# takes all items in an iterable and joins them into one string
+# a string must be specified as the seperator
+# Tuple_Var = ("Andrew", "Sergei", "Sasha")
+# a = "!".join(Tuple_Var)
+# print(a)
+# Result: Andrew!Sergei!Sasha
