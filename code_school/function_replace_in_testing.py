@@ -24,4 +24,10 @@ def replace(s: str, old_char: str, new_char: str) -> str:
             return s
 
 
+def replace2(s: str, old_str: str, new_str: str) -> str:
+    list_var = s.split(old_str)
+    return new_str.join(list_var)
+
+
 print(replace("Hello", "He", "Yo"))
+print(replace2("Hello", "He", "Yo"))

@@ -1,6 +1,5 @@
 import pytest
-from function_replace_in import function_in_papa
-from function_replace_in import replace
+from function_replace_in import function_in_papa, replace, replace2
 
 
 @pytest.mark.parametrize(
@@ -35,3 +34,4 @@ def test_function_in_papa(source_str: str, char: str, expected_result: bool):
 )
 def test_replace(source_str: str, old_char: str, new_char: str, expected_result: str):
     assert replace(source_str, old_char, new_char) == expected_result
+    assert replace2(source_str, old_char, new_char) == expected_result

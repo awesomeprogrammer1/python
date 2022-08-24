@@ -24,12 +24,27 @@ def replace(s: str, old_char: str, new_char: str) -> str:
             return s
 
 
+def replace2(s: str, old_str: str, new_str: str) -> str:
+    list_var = s.split(old_str)
+    return new_str.join(list_var)
+
+
 def function_in_papa(s: str, find: str) -> bool:
     for i in range(len(s)):
+        # checks that everything is in place
+        # and that the string is in range
         if s[i] == find[0] and i + len(find) <= len(s):
+            # checks for the amount of characters
+            # the program needs to check
             for j in range(1, len(find)):
+                # checking if the index's match, if they do
+                # the break statement runs
                 if s[i + j] != find[j]:
                     break
+            # the else then runs
+            # if the above program
+            # has run interrupted by
+            # a break statement
             else:
                 return True
     return False
