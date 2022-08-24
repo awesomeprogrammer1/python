@@ -1,5 +1,5 @@
 import pytest
-from function_replace_in import function_in
+from function_replace_in import function_in_papa
 from function_replace_in import replace
 
 
@@ -11,10 +11,14 @@ from function_replace_in import replace
         ("hedgie", "s", False),
         ("hedgie", "H", False),
         ("Hedgie", "H", True),
+        ("Hello", "llo", True),
+        ("Hello", "He", True),
+        ("Hello", "el", True),
+        ("Andrew", "An", True),
     ],
 )
-def test_function_in(source_str: str, char: str, expected_result: bool):
-    assert function_in(source_str, char) == expected_result
+def test_function_in_papa(source_str: str, char: str, expected_result: bool):
+    assert function_in_papa(source_str, char) == expected_result
 
 
 @pytest.mark.parametrize(
@@ -23,6 +27,10 @@ def test_function_in(source_str: str, char: str, expected_result: bool):
         ("Hello", "H", "Y", "Yello"),
         ("Hello", "He", "Yo", "Yollo"),
         ("Hello", "ll", "mm", "Hemmo"),
+        ("Hedgie", "t", "m", "Hedgie"),
+        ("Hedgie", "tr", "m", "Hedgie"),
+        ("Hello Hello", "ll", "mm", "Hemmo Hemmo"),
+        ("Hi Alladin", "Alladin", "Andrew", "Hi Andrew"),
     ],
 )
 def test_replace(source_str: str, old_char: str, new_char: str, expected_result: str):

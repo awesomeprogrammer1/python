@@ -18,12 +18,16 @@ def replace(s: str, old_char: str, new_char: str) -> str:
     return new_s
 
 
-def function_in(s: str, char: str) -> bool:
-    for element in s:
-        if element == char:
-            return True
+def function_in_papa(s: str, find: str) -> bool:
+    for i in range(len(s)):
+        if s[i] == find[0] and i + len(find) <= len(s):
+            for j in range(1, len(find)):
+                if s[i + j] != find[j]:
+                    break
+            else:
+                return True
     return False
 
 
 if __name__ == "__main__":
-    print(replace("Hello", "ll", "mm"))
+    print(function_in_papa("Andrew", "An"))
