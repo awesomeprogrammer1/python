@@ -57,3 +57,4 @@ if __name__ == "__main__":
     print(function_in_papa("Andrew", "Anr"))
     print(replace("Hello", "He", "Yo"))
     print(replace2("Hello", "ll", "mm"))
+    print(replace("Hello Hello", "ll", "mm"))
