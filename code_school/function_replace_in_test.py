@@ -30,8 +30,9 @@ def test_function_in_papa(source_str: str, char: str, expected_result: bool):
         ("Hedgie", "tr", "m", "Hedgie"),
         ("Hello Hello", "ll", "mm", "Hemmo Hemmo"),
         ("Hi Alladin", "Alladin", "Andrew", "Hi Andrew"),
+        ("Hello", "o", "a", "Hella")
     ],
 )
 def test_replace(source_str: str, old_char: str, new_char: str, expected_result: str):
-    assert replace(source_str, old_char, new_char) == expected_result
+    # assert replace(source_str, old_char, new_char) == expected_result
     assert replace2(source_str, old_char, new_char) == expected_result
