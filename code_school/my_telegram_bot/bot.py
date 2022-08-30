@@ -8,20 +8,22 @@ config = {
 }
 
 bot = telebot.TeleBot(config["token"])
+today = date.today()
+t = time.localtime()
+current_time = time.strftime("%H:%M:%S", t)
 
 
 @bot.message_handler(content_types=["text"])
 def handle_text(message):
-    if message.text == "Hello" or "hello":
+    user_message = message.text
+    message_var = user_message.lower()
+    if message_var == "hello":
         bot.send_message(message.chat.id, "Hello, User.")
-    if message.text == "Date" or "date":
-        today = date.today()
+    if message_var == "date":
         bot.send_message(message.chat.id, today)
-    if message.text == "Time" or "time":
-        t = time.localtime()
-        current_time = time.strftime("%H:%M:%S", t)
+    if message_var == "time":
         bot.send_message(message.chat.id, current_time)
-    if message.text == "How are you" or "how are you":
+    if message_var == "how are you":
         bot.send_message(message.chat.id, "I am very good, thank you.")
 
 
