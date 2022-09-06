@@ -1,7 +1,7 @@
 from datetime import date
 import time
 
-seconds = float(input("Get the UTC date and time at a certain amount of seconds past the epoch. Format Example: 3600.0 "))
+seconds = float(input("Get the UTC date and time at a certain amount of seconds past the epoch. Format Example: 3600.0. Note: 1 hour is 3600.0 seconds "))
 named_tuple = time.localtime()
 
 
