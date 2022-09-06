@@ -1,18 +1,21 @@
+from datetime import date
 import time
+
 
 named_tuple = time.localtime()
 
 
-def format(func):
-    def inner(a):
+def format_date(func):
+    def inner(date_time):
         print("I am going to format the date")
-        return func(a)
+        print(time.strftime("%Y-%m-%d, %I:%M %p %Z", date_time))
+
     return inner
 
 
-@format
-def format_date(a):
-    print(time.strftime("%Y-%m-%d, %I:%M %p %Z", a))
+@format_date
+def get_date(date_time: tuple) -> tuple:
+    print(date_time)
 
 
-format_date(named_tuple)
+get_date(time.localtime())
