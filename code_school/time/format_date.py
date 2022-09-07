@@ -1,7 +1,11 @@
 from datetime import date
 import time
 
-seconds = float(input("Get the UTC date and time at a certain amount of seconds past the epoch. Format Example: 3600.0. Note: 1 hour is 3600.0 seconds "))
+seconds = float(
+    input(
+        "Get the UTC date and time at a certain amount of seconds past the epoch. Format Example: 3600.0. Note: 1 hour is 3600.0 seconds "
+    )
+)
 named_tuple = time.localtime()
 
 
@@ -14,8 +18,9 @@ def format_date(func):
 
 
 @format_date
-def get_date(date_time: tuple) -> tuple:
+def get_date(date_time: float):
     print(date_time)
 
 
-get_date(time.gmtime(seconds))
+fixed_seconds = time.gmtime(seconds)
+get_date(fixed_seconds)
