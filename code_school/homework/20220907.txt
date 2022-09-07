@@ -1,0 +1,2 @@
+1. Resolve format time decorator
+2. Add a function that determines if the date given is valid or not to notes

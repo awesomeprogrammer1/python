@@ -30,6 +30,9 @@ def handle_text(message):
     elif message.text.lower() == "length":
         action2 = bot.send_message(message.chat.id, "Enter any amount of characters")
         bot.register_next_step_handler(action2, length)
+    if message.text.lower() == "count":
+        action3 = bot.send_message(message.chat.id, "Enter a sentence ")
+        bot.register_next_step_handler(action3, count_words)
     else:
         bot.send_message(
             message.chat.id,
@@ -63,4 +66,22 @@ def length(message):
     bot.send_message(message.chat.id, len(message.text))
 
 
+def count_words(message):
+    # 1st approach 
+    # dict_of_words = {}
+    # words = message.text.split()
+    # for word in words:
+    #     list_of_words[word] = words.count(word)
+    # for element in list_of_words:
+    #     bot.send_message(message.chat.id, f'{element}- {list_of_words.get(element)}')
+    # 2nd approach
+    list_of_words = []
+    words2 = message.text.split()
+    for word in words2:
+        list_of_words.append(f'{word} - {words2.count(word)}')
+    bot.send_message(message.chat.id, ", ".join(list_of_words))
+
 bot.polling(non_stop=True, interval=0)
+
+# text {word:count(word)}
+# my name is my Andrew {"my": 2, "name": 1, ....}
