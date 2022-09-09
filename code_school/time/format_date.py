@@ -1,26 +1,23 @@
 from datetime import date
 import time
+from datetime import datetime
 
-seconds = float(
-    input(
-        "Get the UTC date and time at a certain amount of seconds past the epoch. Format Example: 3600.0. Note: 1 hour is 3600.0 seconds and 1 day is 86400 seconds. 1 year is 31536000 seconds and 1 leap year is 31622400 seconds "
-    )
-)
+seconds = input("Input in the format: 21 June, 2018 2:35 UTC: ")
 named_tuple = time.localtime()
 
 
 def format_date(func):
     def inner(date_time):
         print("I am going to format the date")
-        print(time.strftime("%Y-%m-%d, %I:%M %p UTC", date_time))
+        date_object = datetime.strptime(date_time, "%d %B, %Y %H:%M UTC")
+        print(date_object)
 
     return inner
 
 
 @format_date
-def get_date(date_time: float):
+def get_date(date_time: str):
     print(date_time)
 
 
-fixed_seconds = time.gmtime(seconds)
-get_date(fixed_seconds)
+get_date(seconds)
