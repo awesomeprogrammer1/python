@@ -1,5 +1,7 @@
 import datetime
 
+date_var = input("Input a date in the yyyy-mm-dd format: ")
+
 
 def validate(date_text):
     try:
@@ -9,4 +11,4 @@ def validate(date_text):
     print(date_text)
 
 
-validate("2003-09-23")
+validate(date_var)
