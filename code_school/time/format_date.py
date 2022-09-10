@@ -1,19 +1,22 @@
-from datetime import date
 import time
-from datetime import datetime
 
 
 def formatted_date(func):
-    def inner(date_time):
-        print("I am going to format the date")
-        print(time.strftime("%Y-%m-%d, %I:%M %p UTC", time.gmtime(date_time)))
+    def inner():
+        return time.strftime("%Y-%m-%d %I:%M %p UTC", time.gmtime(func()))
 
     return inner
 
 
 @formatted_date
-def format_date(date_time):
-    print(date_time)
+def my_birthday():
+    return 1664582400
 
 
-format_date(3600)
+@formatted_date
+def dads_birthday():
+    return 1663891200
+
+
+print(my_birthday())
+print(dads_birthday())
