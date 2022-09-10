@@ -1,7 +1,5 @@
 import datetime
 
-date_var = input("Input a date in the yyyy-mm-dd format: ")
-
 
 def validate(date_text: str) -> bool:
     try:
@@ -9,5 +7,6 @@ def validate(date_text: str) -> bool:
     except ValueError:
         raise ValueError("Incorrect data format, should be YYYY-MM-DD")
 
-
-validate(date_var)
+if __name__ == "__main__":
+    date_var = input("Input a date in the yyyy-mm-dd format: ")
+    validate(date_var)
