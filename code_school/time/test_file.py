@@ -1,6 +1,12 @@
-from datetime import datetime
+import datetime
 
-date_string = "21 June, 2018"
 
-date_object = datetime.strptime(date_string, "%d %B, %Y")
-print("date_string =", date_object)
+def validate(date_text):
+    try:
+        datetime.datetime.strptime(date_text, "%Y-%m-%d")
+    except ValueError:
+        raise ValueError("Incorrect data format, should be YYYY-MM-DD")
+    print(date_text)
+
+
+validate("2003-09-23")
