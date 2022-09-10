@@ -1,4 +1,5 @@
 from datetime import date
+from multiprocessing.sharedctypes import Value
 import time
 from datetime import datetime
 
@@ -8,10 +9,12 @@ named_tuple = time.localtime()
 
 def format_date(func):
     def inner(date_time):
-        print("I am going to format the date")
-        date_object = datetime.strptime(date_time, "%d %B, %Y %H:%M UTC")
-        print(date_object)
-
+        try:
+            print("I am going to format the date")
+            date_object = datetime.strptime(date_time, "%d %B, %Y %H:%M UTC")
+            print(date_object)
+        except ValueError:
+            print("Error, invalid format. You entered", func(date_time))
     return inner
 
 
