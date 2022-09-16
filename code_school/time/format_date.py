@@ -3,7 +3,7 @@ import time
 
 def formatted_date(func):
     def inner():
-        return time.strftime("%Y-%m-%d %I:%M %p UTC", time.gmtime(func()))
+        return time.strftime("%d-%m-%Y %I:%M %p UTC", time.gmtime(func()))
 
     return inner
 

@@ -1,0 +1,3 @@
+andrew 12
+sergei 11
+sasha 10
