@@ -1,0 +1,5 @@
+1: Finish strings/theory.py # add len, isupper, islower, istitle
+and check if everything is correct
+2: Study and present decorators 
+3: Download and install Telegram
+4: Update function_replace_in.py: add support for multi-character strings

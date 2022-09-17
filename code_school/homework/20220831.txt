@@ -1,0 +1,5 @@
+1. Make it so that if there is no operation given, the program still does something
+2. Fix DivisionByZero
+3. Add Try Except
+4. Add command that asks for a string and returns the length of it
+5. Resolve "Time" and "datetime" (make a presentation)

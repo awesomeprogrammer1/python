@@ -1,0 +1,3 @@
+1. Make it so you can send upper or lower case messages to the bot
+2. Handle "How are you" 
+3. Handle "Date" and handle "Time"

@@ -20,10 +20,7 @@ def edit_contact(name: str, phone: str) -> None:
 
 
 def get_contact(name: str) -> str:
-    if name in contact_book.keys():
-        return contact_book[name]
-    else:
-        return None
+    return contact_book.get(name)
 
 
 while True:

@@ -29,32 +29,5 @@ def replace2(s: str, old_str: str, new_str: str) -> str:
     return new_str.join(list_var)
 
 
-def function_in_papa(s: str, find: str) -> bool:
-    if len(find) > len(s):
-        return False
-    else:
-        for i in range(len(s)):
-            # checks that everything is in place
-            # and that the string is in range
-            if s[i] == find[0] and i + len(find) <= len(s):
-                # checks for the amount of characters
-                # the program needs to check
-                for j in range(1, len(find)):
-                    # checking if the index's match, if they do
-                    # the break statement runs
-                    if s[i + j] != find[j]:
-                        break
-                # the else then runs
-                # if the above program
-                # has run interrupted by
-                # a break statement
-                else:
-                    return True
-        return False
-
-
-if __name__ == "__main__":
-    print(function_in_papa("Andrew", "Anr"))
-    print(replace("Hello", "He", "Yo"))
-    print(replace2("Hello", "ll", "mm"))
-    print(replace("Hello Hello", "ll", "mm"))
+print(replace("Hello", "He", "Yo"))
+print(replace2("Hello", "He", "Yo"))

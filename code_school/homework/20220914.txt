@@ -1,0 +1,5 @@
+1. Do the previous homework
+2. Review string functions
+3. Review list and functions
+4. Review contact_book
+1. Change is_valid_date so that it can check dates in different formats.

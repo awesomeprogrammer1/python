@@ -1,0 +1,2 @@
+1. Create a decorator that will format the date (2022-09-03 02:35 PM UTC) 
+2. Add a function that determines if the date given is valid or not to notes

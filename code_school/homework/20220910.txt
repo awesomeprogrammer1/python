@@ -1,0 +1,4 @@
+1. Change is_valid_date so that it can check dates in different formats.
+2. Make a video reviewing the homework instead of talking about it during class.
+3. Explain why you need to close a file after doing something with it.
+4. Learn about files, directories/folders, path, relative paths, and absolute paths.
