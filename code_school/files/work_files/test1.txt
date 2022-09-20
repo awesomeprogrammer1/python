@@ -1,3 +1,4 @@
-andrew 12
-sergei 11
-sasha 10
+andrew 12 10 9
+sergei 11 8 9
+sasha 10 12 11
+

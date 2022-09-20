@@ -15,6 +15,7 @@ from validate_date import is_valid_date
         ("1982-23-11", "", False),
         ("03/31/2022", "%m/%d/%y", False),
         ("02/29/2020", "%m/%d/%Y", True),
+        ("20/12/2020", "%d/%m/%Y", True)
     ],
 )
 def test_is_valid_date(date_str: str, date_format_type: str, expected_result: bool):
