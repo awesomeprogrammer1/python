@@ -20,6 +20,12 @@ for line in file:
         # adds number at the given index
         # in element_int
         # to existing variable sum_var
-    print(f"Name: {new_line[0]} Average: {round(sum_var/len(new_line[1:]))}")
+    try:
+        print(f"Name: {new_line[0]} Average: {round(sum_var/len(new_line[1:]))}")
+    except IndexError:
+        break
     # prints a formatted string with the name and average
     # of the numbers next to his/her name
+    # if the for loop trys printing
+    # a line that doesn't exist
+    # the except statement ends the loop
