@@ -1,4 +1,44 @@
-andrew 12 10 9
-sergei 11 8 9
-sasha 10 12 11
-
+# write_in_txt.close() 
+# write_in_txt.write(spaced_out_lines[::-1]) 
+ 
+ 
+write_in_txt.close() 
+write_in_txt.write(spaced_out_lines) 
+print(spaced_out_lines) 
+spaced_out_lines = " \n".join(lines_in_file) 
+lines_in_file.reverse() 
+write_in_txt = open(path2, "w") 
+# task 3 
+write_in_txt.close() 
+write_in_txt.write(spaced_out_lines) 
+print(spaced_out_lines) 
+spaced_out_lines = " \n".join(lines_in_file) 
+print(lines_in_file) 
+    lines_in_file.append(current_line) 
+    write_in_txt = open(path2, "w") 
+    path2 = os.path.join("code_school\\files\work_files", "test1.txt") 
+    current_line = seperate_lines[0] 
+    seperate_lines = line.split("\n") 
+for line in lines: 
+lines = python_read.readlines() 
+python_read = open(python_file, "r") 
+python_file = os.path.join("code_school\\files\work_files", "file_practice.py") 
+print_lines_in_file: dict = {} 
+lines_in_file: list = [] 
+number_of_line_in_file = 0 
+# task 2 
+file_write.close() 
+json.dump(dict_of_words, file_write) 
+        dict_of_words[word] = len(word) 
+    if len(word) >= 7: 
+for word in words: 
+words = ["greeting", "replenish", "attentive", "interesting", "boring"] 
+dict_of_words = {} 
+# task 1 
+file_read = open(path, "r") 
+file_write = open(path, "w") 
+path2 = os.path.join("code_school\\files\work_files", "test1.txt") 
+path = os.path.join("code_school\\files\json_files", "test1.json") 
+ 
+import json 
+import os.path
