@@ -1,0 +1,2 @@
+1. Add comments and verify the presentation in lists called list_presentation.ipynb
+2. CORRECTLY redo and finish all the assignments in the email (Tasks 1-10 And 11   -20)

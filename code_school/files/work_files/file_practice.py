@@ -6,12 +6,10 @@ path2 = os.path.join("code_school\\files\work_files", "test1.txt")
 file_write = open(path, "w")
 file_read = open(path, "r")
 # task 1
-dict_of_words = {}
 words = ["greeting", "replenish", "attentive", "interesting", "boring"]
 for word in words:
     if len(word) >= 7:
-        dict_of_words[word] = len(word)
-json.dump(dict_of_words, file_write)
+        file_write.write(word)
 file_write.close()
 # task 2
 number_of_line_in_file = 0
@@ -39,7 +37,32 @@ print(spaced_out_lines)
 write_in_txt.write(spaced_out_lines)
 write_in_txt.close()
 
+# task 4 (TBD)
+file_read = open(path, "r")
+file_write = open(path, "w")
+for line in file_read:
+    if "." not in line:
+        spaced_out_lines = " \n************\n".join(lines_in_file)
+        print(spaced_out_lines)
+file_write.write(spaced_out_lines)
+file_write.close()
+file_read.close()
 
-# write_in_txt.write(spaced_out_lines[::-1])
-# write_in_txt.close()
+# task 5
+character = input(
+    "Input a random character and we will calculate how many times it is in the file: "
+)
+print(spaced_out_lines.count(character))
 
+# task 6
+
+# task 7
+
+# task 8
+
+# task 9
+print(len(spaced_out_lines))
+# task 10
+file_read = open(path, "r")
+lines = file_read.readlines()
+print(len(lines))

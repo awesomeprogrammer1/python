@@ -1,6 +1,29 @@
-# write_in_txt.close() 
-# write_in_txt.write(spaced_out_lines[::-1]) 
+# task 10 
+print(len(spaced_out_lines)) 
+# task 9 
+# task 8 
  
+# task 7 
+ 
+# task 6 
+ 
+print(spaced_out_lines.count(character)) 
+) 
+    "Input a random character and we will calculate how many times it is in the file: " 
+character = input( 
+file_read = open(path, "r") 
+# task 5 
+ 
+file_read.close() 
+file_write.close() 
+file_write.write(spaced_out_lines) 
+        print(spaced_out_lines) 
+        spaced_out_lines = " \n************\n".join(lines_in_file) 
+    if "." not in line: 
+for line in file_read: 
+file_write = open(path, "w") 
+file_read = open(path, "r") 
+# task 4 (TBD) 
  
 write_in_txt.close() 
 write_in_txt.write(spaced_out_lines) 
