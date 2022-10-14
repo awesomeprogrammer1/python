@@ -33,8 +33,10 @@ smallest_number = min(list_of_integers)
 smallest_number_index = list_of_integers.index(smallest_number)
 biggest_number = max(list_of_integers)
 biggest_number_index = list_of_integers.index(biggest_number)
-print(list_of_integers[smallest_number_index:biggest_number_index])
-range_of_numbers = list_of_integers[smallest_number_index:biggest_number_index]
+if smallest_number_index > biggest_number_index:
+    range_of_numbers = list_of_integers[biggest_number_index:smallest_number_index]
+else:
+    range_of_numbers = list_of_integers[smallest_number_index:biggest_number_index]
 product = 1
 for number in range_of_numbers:
     product *= number

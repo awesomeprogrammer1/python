@@ -1,0 +1,2 @@
+1. Write comments on each line for function_join.py
+2: Do all assignments from the first email (1 and 2)

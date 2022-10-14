@@ -1,8 +1,6 @@
 import os.path
-import json
 
-path = os.path.join("code_school\\files\json_files", "test1.json")
-path2 = os.path.join("code_school\\files\work_files", "test1.txt")
+path = os.path.join("code_school\\files\work_files", "test1.txt")
 file_write = open(path, "w")
 file_read = open(path, "r")
 # task 1

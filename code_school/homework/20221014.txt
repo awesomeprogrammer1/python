@@ -1,0 +1,2 @@
+1: Remove the separator from the end of the string in function_join.py
+2: Do assignments 5-10 from the email 
