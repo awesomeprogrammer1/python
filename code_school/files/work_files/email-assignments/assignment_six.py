@@ -7,7 +7,7 @@ read_in_file = open(path_load, "r")
 write_in_file = open(path_write, "w")
 char = read_in_file.read()
 lines = read_in_file.readlines()
-amount_of_lines = len(lines)
+amount_of_elements = len(lines)
 lines = char.split("\n")
 # print(lines)
 
@@ -16,18 +16,17 @@ for line in lines:
     for element in line:
         if "*" in element:
             new_str += "&"
-            continue
-        if "&" in element:
+        elif "&" in element:
             new_str += "*"
-            continue
         else:
             new_str += element
-            continue    
-    if "*" in lines[0]:
-        lines.pop(0)
-        lines.append(new_str)
+    orig_element = lines.index(line)
+    lines[orig_element] = new_str
     #
-print(lines)
+read_in_file.close()
+new_lines = "\n".join(lines)
+write_in_file.write(new_lines)
+write_in_file.close()
 
 # for line in lines:
 #     if "*" in line:

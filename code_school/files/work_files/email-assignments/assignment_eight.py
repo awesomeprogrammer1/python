@@ -8,3 +8,4 @@ array_of_strings = ["str1", "str2", "str3"]
 array_of_strings.reverse()
 seperate_lines = "\n".join(array_of_strings)
 write_in_file.write(seperate_lines)
+write_in_file.close()

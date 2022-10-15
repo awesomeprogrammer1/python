@@ -7,5 +7,5 @@ path_write = os.path.join("code_school\\files\work_files", "test1.txt")
 file = open(path_read, "r")
 
 lines = file.readlines()
-print(len(lines))
+print(f"Number of lines in the file: {len(lines)}")
 file.close()
