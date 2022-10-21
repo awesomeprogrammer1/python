@@ -1,4 +1,7 @@
 import os.path
+'''
+You have a text file. Write all its lines to another file while replacing * with & and vice versa.
+'''
 
 path_load = os.path.join("code_school\\files\work_files", "random_symbols.txt")
 path_write = os.path.join("code_school\\files\work_files", "test1.txt")

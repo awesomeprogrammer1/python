@@ -1,16 +1,27 @@
+from operator import index
+
+
 hey: list = ["hi", "andrew"]
-hey2: list = ["hi","papa"]
+hey2: list = ["hi", "papa"]
+counter = 0
 
 
 def join_func(list1: list, separator: str) -> str:
     joined_str = ""
+    counter = 0
     # creating new str
     for element in list1:
         joined_str += element
         # adds the element to the string
-        joined_str += separator
+        if counter == 0:
+            joined_str += separator
+            # adds seperator to string
+            counter += 1
+        else:
+            pass
         # adds the seperator after the element to the string
     return joined_str
+
 
 print(join_func(hey, "..."))
 # testing case 1
