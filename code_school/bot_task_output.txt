@@ -1,0 +1,1 @@
+Amount of characters: 125. Number of Vowels: 32. Number of Consonants: 55. Number of digits: 6. Number of symbols: 4. Number of words: 24
