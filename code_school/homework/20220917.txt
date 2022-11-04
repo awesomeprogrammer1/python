@@ -1,0 +1,2 @@
+1. Finish the assignments from the previous homework
+2. Write commentary lines in file_read2.py

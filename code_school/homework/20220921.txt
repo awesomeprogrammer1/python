@@ -1,0 +1,3 @@
+1. Prepare a presentation for python for base data types: string, int, float, bool, list, tuple, dict, set and frozenset. Prepare examples and what the data types consist of.
+2. Comment all the code we did during class
+3. Review contact_book   

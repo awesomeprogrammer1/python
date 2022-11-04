@@ -1,0 +1,2 @@
+1. Write function join (list, string) and returns a string. Excluding lists do not use standard functions
+2. Make it so that in even_and_odd.py you skip zero (do not change anything in the list)

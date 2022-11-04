@@ -1,6 +1,10 @@
 import telebot
 from datetime import date, datetime
 import time
+import os.path
+
+
+path1 = os.path.join("code_school", "bot_task_output.txt")
 
 config = {
     "name": "FluffyAndy_Bot",
@@ -33,10 +37,13 @@ def handle_text(message):
     if message.text.lower() == "count":
         action3 = bot.send_message(message.chat.id, "Enter a sentence ")
         bot.register_next_step_handler(action3, count_words)
+    if message.text.lower() == "textinfo":
+        action4 = bot.send_message(message.chat.id, "Enter a piece of text")
+        bot.register_next_step_handler(action4, text_info)
     else:
         bot.send_message(
             message.chat.id,
-            "Hello! I am a bot that can help you. Avalible commands include hello, date, time, how are you, calculator, and length",
+            "Hello! I am a bot that can help you. Avalible commands include hello, date, time, how are you, textinfo, calculator, and length",
         )
 
 
@@ -66,8 +73,35 @@ def length(message):
     bot.send_message(message.chat.id, len(message.text))
 
 
+def text_info(message):
+    file1 = open(path1, "w")
+    vowels = ["a", "e", "i", "o", "u"]
+    consonants = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
+    counter_v = 0
+    counter_c = 0
+    digits = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+    symbols = [',', '.', '/', '!', '?']
+    symbol_counter = 0
+    number_counter = 0
+    length_message = len(message.text.split())
+    for char in message.text:
+        if char in vowels:
+            counter_v += 1
+        if char in digits:
+            number_counter += 1
+        if char in symbols:
+            symbol_counter += 1
+        if char in consonants:
+            counter_c += 1
+    file1.write(
+        f"Amount of characters: {len(message.text)}. Number of Vowels: {counter_v}. Number of Consonants: {counter_c}. Number of digits: {number_counter}. Number of symbols: {symbol_counter}. Number of words: {length_message}"
+    )
+    bot.send_message(message.chat.id, "Information sent to destination file")
+    file1.close()
+
+
 def count_words(message):
-    # 1st approach 
+    # 1st approach
     # dict_of_words = {}
     # words = message.text.split()
     # for word in words:
@@ -78,8 +112,9 @@ def count_words(message):
     list_of_words = []
     words2 = message.text.split()
     for word in words2:
-        list_of_words.append(f'{word} - {words2.count(word)}')
+        list_of_words.append(f"{word} - {words2.count(word)}")
     bot.send_message(message.chat.id, ", ".join(list_of_words))
+
 
 bot.polling(non_stop=True, interval=0)
 

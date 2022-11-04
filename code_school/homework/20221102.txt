@@ -1,0 +1,5 @@
+1. Make it so that paths work on windows and mac 
+2. Learn what a transliterator is
+3. Explain why its better to use a list than a string
+4. Finish assignment 2
+5. Merge the PR/Make seperate ones

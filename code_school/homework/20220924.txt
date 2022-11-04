@@ -1,0 +1,11 @@
+1. Redo the presentation on data types by explaining each data type in the following order:
+What it is called
+Is it mutable or immutable
+Is it ordered or not ordered
+Why do we need this data type, how is it used
+What are the main operations we can do with this data type
+CRUD - Create, Read, Update and Delete (for mutable data types)
+Example for each operation
++ 
+some other helpful interesting methods
+2. Write method "add_contact" (add to the existing file)
