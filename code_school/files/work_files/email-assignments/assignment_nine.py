@@ -1,3 +1,6 @@
+'''
+Task 9 You have a text file. Calculate the number of characters in it.
+'''
 import os.path
 
 

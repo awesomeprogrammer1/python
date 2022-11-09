@@ -1,6 +1,9 @@
 import os.path
-# Task 5: You have a text file.
-# Calculate the number of words that begin with a character set by the user.
+'''
+Task 5: You have a text file.
+Calculate the number of words that begin with a character set by the user.
+'''
+
 
 path_load = os.path.join("code_school\\files\work_files", "assignment1.txt")
 path_write = os.path.join("code_school\\files\work_files", "test1.txt")
