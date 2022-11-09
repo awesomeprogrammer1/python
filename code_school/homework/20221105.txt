@@ -1,0 +1,6 @@
+1. All programs that use paths have to run on mac and windows
+2. Add a header to all email assignments (that do not have one yet)
+3. Ask Papa to explain mathematical sets
+4. Make a presentation about sets
+5. Fix email5_assignment4_simple (Make it so that your program returns "pushed" and "to" only)
+6. Make a short presentation with several examples showing the difference between "in" with strings and "in" with lists

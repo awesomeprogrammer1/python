@@ -1,5 +1,6 @@
 import os.path
 '''
+Task 6
 You have a text file. Write all its lines to another file while replacing * with & and vice versa.
 '''
 

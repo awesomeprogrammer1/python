@@ -20,6 +20,3 @@ transliterated_words = os.path.join("code_school\\files\work_files", "transliter
 write_words = open(transliterated_words, "w", encoding="utf8")
 write_words.write(translated_words)
 write_words.close()
-
-
-

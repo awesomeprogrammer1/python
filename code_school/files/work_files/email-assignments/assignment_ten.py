@@ -1,3 +1,6 @@
+'''
+Task 10 You have a text file. Calculate the number of lines in it
+'''
 import os.path
 
 
