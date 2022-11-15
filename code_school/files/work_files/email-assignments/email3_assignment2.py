@@ -14,7 +14,7 @@ import os.path
 
 path = os.path.join("code_school\\files\work_files", "email3_assignment2_output.txt")
 path1 = os.path.join("code_school\\files\work_files", "email3_assignment2_output.txt")
-
+from pathlib import Path
 
 base_list = []
 

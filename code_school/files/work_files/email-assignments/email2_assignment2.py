@@ -5,7 +5,7 @@ based on the source file to it:
 ■ Number of characters; ■ Number of lines; ■ Number of vowels;
 ■ Number of consonants; ■ Number of digits.
 """
-
+from pathlib import Path
 import os.path
 
 path1 = os.path.join("code_school\\files\work_files", "assignment1.txt")

@@ -5,6 +5,7 @@ The direction is chosen by the user through a menu.
 """
 import os.path
 from easygui import *
+from pathlib import Path
 translated_words = ""
 russian_words = os.path.join("code_school\\files\work_files", "russian_words.txt")
 read_words = open(russian_words, "r", encoding="utf8")

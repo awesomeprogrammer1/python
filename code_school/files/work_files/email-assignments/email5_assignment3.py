@@ -5,6 +5,7 @@ the program must combine the contents of all files listed by the user into one.
 """
 
 import os.path
+from pathlib import Path
 
 base_str = ""
 while True:

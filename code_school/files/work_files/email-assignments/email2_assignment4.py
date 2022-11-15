@@ -2,7 +2,7 @@
 Task 4: You have a text file
 Print the longest line in it
 """
-
+from pathlib import Path
 import os.path
 
 path1 = os.path.join("code_school\\files\work_files", "assignment1.txt")

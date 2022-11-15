@@ -1,4 +1,5 @@
 import os.path
+from pathlib import Path
 
 path1 = os.path.join("code_school\\files\work_files", "email5_assignment1_input.txt")
 path2 = os.path.join(

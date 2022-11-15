@@ -3,7 +3,7 @@ Task 1: You have two text files.
 Find out if their lines match.
 If they don’t, print the mismatched line from each file.
 """
-
+from pathlib import Path
 import os.path
 
 path1 = os.path.join("code_school\\files\work_files", "assignment1.txt")

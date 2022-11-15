@@ -3,7 +3,7 @@ Task 3 You have a text file.
 Delete the last line from it.
 Write the result to another file.
 """
-
+from pathlib import Path
 import os.path
 
 path1 = os.path.join("code_school\\files\work_files", "assignment1.txt")

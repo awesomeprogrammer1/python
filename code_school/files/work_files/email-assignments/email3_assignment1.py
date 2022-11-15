@@ -3,7 +3,7 @@ Task 1: The user types in a list of integers.
 Pack the recieved data and save  it to a file.
 After that, upload the data from the file to a new list.
 """
-
+from pathlib import Path
 import os.path
 
 path1 = os.path.join("code_school\\files\work_files", "email3_assignment1_output.txt")

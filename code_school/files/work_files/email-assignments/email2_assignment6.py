@@ -3,7 +3,7 @@ Task 6 You have a text file.
 Find and replace the specified word.
 The user determines what to search for and to what it should be replaced.
 """
-
+from pathlib import Path
 import os.path
 
 path1 = os.path.join("code_school\\files\work_files", "assignment1.txt")

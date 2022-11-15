@@ -3,7 +3,7 @@ Task 5 You have a text file.
 Count how many times the word specified by the user occurs in it.
 """
 
-
+from pathlib import Path
 import os.path
 
 path1 = os.path.join("code_school\\files\work_files", "assignment1.txt")
