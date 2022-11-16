@@ -1,11 +1,10 @@
 import os.path
 from pathlib import Path
 
-path1 = os.path.join("code_school\\files\work_files", "email5_assignment1_input.txt")
-path2 = os.path.join(
-    "code_school\\files\work_files", "email5_assignment1_bad_words.txt"
-)
-path3 = os.path.join("code_school\\files\work_files", "email5_assignment1_output.txt")
+path_hub = Path("code_school\\files\work_files")
+path1 = path_hub / "email5_assignment1_input.txt"
+path2 = path_hub / "email5_assignment1_bad_words.txt"
+path3 = path_hub / "email5_assignment1_output.txt"
 
 sample_text = open(path1, "r")
 bad_words_file = open(path2, "r")

@@ -7,7 +7,8 @@ import os.path
 from easygui import *
 from pathlib import Path
 translated_words = ""
-russian_words = os.path.join("code_school\\files\work_files", "russian_words.txt")
+path_hub = Path("code_school\\files\work_files")
+russian_words = path_hub / "russian_words.txt"
 read_words = open(russian_words, "r", encoding="utf8")
 russian_words = read_words.read().split()
 for word in russian_words:
