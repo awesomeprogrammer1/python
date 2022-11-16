@@ -9,9 +9,10 @@ Adding, deleting, finding, editing, saving, and loading data
 from easygui import *
 import json
 import os.path
+from pathlib import Path
 
-
-path = os.path.join("code_school\\files\work_files", "email3_assignment3_output.json")
+path_hub = Path("code_school\\files\work_files")
+path = path_hub / "email3_assignment3_output.json"
 
 
 while True:

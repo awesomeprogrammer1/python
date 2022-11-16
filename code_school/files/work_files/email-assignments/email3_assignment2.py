@@ -8,13 +8,14 @@ is displayed when the program starts:
 Use a list of integers as data storage.
 Use Packing/Unpacking
 """
-
+from pathlib import Path
 from easygui import *
 import os.path
 
-path = os.path.join("code_school\\files\work_files", "email3_assignment2_output.txt")
-path1 = os.path.join("code_school\\files\work_files", "email3_assignment2_output.txt")
-
+path_hub = Path("code_school\\files\work_files")
+path = path_hub / "email3_assignment2_output.txt"
+path1 = path_hub / "email3_assignment2_output.txt"
+from pathlib import Path
 
 base_list = []
 

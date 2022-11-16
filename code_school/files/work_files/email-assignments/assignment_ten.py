@@ -1,13 +1,14 @@
 '''
 Task 10 You have a text file. Calculate the number of lines in it
 '''
-import os.path
+from pathlib import Path
 
 
-path_read = os.path.join("code_school\\files\work_files", "assignment1.txt")
-path_write = os.path.join("code_school\\files\work_files", "test1.txt")
+path_read = Path("code_school\\files\work_files")
+read_access = path_read / "assignment1.txt"
 
-file = open(path_read, "r")
+
+file = open(read_access, "r")
 
 lines = file.readlines()
 print(f"Number of lines in the file: {len(lines)}")

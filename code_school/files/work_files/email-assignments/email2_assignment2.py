@@ -5,11 +5,12 @@ based on the source file to it:
 ■ Number of characters; ■ Number of lines; ■ Number of vowels;
 ■ Number of consonants; ■ Number of digits.
 """
-
+from pathlib import Path
 import os.path
 
-path1 = os.path.join("code_school\\files\work_files", "assignment1.txt")
-path2 = os.path.join("code_school\\files\work_files", "email2_assignment2_output.txt")
+path_hub = Path("code_school\\files\work_files")
+path1 = path_hub / "assignment1.txt"
+path2 = path_hub / "email2_assignment2_output.txt"
 
 file1 = open(path1, "r", encoding="utf8")
 file2 = open(path2, "w", encoding="utf8")
