@@ -6,7 +6,8 @@ Count how many times the word specified by the user occurs in it.
 from pathlib import Path
 import os.path
 
-path1 = os.path.join("code_school\\files\work_files", "assignment1.txt")
+path_hub = Path("code_school\\files\work_files")
+path1 = path_hub / "assignment1.txt"
 read_file = open(path1, "r")
 file_content = read_file.read()
 specific_word = input("Input a random word to calculate how many times it appears in the text file ")
