@@ -1,12 +1,15 @@
 import os.path
+from pathlib import Path
 '''
 Task 5: You have a text file.
 Calculate the number of words that begin with a character set by the user.
 '''
 
 
-path_load = os.path.join("code_school\\files\work_files", "assignment1.txt")
-path_write = os.path.join("code_school\\files\work_files", "test1.txt")
+path_load = Path("code_school\\files\work_files")
+
+file_open = path_load / "assignment1.txt"
+
 file = open(path_load, "r")
 words = file.read().split()
 counter = 0
