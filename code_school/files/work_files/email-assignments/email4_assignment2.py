@@ -21,9 +21,9 @@ while True:
         ["Add Artist", "Add Song", "Save", "Load", "Exit"],
     )
     if interface == "Add Artist":
-        # song_plays = {}
-        # file_handle = open(file_path, "w")
-        # artist_db = json.load(file_handle)
+        song_plays = {}
+        file_handle = open(file_path, "w")
+        artist_db = json.load(file_handle)
         add_artist = enterbox(
             "Please enter the name of a musical artist", "Add Artist"
         )
