@@ -50,6 +50,9 @@ while True:
                 "Add Song",
                 ("Song Name", "Number of Plays"),
             )
-            song_and_plays = artist_db[artist_name]
-            
-
+            current_song_info = {}
+            current_song_info[song_and_plays[0]] = song_and_plays[1]
+            file_load[check_artist][song_and_plays[0]] = song_and_plays[1]
+            json.dump(file_load)
+            file_load.close()
+            file_handle.close()
