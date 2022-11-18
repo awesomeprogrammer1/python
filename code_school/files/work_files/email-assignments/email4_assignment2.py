@@ -51,7 +51,7 @@ while True:
                 ("Song Name", "Number of Plays"),
             )
             current_song_info = {}
-            current_song_info[song_and_plays[0]] = song_and_plays[1]
+            current_song_info[song_info[0]] = song_info[1]
             file_load[check_artist][song_and_plays[0]] = song_and_plays[1]
             json.dump(file_load)
             file_load.close()
