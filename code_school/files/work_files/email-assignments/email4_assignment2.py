@@ -21,29 +21,34 @@ while True:
         ["Add Artist", "Add Song", "Save", "Load", "Exit"],
     )
     if interface == "Add Artist":
-        file_path_r = open(file_path, "r")
-        artist_db = json.load(file_path_r)
-        add_artist = enterbox("Please enter the name of a musical artist", "Add Artist")
-        if add_artist in artist_db.keys():
+        file = open(file_path, "r")
+        artist_db = json.load(file)
+        file.close()
+        artist_name = enterbox(
+            "Please enter the name of a musical artist", "Add Artist"
+        )
+        # artist_db = {"Andrew": {"Help":100, "Me": 132567}}
+        # add_artist = "Andrew"
+        if artist_name in artist_db.keys():
             textbox("Error: Artist already exists")
-        artist_db[add_artist] = {}
-        json.dump(file_path, artist_db)
-        textbox(artist_db)
-        file_path_r.close()
-        if interface == "Add Song":
-            file_load = open(file_path, "r")
-            artist_db_s = json.load(file_load)
-            file_handle = open(file_path, "w")
-            current_song_plays = {}
-            check_artist = enterbox(
-                "Please enter the name of a musical artist to add a song to", "Add Song"
-            )
-            if check_artist not in file_load.keys():
-                textbox("Error, Artist Doesn't Exist")
-            song_and_plays = multenterbox(
-                "Please enter the song with the plays ",
+        else:
+            artist_db[artist_name] = {}
+        # artist_db = {"Andrew": {}}
+        file = open(file_path, "w")
+        json.dump(artist_db, file)
+        file.close()
+    if interface == "Add Song":
+        file = open(file_path, "r")
+        artist_db = json.load(file)
+        file.close()
+        artist_name = enterbox("Please enter the name of a musical artist", "Add Song")
+        if artist_name not in artist_db.keys():
+            textbox("Error: Artist does not exist")
+        else:
+            song_info = multenterbox(
+                "Enter Song Information",
                 "Add Song",
-                ["Song", "Song Listens"],
+                ("Song Name", "Number of Plays"),
             )
             current_song_info = {}
             current_song_info[song_and_plays[0]] = song_and_plays[1]
@@ -51,4 +56,3 @@ while True:
             json.dump(file_load)
             file_load.close()
             file_handle.close()
-            
