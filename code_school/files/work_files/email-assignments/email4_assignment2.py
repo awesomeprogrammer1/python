@@ -51,8 +51,11 @@ while True:
                 ("Song Name", "Number of Plays"),
             )
             current_song_info = {}
-            current_song_info[song_and_plays[0]] = song_and_plays[1]
-            file_load[check_artist][song_and_plays[0]] = song_and_plays[1]
-            json.dump(file_load)
-            file_load.close()
-            file_handle.close()
+            current_song_info[song_info[0]] = song_info[1]
+            artist_db[artist_name][song_info[0]] = song_info[1]
+            file = open(file_path, "w")
+            json.dump(artist_db, file)
+            file.close()
+            file.close()
+        if interface == "Exit":
+            break
