@@ -38,28 +38,20 @@ while True:
         ["Add Artist", "Add Song", "Delete Artist", "Delete Song", "Edit Song", "Save Songs", "Load Songs", "Exit"],
     )
     if interface == "Add Artist":
-        file = open(file_path, "r")
-        artist_db = json.load(file)
-        file.close()
         artist_name = enterbox(
             "Please enter the name of a musical artist", "Add Artist"
         )
         # artist_db = {"Andrew": {"Help":100, "Me": 132567}}
         # add_artist = "Andrew"
-        if artist_name in artist_db.keys():
+        if artist_name in load_db().keys():
             textbox("Error: Artist already exists")
         else:
-            artist_db[artist_name] = {}
+            load_db()[artist_name] = {}
         # artist_db = {"Andrew": {}}
-        file = open(file_path, "w")
-        json.dump(artist_db, file)
-        file.close()
+        save_db(load_db())
     elif interface == "Add Song":
-        file = open(file_path, "r")
-        artist_db = json.load(file)
-        file.close()
         artist_name = enterbox("Please enter the name of a musical artist", "Add Song")
-        if artist_name not in artist_db.keys():
+        if artist_name not in load_db.keys():
             textbox("Error: Artist does not exist")
         else:
             song_info = multenterbox(
@@ -69,66 +61,46 @@ while True:
             )
             current_song_info = {}
             current_song_info[song_info[0]] = song_info[1]
-            artist_db[artist_name][song_info[0]] = song_info[1]
-            file = open(file_path, "w")
-            json.dump(artist_db, file)
-            file.close()
+            load_db()[artist_name][song_info[0]] = song_info[1]
+            save_db(load_db())
     elif interface == "Delete Artist":
-        file = open(file_path, "r")
-        artist_db = json.load(file)
-        file.close()
         artist_name = enterbox("Please enter the name of the musical artist", "Delete Artist")
-        if artist_name not in artist_db.keys():
+        if artist_name not in load_db().keys():
             textbox("Error: Artist does not exist")
         else:
-            artist_db.pop(artist_name)
-        file = open(file_path, "w")
-        json.dump(artist_db, file)
-        file.close()
+            load_db().pop(artist_name)
+        save_db(load_db())
     elif interface == "Delete Song":
-        file = open(file_path, "r")
-        artist_db = json.load(file)
-        file.close()
         artist_name = enterbox("Please enter the name of a musical artist", "Delete Song")
-        if artist_name not in artist_db:
+        if artist_name not in load_db():
             textbox("Error: Artist does not exist.")
         else:
             song_name = enterbox("Enter the name of the song you would like to delete", "Delete Song")
-            if song_name not in artist_db[artist_name]:
+            if song_name not in load_db()[artist_name]:
                 textbox("Error: Song does not exist.")
             else:
-                artist_db[artist_name].pop(song_name)
-                file = open(file_path, "w")
-                json.dump(artist_db, file)
-                file.close()
+                load_db()[artist_name].pop(song_name)
+                save_db(load_db())
     elif interface == "Edit Song":
-        file = open(file_path, "r")
-        artist_db = json.load(file)
-        file.close()
         song_info = multenterbox(
                 "Enter Song Information",
                 "Edit Song",
                 ["Artist Name", "Song Name"],
             )
-        if song_info[0] not in artist_db:
+        if song_info[0] not in load_db():
             textbox("Error, artist doesnt exist.")
         else:
-            if song_info[1] not in artist_db[song_info[0]]:
+            if song_info[1] not in load_db()[song_info[0]]:
                 textbox("Error, song doesnt exist.")
             else:
                 edit_plays = enterbox("Please enter the new number of plays", "Edit Song Plays")
-                artist_db[song_info[0]][song_info[1]] = edit_plays
-                file = open(file_path, "w")
-                json.dump(artist_db, file)
-                file.close()
+                load_db()[song_info[0]][song_info[1]] = edit_plays
+                save_db(load_db())
     elif interface == "Save Songs":
-        file = open(file_path, "r")
-        artist_db = json.load(file)
-        file.close()
-        save_db(artist_db)
-        textbox("Songs successfully loaded", "Load Songs", artist_db)
+        save_db(load_db())
+        textbox(load_db(), "Save Songs", "Successfully saved")
     elif interface == "Load Songs":
-        textbox("Songs successfully loaded", "Load Songs", load_db)
+        textbox(load_db())
     if interface == "Exit":
         break
 
