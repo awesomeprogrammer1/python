@@ -13,11 +13,29 @@ import json
 folder_with_info = Path("code_school/files/work_files")
 file_path = folder_with_info / "email4_assignment2_output.json"
 
+
+def load_db():
+    file = open(file_path, "r")
+    artist_db = json.load(file)
+    file.close()
+    return artist_db
+
+
+def save_db(db):
+    file = open(file_path, "w")
+    json.dump(db, file)
+    file.close()
+
+
+
+
+
+
 while True:
     interface = buttonbox(
         "What do you want to do? ",
         "Song database",
-        ["Add Artist", "Add Song", "Delete Artist", "Delete Song", "Edit Song", "Exit"],
+        ["Add Artist", "Add Song", "Delete Artist", "Delete Song", "Edit Song", "Save Songs", "Load Songs", "Exit"],
     )
     if interface == "Add Artist":
         file = open(file_path, "r")
@@ -103,5 +121,21 @@ while True:
                 file = open(file_path, "w")
                 json.dump(artist_db, file)
                 file.close()
+    elif interface == "Save Songs":
+        file = open(file_path, "r")
+        artist_db = json.load(file)
+        file.close()
+        save_db(artist_db)
+        textbox("Songs successfully loaded", "Load Songs", artist_db)
+    elif interface == "Load Songs":
+        textbox("Songs successfully loaded", "Load Songs", load_db)
     if interface == "Exit":
         break
+
+
+
+
+
+
+
+
