@@ -1,0 +1,3 @@
+1. Change email4_assignment2: Add functions to load artist database and save it.
+2. Finish sets presentation
+3. Make a short presentation with several examples showing the difference between "in" with strings and "in" with lists
