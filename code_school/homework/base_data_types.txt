@@ -1,1 +1,1 @@
-string, int, float, bool, list, tuple, dict, set and frozenset
+string (immutable), int (immutable), float (immutable), bool (immutable), list, tuple (immutable), dict, set and frozenset
