@@ -43,7 +43,7 @@ while True:
         )
         # artist_db = {"Andrew": {"Help":100, "Me": 132567}}
         # add_artist = "Andrew"
-        if artist_name in load_db().keys():
+        if artist_name in load_db():
             textbox("Error: Artist already exists")
         else:
             load_db()[artist_name] = {}
@@ -51,7 +51,7 @@ while True:
         save_db(load_db())
     elif interface == "Add Song":
         artist_name = enterbox("Please enter the name of a musical artist", "Add Song")
-        if artist_name not in load_db.keys():
+        if artist_name not in load_db():
             textbox("Error: Artist does not exist")
         else:
             song_info = multenterbox(
@@ -65,7 +65,7 @@ while True:
             save_db(load_db())
     elif interface == "Delete Artist":
         artist_name = enterbox("Please enter the name of the musical artist", "Delete Artist")
-        if artist_name not in load_db().keys():
+        if artist_name not in load_db():
             textbox("Error: Artist does not exist")
         else:
             load_db().pop(artist_name)
