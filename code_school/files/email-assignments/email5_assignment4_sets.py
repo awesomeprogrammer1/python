@@ -4,7 +4,7 @@ The user enters file names until they enter the word "quit".
 After the input completes, the program must write words present in all listed files
 to the final file (each file must contain words)
 """
-
+from pathlib import Path
 
 def get_unique_words(file_name: str) -> set:
     folder_with_info = Path("code_school/files/work_files")
@@ -17,9 +17,6 @@ def get_unique_words(file_name: str) -> set:
     return words
 
 
-
-
-from pathlib import Path
 
 base_set: set = set()
 given_file = input("Enter a file name ")
