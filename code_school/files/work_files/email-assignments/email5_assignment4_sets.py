@@ -36,5 +36,5 @@ while True:
     file_words = file_read.read().split()
     file_read.close()
     set_words_in_file = set(file_words)
-    set_words_in_file.intersection_update(base_set)
-    print(set_words_in_file)
+    base_set.intersection_update(set_words_in_file)
+    print(base_set)
