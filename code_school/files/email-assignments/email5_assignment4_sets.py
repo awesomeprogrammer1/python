@@ -7,26 +7,24 @@ to the final file (each file must contain words)
 
 
 def get_unique_words(file_name: str) -> set:
+    folder_with_info = Path("code_school/files/work_files")
     file1_path = folder_with_info / file_name
     file_read = open(file1_path, "r")
     file_words = file_read.read().split()
     file_read.close()
     words = set(file_words)
+
     return words
 
 
+
+
 from pathlib import Path
-import os.path
 
 base_set: set = set()
-folder_with_info = Path("code_school/files/work_files")
 given_file = input("Enter a file name ")
 given_file += ".txt"
-file1_path = folder_with_info / given_file
-file_read = open(file1_path, "r")
-file_words = file_read.read().split()
-file_read.close()
-for word in file_words:
+for word in get_unique_words(given_file):
     base_set.add(word)
 while True:
     given_file = input("Enter a file name or quit. to stop entering file names: ")
@@ -37,6 +35,7 @@ while True:
         base_set.intersection_update(get_unique_words(given_file))
 print(base_set)
 words_in_all_files = "".join(base_set)
+folder_with_info = Path("code_school/files/work_files")
 word_dump = folder_with_info / "email5_assignment4_output.txt"
 file_write = open(word_dump, "w")
 file_write.write(words_in_all_files)
