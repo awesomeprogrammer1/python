@@ -1,9 +1,10 @@
-'''
+"""
 Task 4
 The user enters file names until they enter the word "quit".
 After the input completes, the program must write words present in all listed files
 to the final file (each file must contain words)
-'''
+"""
+
 
 def get_unique_words(file_name: str) -> set:
     file1_path = folder_with_info / file_name
@@ -16,7 +17,8 @@ def get_unique_words(file_name: str) -> set:
 
 from pathlib import Path
 import os.path
-base_set: set = {}
+
+base_set: set = set()
 folder_with_info = Path("code_school/files/work_files")
 given_file = input("Enter a file name ")
 given_file += ".txt"
@@ -27,14 +29,15 @@ file_read.close()
 for word in file_words:
     base_set.add(word)
 while True:
-    given_file = input("Enter a file name or quit to stop entering file names: ")
-    given_file += ".txt"
-    if given_file == "quit":
+    given_file = input("Enter a file name or quit. to stop entering file names: ")
+    if given_file == "quit.":
         break
-    file1_path = folder_with_info / given_file
-    file_read = open(file1_path, "r")
-    file_words = file_read.read().split()
-    file_read.close()
-    set_words_in_file = set(file_words)
-    base_set.intersection_update(set_words_in_file)
-    print(base_set)
+    else:
+        given_file += ".txt"
+        base_set.intersection_update(get_unique_words(given_file))
+print(base_set)
+words_in_all_files = "".join(base_set)
+word_dump = folder_with_info / "email5_assignment4_output.txt"
+file_write = open(word_dump, "w")
+file_write.write(words_in_all_files)
+file_write.close()
