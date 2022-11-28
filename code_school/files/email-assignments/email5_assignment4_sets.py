@@ -26,7 +26,7 @@ while True:
     else:
         base_set.intersection_update(get_unique_words(given_file))
 print(base_set)
-words_in_all_files = "".join(base_set)
+words_in_all_files = " ".join(base_set)
 folder_with_info = Path("code_school/files/work_files")
 word_dump = folder_with_info / "email5_assignment4_output.txt"
 file_write = open(word_dump, "w")
