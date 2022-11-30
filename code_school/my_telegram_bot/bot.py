@@ -2,7 +2,8 @@ import telebot
 from datetime import date, datetime
 import time
 import os.path
-
+import json
+from pathlib import Path
 
 path1 = os.path.join("code_school", "bot_task_output.txt")
 
@@ -15,14 +16,17 @@ bot = telebot.TeleBot(config["token"])
 today = date.today()
 t = time.localtime()
 current_time = time.strftime("%H:%M:%S", t)
-
+path = Path("code_school\\my_telegram_bot")
+user_db = path / "login_info.json"
 
 @bot.message_handler(content_types=["text"])
 def handle_text(message):
-
-    if message.text.lower() == "hello":
+    if message.text.lower() == "register":
+        user_password = bot.send_message(message.chat.id, "Enter a password")
+        bot.register_next_step_handler(user_password, registration)
+    elif message.text.lower() == "hello":
         bot.send_message(message.chat.id, "Hello, User.")
-    elif message.text == "date":
+    elif message.text.lower() == "date":
         bot.send_message(message.chat.id, today)
     elif message.text.lower() == "time":
         bot.send_message(message.chat.id, t)
@@ -34,10 +38,10 @@ def handle_text(message):
     elif message.text.lower() == "length":
         action2 = bot.send_message(message.chat.id, "Enter any amount of characters")
         bot.register_next_step_handler(action2, length)
-    if message.text.lower() == "count":
+    elif message.text.lower() == "count":
         action3 = bot.send_message(message.chat.id, "Enter a sentence ")
         bot.register_next_step_handler(action3, count_words)
-    if message.text.lower() == "textinfo":
+    elif message.text.lower() == "textinfo":
         action4 = bot.send_message(message.chat.id, "Enter a piece of text")
         bot.register_next_step_handler(action4, text_info)
     else:
@@ -116,7 +120,22 @@ def count_words(message):
     bot.send_message(message.chat.id, ", ".join(list_of_words))
 
 
+def registration(message):
+    get_info = open(user_db, "r")
+    get_user_info = json.load(get_info)
+    get_info.close()
+    get_user_info[message.chat.id] = message.text
+    write_info = open(user_db, "w")
+    json.dump(get_user_info, write_info)
+    write_info.close()
+    bot.send_message(message.chat.id, "Registration Complete")
+
+
 bot.polling(non_stop=True, interval=0)
+
+
+
+
 
 # text {word:count(word)}
 # my name is my Andrew {"my": 2, "name": 1, ....}
