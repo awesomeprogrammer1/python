@@ -26,13 +26,17 @@ def write_results(result_set: set, file_name: str) -> None:
     file_write.close()
 
 
-given_file = input("Enter a file name ")
-base_set: set = get_unique_words(given_file)
-while True:
-    given_file = input("Enter a file name or quit. to stop entering file names: ")
-    if given_file == "quit.":
-        break
-    else:
-        base_set.intersection_update(get_unique_words(given_file))
-print(base_set)
-write_results(base_set, "email5_assignment4_output.txt")
+def main():
+    given_file = input("Enter a file name ")
+    base_set: set = get_unique_words(given_file)
+    while True:
+        given_file = input("Enter a file name or quit. to stop entering file names: ")
+        if given_file == "quit.":
+            break
+        else:
+            base_set.intersection_update(get_unique_words(given_file))
+    print(base_set)
+    write_results(base_set, "email5_assignment4_output.txt")
+
+
+main()
