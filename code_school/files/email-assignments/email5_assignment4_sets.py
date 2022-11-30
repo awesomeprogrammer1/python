@@ -17,6 +17,15 @@ def get_unique_words(file_name: str) -> set:
     return words
 
 
+def write_results(result_set: set, file_name: str) -> None:
+    words_in_all_files = " ".join(result_set)
+    folder_with_info = Path("code_school/files/work_files")
+    word_dump = folder_with_info / file_name
+    file_write = open(word_dump, "w")
+    file_write.write(words_in_all_files)
+    file_write.close()
+
+
 given_file = input("Enter a file name ")
 base_set: set = get_unique_words(given_file)
 while True:
@@ -26,9 +35,4 @@ while True:
     else:
         base_set.intersection_update(get_unique_words(given_file))
 print(base_set)
-words_in_all_files = " ".join(base_set)
-folder_with_info = Path("code_school/files/work_files")
-word_dump = folder_with_info / "email5_assignment4_output.txt"
-file_write = open(word_dump, "w")
-file_write.write(words_in_all_files)
-file_write.close()
+write_results(base_set, "email5_assignment4_output.txt")
