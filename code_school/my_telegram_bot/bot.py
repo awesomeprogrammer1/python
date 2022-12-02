@@ -20,7 +20,14 @@ path = Path("code_school\\my_telegram_bot")
 user_db = path / "login_info.json"
 
 
+# def is_authenticated():
+#     def inner_is_authenticated():
+#         return False
+#     return inner_is_authenticated()
+
+
 @bot.message_handler(content_types=["text"])
+# @is_authenticated()
 def handle_text(message):
     if message.text.lower() == "start":
         bot.send_message(
@@ -33,41 +40,36 @@ def handle_text(message):
     elif message.text.lower() == "authenticate":
         authenticate_user = bot.send_message(message.chat.id, "Enter your password")
         bot.register_next_step_handler(authenticate_user, authentication)
-        if authentication(message.chat.id) == False:
-            bot.send_message(
-                message.chat.id,
-                "Authentication failed, please enter 'start' to restart the process",
-            )
-        else:
-            if message.text.lower() == "hello":
-                bot.send_message(message.chat.id, "Hello, User.")
-            elif message.text.lower() == "date":
-                bot.send_message(message.chat.id, today)
-            elif message.text.lower() == "time":
-                bot.send_message(message.chat.id, t)
-            elif message.text.lower() == "how are you":
-                bot.send_message(message.chat.id, "I am very good, thank you.")
-            elif message.text.lower() == "calculator":
-                action = bot.send_message(
-                    message.chat.id, "Enter operation"
-                )  # 2+ 2 -> 4
-                bot.register_next_step_handler(action, calculator)
-            elif message.text.lower() == "length":
-                action2 = bot.send_message(
-                    message.chat.id, "Enter any amount of characters"
-                )
-                bot.register_next_step_handler(action2, length)
-            elif message.text.lower() == "count":
-                action3 = bot.send_message(message.chat.id, "Enter a sentence ")
-                bot.register_next_step_handler(action3, count_words)
-            elif message.text.lower() == "textinfo":
-                action4 = bot.send_message(message.chat.id, "Enter a piece of text")
-                bot.register_next_step_handler(action4, text_info)
-            else:
-                bot.send_message(
-                    message.chat.id,
-                    "Hello! I am a bot that can help you. Avalible commands include hello, date, time, how are you, textinfo, calculator, and length",
-                )
+    if  
+    if message.text.lower() == "hello":
+        bot.send_message(message.chat.id, "Hello, User.")
+    elif message.text.lower() == "date":
+        bot.send_message(message.chat.id, today)
+    elif message.text.lower() == "time":
+        bot.send_message(message.chat.id, t)
+    elif message.text.lower() == "how are you":
+        bot.send_message(message.chat.id, "I am very good, thank you.")
+    elif message.text.lower() == "calculator":
+        action = bot.send_message(
+            message.chat.id, "Enter operation"
+        )  # 2+ 2 -> 4
+        bot.register_next_step_handler(action, calculator)
+    elif message.text.lower() == "length":
+        action2 = bot.send_message(
+            message.chat.id, "Enter any amount of characters"
+        )
+        bot.register_next_step_handler(action2, length)
+    elif message.text.lower() == "count":
+        action3 = bot.send_message(message.chat.id, "Enter a sentence ")
+        bot.register_next_step_handler(action3, count_words)
+    elif message.text.lower() == "textinfo":
+        action4 = bot.send_message(message.chat.id, "Enter a piece of text")
+        bot.register_next_step_handler(action4, text_info)
+    else:
+        bot.send_message(
+            message.chat.id,
+            "Hello! I am a bot that can help you. Avalible commands include hello, date, time, how are you, textinfo, calculator, and length",
+        )
 
 
 def calculator(message):
@@ -172,11 +174,32 @@ def registration(message):
     bot.send_message(message.chat.id, "Registration Complete")
 
 
-def authentication(message):
+'''
+def is_authenticated(message):
     get_info = open(user_db, "r")
     get_user_info = json.load(get_info)
     get_info.close()
     return message.text in get_user_info[message.chat.id]
+'''
+
+
+def authentication(message):
+    get_info = open(user_db, "r")
+    get_user_info = json.load(get_info)
+    get_info.close()
+    if message.text == get_user_info.get(str(message.chat.id)):
+        bot.send_message(message.chat.id, "Successfully Authenticated")
+    else:
+        bot.send_message(message.chat.id, "Password Incorrect")
+
+
+def is_authenticated():
+    def inner_is_authenticated():
+        return False
+    return inner_is_authenticated()
+
+
+
 
 
 bot.polling(non_stop=True, interval=0)
