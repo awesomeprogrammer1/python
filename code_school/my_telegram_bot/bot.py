@@ -130,6 +130,14 @@ def registration(message):
     write_info.close()
     bot.send_message(message.chat.id, "Registration Complete")
 
+def authentication(message):
+    get_info = open(user_db, "r")
+    get_user_info = json.load(get_info)
+    get_info.close()
+    if message.text in get_user_info:
+        bot.send_message(message.chat.id, "Successfully Authenticated")
+    else:
+        bot.send_message(message.chat.id, "Error: Authentication Unsuccessful")
 
 bot.polling(non_stop=True, interval=0)
 
