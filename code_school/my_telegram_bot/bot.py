@@ -18,7 +18,7 @@ t = time.localtime()
 current_time = time.strftime("%H:%M:%S", t)
 path = Path("code_school\\my_telegram_bot")
 user_db = path / "login_info.json"
-
+print(t)
 
 # def is_authenticated():
 #     def inner_is_authenticated():
@@ -38,38 +38,41 @@ def handle_text(message):
         user_password = bot.send_message(message.chat.id, "Enter a password")
         bot.register_next_step_handler(user_password, registration)
     elif message.text.lower() == "authenticate":
-        authenticate_user = bot.send_message(message.chat.id, "Enter your password")
-        bot.register_next_step_handler(authenticate_user, authentication)
-    if  
-    if message.text.lower() == "hello":
-        bot.send_message(message.chat.id, "Hello, User.")
-    elif message.text.lower() == "date":
-        bot.send_message(message.chat.id, today)
-    elif message.text.lower() == "time":
-        bot.send_message(message.chat.id, t)
-    elif message.text.lower() == "how are you":
-        bot.send_message(message.chat.id, "I am very good, thank you.")
-    elif message.text.lower() == "calculator":
-        action = bot.send_message(
-            message.chat.id, "Enter operation"
-        )  # 2+ 2 -> 4
-        bot.register_next_step_handler(action, calculator)
-    elif message.text.lower() == "length":
-        action2 = bot.send_message(
-            message.chat.id, "Enter any amount of characters"
-        )
-        bot.register_next_step_handler(action2, length)
-    elif message.text.lower() == "count":
-        action3 = bot.send_message(message.chat.id, "Enter a sentence ")
-        bot.register_next_step_handler(action3, count_words)
-    elif message.text.lower() == "textinfo":
-        action4 = bot.send_message(message.chat.id, "Enter a piece of text")
-        bot.register_next_step_handler(action4, text_info)
-    else:
-        bot.send_message(
-            message.chat.id,
-            "Hello! I am a bot that can help you. Avalible commands include hello, date, time, how are you, textinfo, calculator, and length",
-        )
+        seconds_past_authentication = time.time()
+        if int(seconds_past_authentication) > 86400:
+            authenticate_user = bot.send_message(message.chat.id, "Enter your password")
+            bot.register_next_step_handler(authenticate_user, authentication)
+            seconds_past_authentication = time.time()
+        else:
+            if message.text.lower() == "hello":
+                bot.send_message(message.chat.id, "Hello, User.")
+            elif message.text.lower() == "date":
+                bot.send_message(message.chat.id, today)
+            elif message.text.lower() == "time":
+                bot.send_message(message.chat.id, t)
+            elif message.text.lower() == "how are you":
+                bot.send_message(message.chat.id, "I am very good, thank you.")
+            elif message.text.lower() == "calculator":
+                action = bot.send_message(
+                    message.chat.id, "Enter operation"
+                )  # 2+ 2 -> 4
+                bot.register_next_step_handler(action, calculator)
+            elif message.text.lower() == "length":
+                action2 = bot.send_message(
+                    message.chat.id, "Enter any amount of characters"
+                )
+                bot.register_next_step_handler(action2, length)
+            elif message.text.lower() == "count":
+                action3 = bot.send_message(message.chat.id, "Enter a sentence ")
+                bot.register_next_step_handler(action3, count_words)
+            elif message.text.lower() == "textinfo":
+                action4 = bot.send_message(message.chat.id, "Enter a piece of text")
+                bot.register_next_step_handler(action4, text_info)
+            else:
+                bot.send_message(
+                    message.chat.id,
+                    "Hello! I am a bot that can help you. Avalible commands include hello, date, time, how are you, textinfo, calculator, and length",
+                )
 
 
 def calculator(message):
