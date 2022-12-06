@@ -39,7 +39,7 @@ def handle_text(message):
         bot.register_next_step_handler(user_password, registration)
     elif message.text.lower() == "authenticate":
         seconds_past_authentication = time.time()
-        if int(seconds_past_authentication) > 86400:
+        if int(time.time()) - int(seconds_past_authentication) > 86400:
             authenticate_user = bot.send_message(message.chat.id, "Enter your password")
             bot.register_next_step_handler(authenticate_user, authentication)
             seconds_past_authentication = time.time()
