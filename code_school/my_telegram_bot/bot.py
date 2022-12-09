@@ -18,6 +18,7 @@ t = time.localtime()
 current_time = time.strftime("%H:%M:%S", t)
 path = Path("code_school\\my_telegram_bot")
 user_db = path / "login_info.json"
+SECONDS_IN_24_HOURS = 86400
 print(t)
 
 # def is_authenticated():
@@ -39,7 +40,7 @@ def handle_text(message):
         bot.register_next_step_handler(user_password, registration)
     elif message.text.lower() == "authenticate":
         seconds_past_authentication = time.time()
-        if int(time.time()) - int(seconds_past_authentication) > 86400:
+        if int(time.time()) - int(seconds_past_authentication) > SECONDS_IN_24_HOURS:
             authenticate_user = bot.send_message(message.chat.id, "Enter your password")
             bot.register_next_step_handler(authenticate_user, authentication)
             seconds_past_authentication = time.time()
