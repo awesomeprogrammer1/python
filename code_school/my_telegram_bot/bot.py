@@ -27,55 +27,53 @@ print(t)
 #     return inner_is_authenticated()
 
 
-# def open_db():
-#     user_db_handle = open(user_db, "r")
-#     user_db_dict = json.load(user_db_handle)
-#     user_db_handle.close()
-#     return user_db_dict
+user_db_handle = open(user_db, "r")
+user_db_dict = json.load(user_db_handle)
+user_db_handle.close()
+
 
 
 @bot.message_handler(content_types=["text"])
 # @is_authenticated()
 def handle_text(message):
-    if message.text.lower() == "help":
-        bot.send_message(message.chat.id, "Current Avalible Commands: \n Register \n Authenticate \n ------------------------------------ \n Authenticate or register and then authenticate to get access to other commands",)
-    if message.text.lower() == "register":
-        user_password = bot.send_message(message.chat.id, "Enter a password")
-        bot.register_next_step_handler(user_password, registration)
-    if message.text.lower() == "authenticate":
-        if is_authenticated(message.chat.id) is False:
+    if is_authenticated(message.chat.id) is True:
+        if message.text.lower() == "commands":
+            bot.send_message(message.chat.id, "Avalible commands: \n 'hello' \n 'date' \n 'time' \n 'how are you' \n 'calculator' \n 'length' \n 'count' \n 'textinfo'")
+        elif message.text.lower() == "hello":
+            bot.send_message(message.chat.id, "Hello, User.")
+        elif message.text.lower() == "date":
+            bot.send_message(message.chat.id, today)
+        elif message.text.lower() == "time":
+            bot.send_message(message.chat.id, t)
+        elif message.text.lower() == "how are you":
+            bot.send_message(message.chat.id, "I am very good, thank you.")
+        elif message.text.lower() == "calculator":
+            action = bot.send_message(
+                message.chat.id, "Enter operation"
+            )  # 2+ 2 -> 4
+            bot.register_next_step_handler(action, calculator)
+        elif message.text.lower() == "length":
+            action2 = bot.send_message(
+                message.chat.id, "Enter any amount of characters"
+            )
+            bot.register_next_step_handler(action2, length)
+        elif message.text.lower() == "count":
+            action3 = bot.send_message(message.chat.id, "Enter a sentence ")
+            bot.register_next_step_handler(action3, count_words)
+        elif message.text.lower() == "textinfo":
+            action4 = bot.send_message(message.chat.id, "Enter a piece of text")
+            bot.register_next_step_handler(action4, text_info)
+    else:
+        if message.chat.id not in user_db_dict:
+            bot.send_message(message.chat.id, "Please register by typing 'register'",)
+        else:
+            bot.send_message(message.chat.id, "Authenticate by typing 'authenticate'",)
+        if message.text.lower() == "register":
+            user_password = bot.send_message(message.chat.id, "Enter a password")
+            bot.register_next_step_handler(user_password, registration)
+        if message.text.lower() == "authenticate":
             authenticate_user = bot.send_message(message.chat.id, "Enter your password")
             bot.register_next_step_handler(authenticate_user, user_authenticated)
-        else:
-            if message.text.lower() == "help":
-                bot.send_message(message.chat.id, "Avalible commands: \n 'hello' \n 'date' \n 'time' \n 'how are you' \n 'calculator' \n 'length \n count \n textinfo")
-            while is_authenticated(message.chat.id) is True:
-                if message.text.lower() == "hello":
-                    bot.send_message(message.chat.id, "Hello, User.")
-                elif message.text.lower() == "date":
-                    bot.send_message(message.chat.id, today)
-                elif message.text.lower() == "time":
-                    bot.send_message(message.chat.id, t)
-                elif message.text.lower() == "how are you":
-                    bot.send_message(message.chat.id, "I am very good, thank you.")
-                elif message.text.lower() == "calculator":
-                    action = bot.send_message(
-                        message.chat.id, "Enter operation"
-                    )  # 2+ 2 -> 4
-                    bot.register_next_step_handler(action, calculator)
-                elif message.text.lower() == "length":
-                    action2 = bot.send_message(
-                        message.chat.id, "Enter any amount of characters"
-                    )
-                    bot.register_next_step_handler(action2, length)
-                elif message.text.lower() == "count":
-                    action3 = bot.send_message(message.chat.id, "Enter a sentence ")
-                    bot.register_next_step_handler(action3, count_words)
-                elif message.text.lower() == "textinfo":
-                    action4 = bot.send_message(message.chat.id, "Enter a piece of text")
-                    bot.register_next_step_handler(action4, text_info)
-                else:
-                    bot.send_message(message.chat.id, "Avalible commands: \n 'hello' \n 'date' \n 'time' \n 'how are you' \n 'calculator' \n 'length \n count \n textinfo")
 
 
 def calculator(message):
@@ -199,7 +197,7 @@ def user_authenticated(message):
     user_db_dict = json.load(user_db_handle)
     user_db_handle.close()
     if message.text == user_db_dict.get(str(message.chat.id)).get("password"):
-        bot.send_message(message.chat.id, "Successfully Authenticated. Type 'authenticate' again to get access to commands, and then type 'cmds' for a list of them")
+        bot.send_message(message.chat.id, "Successfully Authenticated. Type 'commands' for a full list of commands when authenticated")
         update_authentication_timestamp(message.chat.id, time.time())
     else:
         bot.send_message(message.chat.id, "Password Incorrect")
@@ -233,7 +231,7 @@ def is_authenticated(user_id):
     user_db_handle.close()
     if str(user_id) not in user_db_dict:
         return False
-    elif "time" not in user_db_dict[str(user_id)]:
+    if "time" not in user_db_dict[str(user_id)]:
         return False
     authentication_timestamp = user_db_dict[str(user_id)]["time"]
     if int(time.time()) - authentication_timestamp < 86400:
