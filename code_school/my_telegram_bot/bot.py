@@ -44,7 +44,7 @@ def handle_text(message):
         elif message.text.lower() == "date":
             bot.send_message(message.chat.id, today)
         elif message.text.lower() == "time":
-            bot.send_message(message.chat.id, t)
+            bot.send_message(message.chat.id, current_time)
         elif message.text.lower() == "how are you":
             bot.send_message(message.chat.id, "I am very good, thank you.")
         elif message.text.lower() == "calculator":
@@ -66,14 +66,12 @@ def handle_text(message):
     else:
         if str(message.chat.id) not in user_db_dict:
             bot.send_message(message.chat.id, "Please register by typing 'register'",)
-        else:
-            bot.send_message(message.chat.id, "Authenticate by typing 'authenticate'",)
-        if message.text.lower() == "register":
-            user_password = bot.send_message(message.chat.id, "Enter a password")
-            bot.register_next_step_handler(user_password, registration)
-        if message.text.lower() == "authenticate":
-            authenticate_user = bot.send_message(message.chat.id, "Enter your password")
-            bot.register_next_step_handler(authenticate_user, user_authenticated)
+            if message.text.lower() == "register":
+                user_password = bot.send_message(message.chat.id, "Enter a password")
+                bot.register_next_step_handler(user_password, registration)
+            if message.text.lower() == "authenticate":
+                authenticate_user = bot.send_message(message.chat.id, "Enter your password")
+                bot.register_next_step_handler(authenticate_user, user_authenticated)
 
 
 def calculator(message):
