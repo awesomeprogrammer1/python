@@ -40,7 +40,7 @@ def handle_text(message):
     if message.text.lower() == "help":
         bot.send_message(
             message.chat.id,
-            "Current Avalible Commands: \n Register \n Authenticate \n Register and/or Authenticate to get access to other commands",
+            "Current Avalible Commands: \n Register \n Authenticate \n ----------------------------- \n Register and/or Authenticate to get access to other commands",
         )
     elif message.text.lower() == "register":
         user_password = bot.send_message(message.chat.id, "Enter a password")
@@ -77,8 +77,6 @@ def handle_text(message):
             elif message.text.lower() == "textinfo":
                 action4 = bot.send_message(message.chat.id, "Enter a piece of text")
                 bot.register_next_step_handler(action4, text_info)
-    else:
-        bot.send_message(message.chat.id, "Type 'help' for avalible commands")  
 
 
 def calculator(message):
