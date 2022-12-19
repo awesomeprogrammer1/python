@@ -37,7 +37,7 @@ user_db_handle.close()
 # @is_authenticated()
 def handle_text(message):
     if is_authenticated(message.chat.id) is True:
-        if message.text.lower() == "commands":
+        if message.text.lower() == "help":
             bot.send_message(message.chat.id, "Avalible commands: \n 'hello' \n 'date' \n 'time' \n 'how are you' \n 'calculator' \n 'length' \n 'count' \n 'textinfo'")
         elif message.text.lower() == "hello":
             bot.send_message(message.chat.id, "Hello, User.")
@@ -197,7 +197,7 @@ def user_authenticated(message):
     user_db_dict = json.load(user_db_handle)
     user_db_handle.close()
     if message.text == user_db_dict.get(str(message.chat.id)).get("password"):
-        bot.send_message(message.chat.id, "Successfully Authenticated. Type 'commands' for a full list of commands when authenticated")
+        bot.send_message(message.chat.id, "Successfully Authenticated. Type 'help' for a full list of commands when authenticated")
         update_authentication_timestamp(message.chat.id, time.time())
     else:
         bot.send_message(message.chat.id, "Password Incorrect")
