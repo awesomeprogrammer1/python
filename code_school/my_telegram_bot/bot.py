@@ -26,6 +26,18 @@ print(t)
 #         return False
 #     return inner_is_authenticated()
 
+def open_db():
+    user_db_handle = open(user_db, "r")
+    user_db_dict = json.load(user_db_handle)
+    user_db_handle.close()
+    return user_db_dict
+
+
+
+
+
+
+
 
 @bot.message_handler(content_types=["text"])
 # @is_authenticated()
@@ -167,12 +179,9 @@ def count_words(message):
 
 
 def registration(message):
-    get_info = open(user_db, "r")
-    get_user_info = json.load(get_info)
-    get_info.close()
-    get_user_info[str(message.chat.id)] = {"password": message.text}
+    open_db()[str(message.chat.id)] = {"password": message.text}
     write_info = open(user_db, "w")
-    json.dump(get_user_info, write_info)
+    json.dump(open_db(), write_info)
     write_info.close()
     bot.send_message(message.chat.id, "Registration Complete")
 
@@ -189,40 +198,28 @@ def is_authenticated(message):
 '''
 This function authenticates the user
 '''
+
+
 def user_authenticated(message):
-    get_info = open(user_db, "r")
-    get_user_info = json.load(get_info)
-    get_info.close()
-    if message.text == get_user_info.get(str(message.chat.id)).get("password"):
+    if message.text == open_db().get(str(message.chat.id)).get("password"):
         bot.send_message(message.chat.id, "Successfully Authenticated")
         update_authentication_timestamp(message.chat.id, time.time())
     else:
         bot.send_message(message.chat.id, "Password Incorrect")
 
 
-
-
 def update_authentication_timestamp(user_id, timestamp):
-    user_db_handle = open(user_db, "r")
-    user_db_dict = json.load(user_db_handle)
-    user_db_handle.close()
-    user_db_dict[str(user_id)]["time"] = timestamp
-    print(user_db_dict)
+    open_db()[str(user_id)]["time"] = timestamp
+    print(open_db())
     user_db_handle = open(user_db, "w")
-    json.dump(user_db_dict, user_db_handle)
+    json.dump(open_db(), user_db_handle)
     user_db_handle.close()
 
 
-
-
-
-def is_authenticated():
+def is_authenticated(message):
     def inner_is_authenticated():
-        return False
+        if update_authentication_timestamp(message.chat.id, time.time())
     return inner_is_authenticated()
-
-
-
 
 
 bot.polling(non_stop=True, interval=0)
