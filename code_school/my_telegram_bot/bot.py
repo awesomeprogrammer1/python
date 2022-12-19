@@ -37,20 +37,23 @@ print(t)
 @bot.message_handler(content_types=["text"])
 # @is_authenticated()
 def handle_text(message):
-    if message.text.lower() == "start":
+    if message.text.lower() == "help":
         bot.send_message(
             message.chat.id,
-            "Register or Authenticate yourself with 'register' and/or 'authenticate' to use commands",
+            "Current Avalible Commands: \n Register \n Authenticate \n Register and/or Authenticate to get access to other commands",
         )
     elif message.text.lower() == "register":
         user_password = bot.send_message(message.chat.id, "Enter a password")
         bot.register_next_step_handler(user_password, registration)
-    elif message.text.lower() == "authenticate":    
-        if test_is_authenticated(message.chat.id) is False:
+    elif message.text.lower() == "authenticate":
+        if is_authenticated(message.chat.id) is False:
             authenticate_user = bot.send_message(message.chat.id, "Enter your password")
-            bot.register_next_step_handler(authenticate_user, user_authenticated)      
+            bot.register_next_step_handler(authenticate_user, user_authenticated) 
         else:
-            if message.text.lower() == "hello":
+            bot.send_message(message.chat.id, "Type 'help' for avalible commands")
+            if message.text.lower() == "help":
+                bot.send_message(message.chat.id, "Avalible commands: \n 'hello' \n 'date' \n 'time' \n 'how are you' \n 'calculator' \n 'length \n count \n textinfo")
+            elif message.text.lower() == "hello":
                 bot.send_message(message.chat.id, "Hello, User.")
             elif message.text.lower() == "date":
                 bot.send_message(message.chat.id, today)
@@ -74,11 +77,8 @@ def handle_text(message):
             elif message.text.lower() == "textinfo":
                 action4 = bot.send_message(message.chat.id, "Enter a piece of text")
                 bot.register_next_step_handler(action4, text_info)
-            else:
-                bot.send_message(
-                    message.chat.id,
-                    "Hello! I am a bot that can help you. Avalible commands include hello, date, time, how are you, textinfo, calculator, and length",
-                )
+    else:
+        bot.send_message(message.chat.id, "Type 'help' for avalible commands")  
 
 
 def calculator(message):
@@ -230,7 +230,7 @@ def is_authenticated(authentication_timestamp):
 '''
 
 
-def test_is_authenticated(user_id):
+def is_authenticated(user_id):
     user_db_handle = open(user_db, "r")
     user_db_dict = json.load(user_db_handle)
     user_db_handle.close()
