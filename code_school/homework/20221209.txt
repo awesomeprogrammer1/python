@@ -1,0 +1,2 @@
+1. Remember all data types and all methods you can perform on them
+2. Write a function to check if the user is authenticated or not
