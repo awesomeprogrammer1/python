@@ -233,7 +233,7 @@ def test_is_authenticated(user_id):
     user_db_dict = json.load(user_db_handle)
     user_db_handle.close()
     authentication_timestamp = user_db_dict[str(user_id)]["time"]
-    if int(time.time()) - int(authentication_timestamp) < 86400:
+    if int(time.time()) - authentication_timestamp < 86400:
         return True
     else:
         return False
