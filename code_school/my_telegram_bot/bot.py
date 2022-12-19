@@ -216,9 +216,12 @@ def update_authentication_timestamp(user_id, timestamp):
     user_db_handle.close()
 
 
-def is_authenticated(message):
+def is_authenticated(authentication_timestamp):
     def inner_is_authenticated():
-        if update_authentication_timestamp(message.chat.id, time.time())
+        if int(time.time()) - int(authentication_timestamp) < 86400:
+            return True
+        else:
+            return False
     return inner_is_authenticated()
 
 
