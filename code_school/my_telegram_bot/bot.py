@@ -63,6 +63,8 @@ def handle_text(message):
         elif message.text.lower() == "textinfo":
             action4 = bot.send_message(message.chat.id, "Enter a piece of text")
             bot.register_next_step_handler(action4, text_info)
+        else:
+            bot.send_message(message.chat.id, "Error: Your command was not recognized: type 'help' for a list of commands ")
     else:
         if str(message.chat.id) not in user_db_dict:
             bot.send_message(message.chat.id, "Please register by typing 'register'",)
