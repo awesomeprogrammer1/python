@@ -219,6 +219,7 @@ def update_authentication_timestamp(user_id, timestamp):
     user_db_handle.close()
 
 
+'''
 def is_authenticated(authentication_timestamp):
     def inner_is_authenticated():
         if int(time.time()) - int(authentication_timestamp) < 86400:
@@ -226,6 +227,7 @@ def is_authenticated(authentication_timestamp):
         else:
             return False
     return inner_is_authenticated()
+'''
 
 
 def test_is_authenticated(user_id):
