@@ -1,0 +1,1 @@
+1. Change the bot so that all operations are available only to authenticated users

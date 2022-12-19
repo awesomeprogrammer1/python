@@ -1,0 +1,2 @@
+1. Explain the difference between intersection() and intersection_update() with examples
+2. Finish email5_assignment4_sets.py
