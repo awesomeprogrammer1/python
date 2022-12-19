@@ -64,7 +64,7 @@ def handle_text(message):
             action4 = bot.send_message(message.chat.id, "Enter a piece of text")
             bot.register_next_step_handler(action4, text_info)
     else:
-        if message.chat.id not in user_db_dict:
+        if str(message.chat.id) not in user_db_dict:
             bot.send_message(message.chat.id, "Please register by typing 'register'",)
         else:
             bot.send_message(message.chat.id, "Authenticate by typing 'authenticate'",)
