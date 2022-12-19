@@ -49,7 +49,7 @@ def handle_text(message):
             bot.send_message(message.chat.id, "I am very good, thank you.")
         elif message.text.lower() == "calculator":
             action = bot.send_message(
-                message.chat.id, "Enter operation"
+                message.chat.id, "Enter an operation (such as 2+2)"
             )  # 2+ 2 -> 4
             bot.register_next_step_handler(action, calculator)
         elif message.text.lower() == "length":
