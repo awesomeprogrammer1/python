@@ -69,6 +69,8 @@ def handle_text(message):
             if message.text.lower() == "register":
                 user_password = bot.send_message(message.chat.id, "Enter a password")
                 bot.register_next_step_handler(user_password, registration)
+        else:
+            bot.send_message(message.chat.id, "Please Authenticate by typing 'authenticate'",)
             if message.text.lower() == "authenticate":
                 authenticate_user = bot.send_message(message.chat.id, "Enter your password")
                 bot.register_next_step_handler(authenticate_user, user_authenticated)
