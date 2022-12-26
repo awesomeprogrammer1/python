@@ -19,7 +19,18 @@ current_time = time.strftime("%H:%M:%S", t)
 path = Path("code_school\\my_telegram_bot")
 user_db = path / "login_info.json"
 SECONDS_IN_24_HOURS = 86400
-print(t)
+keyboard_not_authenticated = telebot.types.ReplyKeyboardMarkup(resize_keyboard=True)
+authenicate_button = telebot.types.KeyboardButton("Authenticate")
+register_button = telebot.types.KeyboardButton("Register")
+keyboard_not_authenticated.add(authenicate_button, register_button)
+
+keyboard_authenticated = telebot.types.ReplyKeyboardMarkup(resize_keyboard=True)
+help_button = telebot.types.KeyboardButton("Help")
+hello_button = telebot.types.KeyboardButton("Hello")
+date_button = telebot.types.KeyboardButton("Date")
+time_button = telebot.types.KeyboardButton("Time")
+how_are_you_button = telebot.types.KeyboardButton("How are you")
+keyboard_authenticated.add(help_button, hello_button, date_button, time_button, how_are_you_button)
 
 # def is_authenticated():
 #     def inner_is_authenticated():
@@ -31,6 +42,10 @@ user_db_handle = open(user_db, "r")
 user_db_dict = json.load(user_db_handle)
 user_db_handle.close()
 
+@bot.message_handler(commands=['start'])
+def start(message):
+    if message.text == "/start":
+        bot.send_message(message.chat.id, "Hello", reply_markup=keyboard_not_authenticated)
 
 
 @bot.message_handler(content_types=["text"])
@@ -41,6 +56,7 @@ def handle_text(message):
             bot.send_message(message.chat.id, "Avalible commands: \n 'hello' \n 'date' \n 'time' \n 'how are you' \n 'calculator' \n 'length' \n 'count' \n 'textinfo'")
         elif message.text.lower() == "hello":
             bot.send_message(message.chat.id, "Hello, User.")
+       
         elif message.text.lower() == "date":
             bot.send_message(message.chat.id, today)
         elif message.text.lower() == "time":
@@ -67,12 +83,10 @@ def handle_text(message):
             bot.send_message(message.chat.id, "Error: Your command was not recognized: type 'help' for a list of commands ")
     else:
         if str(message.chat.id) not in user_db_dict:
-            bot.send_message(message.chat.id, "Please register by typing 'register'",)
             if message.text.lower() == "register":
                 user_password = bot.send_message(message.chat.id, "Enter a password")
                 bot.register_next_step_handler(user_password, registration)
         else:
-            bot.send_message(message.chat.id, "Please Authenticate by typing 'authenticate'",)
             if message.text.lower() == "authenticate":
                 authenticate_user = bot.send_message(message.chat.id, "Enter your password")
                 bot.register_next_step_handler(authenticate_user, user_authenticated)
@@ -84,8 +98,11 @@ def calculator(message):
         if s in message.text:
             numbers = message.text.split(s)  # ['2', '2']
             if s == "+":
-                add = int(numbers[0]) + int(numbers[1])
-                bot.send_message(message.chat.id, add)
+                try:
+                    add = int(numbers[0]) + int(numbers[1])
+                    bot.send_message(message.chat.id, add)
+                except ValueError:
+                    bot.send_message(message.chat.id, "Invalid Input")
             if s == "-":
                 subtract = int(numbers[0]) - int(numbers[1])
                 bot.send_message(message.chat.id, subtract)
@@ -199,7 +216,7 @@ def user_authenticated(message):
     user_db_dict = json.load(user_db_handle)
     user_db_handle.close()
     if message.text == user_db_dict.get(str(message.chat.id)).get("password"):
-        bot.send_message(message.chat.id, "Successfully Authenticated. Type 'help' for a full list of commands when authenticated")
+        bot.send_message(message.chat.id, "Successfully Authenticated. Type 'help' for a full list of commands when authenticated", reply_markup=keyboard_authenticated)
         update_authentication_timestamp(message.chat.id, time.time())
     else:
         bot.send_message(message.chat.id, "Password Incorrect")
