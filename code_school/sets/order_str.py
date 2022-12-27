@@ -17,15 +17,21 @@ Results:
 
 '''
 
-def all_eq(list_var):
+def all_eq(list_var: list) -> list:
     longest_element = 0
     for element in list_var:
         if len(element) > longest_element:
             longest_element = len(element)
     for element in list_var:
+        orig_element = element
         if len(element) < longest_element:
             for i in range(longest_element-len(element)):
                 element += "_"
-                
+            list_var[list_var.index(orig_element)] = element
+    new_list = list_var
+    return new_list
+
+print(all_eq(["hey","andrew"]))
+
 
 
