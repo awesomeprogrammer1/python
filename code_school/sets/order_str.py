@@ -21,4 +21,11 @@ def all_eq(list_var):
     longest_element = 0
     for element in list_var:
         if len(element) > longest_element:
-            longest_element = len(element) 
+            longest_element = len(element)
+    for element in list_var:
+        if len(element) < longest_element:
+            for i in range(longest_element-len(element)):
+                element += "_"
+                
+
+
