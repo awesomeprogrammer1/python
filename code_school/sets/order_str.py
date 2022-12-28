@@ -17,7 +17,7 @@ Results:
 
 '''
 
-def all_eq(list_var: list) -> list:
+def order_str(list_var: list) -> list:
     longest_element = 0
     for element in list_var:
         if len(element) > longest_element:
@@ -32,6 +32,6 @@ def all_eq(list_var: list) -> list:
     return new_list
 
 
-print(all_eq(['крот', 'белка', 'выхухоль']))
-print(all_eq(['a', 'aa', 'aaa', 'aaaa', 'aaaaa']))
-print(all_eq(['qweasdqweas', 'q', 'rteww', 'ewqqqqq']))
+print(order_str(['крот', 'белка', 'выхухоль']))
+print(order_str(['a', 'aa', 'aaa', 'aaaa', 'aaaaa']))
+print(order_str(['qweasdqweas', 'q', 'rteww', 'ewqqqqq']))
