@@ -31,7 +31,7 @@ def all_eq(list_var: list) -> list:
     new_list = list_var
     return new_list
 
-print(all_eq(['крот____', 'белка___', 'выхухоль']))
 
-
-
+print(all_eq(['крот', 'белка', 'выхухоль']))
+print(all_eq(['a', 'aa', 'aaa', 'aaaa', 'aaaaa']))
+print(all_eq(['qweasdqweas', 'q', 'rteww', 'ewqqqqq']))
