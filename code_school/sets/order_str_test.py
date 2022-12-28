@@ -17,15 +17,15 @@ from order_str import order_str
 
 
 @pytest.mark.parametrize(
-    "source_list, result_set",
+    "source_list, result_list",
     [
-        ([1, 1, 3, 3, 1], {1, 3, "111", "33", "11"}),
-        ([5, 5, 5, 5, 5, 5, 5], {"5555555", 5, "55", "55555", "5555", "555555", "555"}),
+        (['крот', 'белка', 'выхухоль'], ['крот____', 'белка___', 'выхухоль']),
+        (['a', 'aa', 'aaa', 'aaaa', 'aaaaa'], ['a____', 'aa___', 'aaa__', 'aaaa_', 'aaaaa']),
         (
-            [2, 2, 1, 2, 2, 5, 6, 7, 1, 3, 2, 2],
-            {1, 2, 3, 5, 6, 7, "22", "2222", "22222", "222", "11", "222222"},
+            ['qweasdqweas', 'q', 'rteww', 'ewqqqqq'],
+            ['qweasdqweas', 'q__________', 'rteww______', 'ewqqqqq____'],
         ),
     ],
 )
 def test_order_str(source_list: list, result_list: list):
-    assert  == set()
+    assert order_str(source_list) == result_list
