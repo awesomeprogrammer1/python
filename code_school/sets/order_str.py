@@ -17,6 +17,9 @@ Results:
 
 '''
 
+# 1st variant
+
+
 def order_str(list_var: list) -> list:
     longest_element = 0
     for element in list_var:
@@ -30,6 +33,21 @@ def order_str(list_var: list) -> list:
             list_var[list_var.index(orig_element)] = element
     new_list = list_var
     return new_list
+
+
+
+
+# def order_str(list_var: list) -> list:
+#     longest_element = max(list_var)
+#     longest_element = len(max(list_var))
+#     for element in list_var:
+#         orig_element = element
+#         if len(element) < longest_element:
+#             for i in range(longest_element-len(element)):
+#                 element += "_"
+#             list_var[list_var.index(orig_element)] = element
+#     new_list = list_var
+#     return new_list
 
 
 print(order_str(['крот', 'белка', 'выхухоль']))

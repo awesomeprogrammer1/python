@@ -22,25 +22,41 @@ Result:
 """
 
 
-def set_gen(list: list) -> set:
-    set_var = set(list)
-    base_set: set = set()
-    for number in set_var:
-        number_as_str = str(number)
-        count_num = list.count(number)
-        if count_num > 1:
-            if count_num <= 2:
-                number_as_str += number_as_str
-                base_set.add(number_as_str)
-            else:
-                new_num_as_str = number_as_str + number_as_str
-                base_set.add(new_num_as_str)
-                for i in range(count_num - 2):
-                    new_num_as_str += number_as_str
-                    base_set.add(new_num_as_str)
-    set_var.symmetric_difference_update(base_set)
-    return set_var
+# def set_gen(list: list) -> set:
+#     set_var = set(list)
+#     base_set: set = set()
+#     for number in set_var:
+#         number_as_str = str(number)
+#         count_num = list.count(number)
+#         if count_num > 1:
+#             if count_num <= 2:
+#                 number_as_str += number_as_str
+#                 base_set.add(number_as_str)
+#             else:
+#                 new_num_as_str = number_as_str + number_as_str
+#                 base_set.add(new_num_as_str)
+#                 for i in range(count_num - 2):
+#                     new_num_as_str += number_as_str
+#                     base_set.add(new_num_as_str)
+#     set_var.symmetric_difference_update(base_set)
+#     return set_var
+
+def set_gen(lst):
+    mylist = list(lst)
+    index = 0
+    while index < len(mylist):
+        cnt = mylist.count(mylist[index])
+        if cnt > 1:
+            mylist[index] = str(mylist[index]) * cnt
+        index += 1
+
+    return set(mylist)
 
 
-list_1 = [2, 2, 1, 2, 2, 5, 6, 7, 1, 3, 2, 2]
+list_1 = [1, 1, 3, 3, 1]
+list_2 = [5, 5, 5, 5, 5, 5, 5]
+list_3 = [2, 2, 1, 2, 2, 5, 6, 7, 1, 3, 2, 2]
 print(set_gen(list_1))
+print(list_1)
+print(set_gen(list_2))
+print(set_gen(list_3))
