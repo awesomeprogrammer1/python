@@ -1,3 +1,5 @@
 1. Make a presentation on lambda (that explains what it does)
-2. Use lambda to make another variation of order_str.py 
+2. Write comments on Sasha's version of set_gen + Rewrite it with a for loop
+3. Explain CQRS
+4. Use lambda to make another variation of order_str.py (Not for next class)!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 (Lambda function that you can apply to a list of strings to get the longest element)
