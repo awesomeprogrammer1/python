@@ -43,12 +43,29 @@ Result:
 
 def set_gen(lst):
     mylist = list(lst)
+    # gets list
     index = 0
+    # variable
     while index < len(mylist):
+        # while loop w/ condition
         cnt = mylist.count(mylist[index])
+        # counts how many times the item at the given index appears
         if cnt > 1:
             mylist[index] = str(mylist[index]) * cnt
+            # multiplies the element by the number of times it appears and swaps it with the existing element
         index += 1
+        # adds 1 in order to proceed to the next element
+
+    return set(mylist)
+
+
+def set_gen_new(lst):
+    mylist = list(lst)
+    index = 0
+    for i in range(len(mylist)):
+        cnt = mylist.count(mylist[i])
+        if cnt > 1:
+            mylist[i] = str(mylist[i]) * cnt
 
     return set(mylist)
 
