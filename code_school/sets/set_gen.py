@@ -41,13 +41,14 @@ Result:
 #     set_var.symmetric_difference_update(base_set)
 #     return set_var
 
+
 def set_gen(lst):
     mylist = list(lst)
     # gets list
     index = 0
     # variable
     while index < len(mylist):
-        # while loop w/ condition
+        # while loop that runs when variable index is less than len(mylist)
         cnt = mylist.count(mylist[index])
         # counts how many times the item at the given index appears
         if cnt > 1:
@@ -61,7 +62,6 @@ def set_gen(lst):
 
 def set_gen_new(lst):
     mylist = list(lst)
-    index = 0
     for i in range(len(mylist)):
         cnt = mylist.count(mylist[i])
         if cnt > 1:
@@ -73,7 +73,7 @@ def set_gen_new(lst):
 list_1 = [1, 1, 3, 3, 1]
 list_2 = [5, 5, 5, 5, 5, 5, 5]
 list_3 = [2, 2, 1, 2, 2, 5, 6, 7, 1, 3, 2, 2]
-print(set_gen(list_1))
+print(set_gen_new(list_1))
 print(list_1)
-print(set_gen(list_2))
+print(set_gen_new(list_2))
 print(set_gen(list_3))

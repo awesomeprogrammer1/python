@@ -1,0 +1,3 @@
+1. Make a presentation on lambda (that explains what it does)
+2. Generate a new list that returns all elements that contain "тип данных"
+3. Generate a new list that returns all elements that contain more than four words
