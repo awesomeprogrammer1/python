@@ -1,0 +1,4 @@
+1. Explain the example with lambda functions in lambda_presentation (Explain why you can't do it with a regular function)
+2.
+andrew is good boy 
+{'andrew': {'a':1,'n':1...} , 'is': {'i':1,'s':1},...}
