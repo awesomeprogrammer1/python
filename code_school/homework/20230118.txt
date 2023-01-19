@@ -1,0 +1,9 @@
+1. Explain the difference between interpreting and compiling 
+(A compiler takes the source code of your program and converts it to machine instructions a computer can execute (It does the program all in one go)
+An interpreter interprets the code line by line and executes) (Executes line by line)
+2. andrew is good boy {'andrew': {'a':1,'n':1...} , 'is': {'i':1,'s':1},...}
+3. (for traffic_light_func)
+A car drives up to the traffic light 
+You have to mark the time that the car came up to the traffic light
+And then have a countdown from red to yellow to green
+(For Wednesday Class)

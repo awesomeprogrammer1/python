@@ -37,3 +37,11 @@
 word = input("Enter a word: ")
 word_dict = {character: word.count(character) for character in word}
 print(word_dict)
+
+
+# andrew is good boy 
+# {'andrew': {'a':1,'n':1...} , 'is': {'i':1,'s':1},...}
+
+words = input("Enter a sentence: ").split()
+word_dict = { : {}}
+
