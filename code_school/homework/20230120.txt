@@ -1,0 +1,4 @@
+1. Write 'hello world' on the programming language 'go' (compiled program, sasha has mac and windows, and has an ARM processor, same as mfbacs)
+2. Send the program to sasha's email so that it runs on his computer
+3. Explain what a genenerator and iterator are.
+4. Understand what a click sort, insertion sort, merge sort and bubble sort are (explain one of the four per lesson in order)

@@ -34,14 +34,18 @@
 
 
 # papa {"p":2,"a":2}
-word = input("Enter a word: ")
-word_dict = {character: word.count(character) for character in word}
-print(word_dict)
+# word = input("Enter a word: ")
+# word_dict = {character: word.count(character) for character in word}
+# print(word_dict)
 
 
-# andrew is good boy 
-# {'andrew': {'a':1,'n':1...} , 'is': {'i':1,'s':1},...}
-
-words = input("Enter a sentence: ").split()
-word_dict = { : {}}
-
+list_of_strings = [
+    "Список - изменяемый тип данных",
+    "Строка - неизменяемый тип данных",
+    "Строковый метод работает быстрее, чем срез",
+    "Для обхода последовательности используйте совместный цикл",
+]
+# word_rev_dict = {element: element[::-1] for element in list_of_strings}
+# print(word_rev_dict)
+word_rev_dict = {element: " ".join(element.split()[::-1]) for element in list_of_strings}
+print(word_rev_dict)
