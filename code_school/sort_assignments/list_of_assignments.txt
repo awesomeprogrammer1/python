@@ -1,0 +1,4 @@
+Task 1 Write a program that sorts a list of integers using bubble sort.
+Task 2 Write a program that sorts a list of integers using the insertion method.
+Task 3 There is a list of integers. It is necessary to sort the first half of the list in descending order, the second half in ascending order.
+Task 4 Write a program that sorts a list of integers using the merge method.
