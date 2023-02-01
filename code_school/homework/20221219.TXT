@@ -1,0 +1,1 @@
+1. Remember all data types and all methods you can perform on them
