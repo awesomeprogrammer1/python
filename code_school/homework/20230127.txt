@@ -1,0 +1,6 @@
+1. Explain what a genenerator and iterator are.
+2. Explain BubbleSort again to Mom, Dad, and Sasha (and implement it)
+3. Learn and explain ShellSort to Mom, Dad and Sasha (and implement it)
+4. Help Mom write a program that can solve a quadratic equation
+5. Do assignment 2 from list_of_assignments.txt
+6. Optimize assignment 3 from list_of_assignments.txt (Add lambda function for extra credit)
