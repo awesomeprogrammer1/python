@@ -18,7 +18,13 @@ def InsertionSort(myList, startInd, gapValue):
         myList[currentInd] = currentElem
 
 
-numbers = [465,34,9,6456,3452534,95,23,54,72]
+numbers = [12, 34, 25, 15, 67, 23, 11, 5, 86]
 print("Original list: {}".format(numbers))
 ShellSort(numbers)
 print("Sorted list: {}".format(numbers))
+
+
+# [465, 34, 9, 54, 3452534, 95, 23, 6456]
+# [9, 23, 465, 3452534]
+# [34, 54, 95, 6456]
+# [9, 23, 34, 54, 95, 465, 6456, 3452534, 6456]

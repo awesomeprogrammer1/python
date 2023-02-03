@@ -5,3 +5,5 @@
 5. Do assignment 2 from list_of_assignments.txt
 6. Optimize assignment 3 from list_of_assignments.txt (Add lambda function for extra credit)
 7. (For Andrew: Update branch)
+
+[5, 11, 12, 15, 23, 25, 34, 67, 86]

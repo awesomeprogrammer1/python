@@ -26,34 +26,48 @@ myList2 = myList[: int(myListIndex)]
 # the second half in ascending order.
 
 
-def BubbleSort_increase(lst):
-    myList = list(lst)
-    count = 0
-    for i in range(len(myList) - 1):
-        for j in range(len(myList) - i - 1):
-            count += 1
-            if myList[j] > myList[j + 1]:
-                myList[j], myList[j + 1] = myList[j + 1], myList[j]
-    return myList
+# def BubbleSort_increase(mylst):
+#     myList = list(lst)
+#     count = 0
+#     for i in range(len(myList) - 1):
+#         for j in range(len(myList) - i - 1):
+#             count += 1
+#             if myList[j] > myList[j + 1]:
+#                 myList[j], myList[j + 1] = myList[j + 1], myList[j]
+#     return myList
 
 
-def BubbleSort_decrease(lst):
-    myList = list(lst)
-    count = 0
-    for i in range(len(myList) - 1):
-        for j in range(len(myList) - i - 1):
-            count += 1
-            if myList[j] < myList[j + 1]:
-                myList[j], myList[j + 1] = myList[j + 1], myList[j]
-    return myList
+# def BubbleSort_decrease(lst):
+#     myList = list(lst)
+#     count = 0
+#     for i in range(len(myList) - 1):
+#         for j in range(len(myList) - i - 1):
+#             count += 1
+#             if myList[j] < myList[j + 1]:
+#                 myList[j], myList[j + 1] = myList[j + 1], myList[j]
+#     return myList
 
 
 
-def BubbleSort_inc_dec(lst):
-    for h in range()
+def BubbleSort_inc_dec(lst: list):
+    myListIndex = len(lst) / 2
+    lst1 = lst[int(myListIndex):]
+    lst2 = lst[: int(myListIndex)]
+    for i in range(len(lst) - 1):
+        for j in range(len(lst) - i - 1):
+            if lst1[j] > lst1[j + 1]:
+                lst1[j], lst1[j + 1] = lst1[j + 1], lst1[j]
+        for k in range(len(lst2) - i - 1):
+            if lst2[k] < lst2[k + 1]:
+                lst2[k], lst2[k + 1] = lst2[k + 1], lst2[k]
+    return lst1, lst2
+       
+    
+    
 
 
-main_list = BubbleSort_decrease(myList2) + (BubbleSort_increase(myList1))
-print(BubbleSort_increase(myList1))
-print(BubbleSort_decrease(myList2))
-print(main_list)
+# main_list = BubbleSort_decrease(myList2) + (BubbleSort_increase(myList1))
+print(BubbleSort_inc_dec(myList))
+# print(BubbleSort_increase(myList1))
+# print(BubbleSort_decrease(myList2))
+# print(main_list)
