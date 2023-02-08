@@ -54,16 +54,14 @@ def BubbleSort_inc_dec(lst: list):
     lst1 = lst[int(myListIndex):]
     lst2 = lst[: int(myListIndex)]
     for i in range(len(lst) - 1):
-        for j in range(len(lst) - i - 1):
+        for j in range(len(lst1) - i - 1):
             if lst1[j] > lst1[j + 1]:
                 lst1[j], lst1[j + 1] = lst1[j + 1], lst1[j]
         for k in range(len(lst2) - i - 1):
             if lst2[k] < lst2[k + 1]:
                 lst2[k], lst2[k + 1] = lst2[k + 1], lst2[k]
-    return lst1, lst2
-       
-    
-    
+    main_lst = lst1 + lst2
+    return main_lst
 
 
 # main_list = BubbleSort_decrease(myList2) + (BubbleSort_increase(myList1))
@@ -71,3 +69,5 @@ print(BubbleSort_inc_dec(myList))
 # print(BubbleSort_increase(myList1))
 # print(BubbleSort_decrease(myList2))
 # print(main_list)
+
+# [107, 5, 17, 9, 92, 45]
