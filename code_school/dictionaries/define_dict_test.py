@@ -14,6 +14,8 @@ def test_top3(source_str: str, expected_result: str):
 
 def test_top3_long_sentence():
     test_sentence="""
-    
+    discovered america think that one or more of their ships 
+    were blown off course and 
+    ended up in the northeast united states
 """
-    assert top3(test_sentence) == "Less than 3 symbols in str"
+    assert top3(test_sentence) == "Symbol/Frequency: e/15, t/10, o/9"

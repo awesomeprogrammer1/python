@@ -37,6 +37,8 @@ def top3(st: str) -> str:
         else:
             symbol_count[symbol] += 1
     ordered_symbols = sorted(symbol_count.items(), key=lambda x: x[1], reverse=True)
+    print(symbol_count.items())
+    print(type(symbol_count.items()))
     if len(ordered_symbols) > 2:
         top3_symbols = ordered_symbols[:3]
     else:
