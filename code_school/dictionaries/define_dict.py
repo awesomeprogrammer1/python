@@ -36,16 +36,16 @@ def top3(st: str) -> str:
             symbol_count[symbol] = 1
         else:
             symbol_count[symbol] += 1
-    ordered_symbols = sorted(symbol_count.items(), key=lambda x:x[1], reverse=True)
+    ordered_symbols = sorted(symbol_count.items(), key=lambda x: x[1], reverse=True)
     if len(ordered_symbols) > 2:
         top3_symbols = ordered_symbols[:3]
     else:
         return "Less than 3 symbols in str"
     return f"Symbol/Frequency: {top3_symbols[0][0]}/{top3_symbols[0][1]}, {top3_symbols[1][0]}/{top3_symbols[1][1]}, {top3_symbols[2][0]}/{top3_symbols[2][1]}"
-    
-
-print(top3("discovered america think that one or more of their ships were blown off course and ended up in the northeast united states"))
 
 
-            
-                
+print(
+    top3(
+        "discovered america think that one or more of their ships were blown off course and ended up in the northeast united states"
+    )
+)
