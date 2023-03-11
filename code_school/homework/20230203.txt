@@ -1,0 +1,5 @@
+1. Learn and explain ShellSort to Mom, Dad and Sasha (and implement it)
+2. Do assignment 2 from list_of_assignments.txt **
+3. Learn about InsertionSort
+4. Explain what recursion in programming means 
+5. Write functions that find the factorial of numbers

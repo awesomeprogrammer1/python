@@ -5,4 +5,4 @@ alphabet = ('ABCDEFGHIJKLMNOPQRSTUVWXYZ')
 
 for i in s:
     if i in alphabet:
-     print(i,end=', ')
+        print(i,end=', ')

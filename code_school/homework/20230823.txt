@@ -1,0 +1,11 @@
+1. Learn and explain ShellSort to Mom, Dad and Sasha (and implement it) P.S. (Do the sort in ascending and descending order)
+2. Do assignment 2 from list_of_assignments.txt *** (Do the sort in ascending and descending order) ^
+3. Learn about InsertionSort
+4. Explain what recursion in programming means 
+5. Look at all the videos that Sasha sent very carefully ^
+6. Explain in your own words the zen of python (Hint: There is a PEP for it and you have to say what PEP is)
+7. Help Mom writing a function that takes two numbers (num1, num2) and have it print all the prime numbers 
+(more or equal than num1 and less or equal than num2)
+
+
+^ Sasha will ask questions about the assignment

@@ -1,0 +1,4 @@
+
+2. Learn and explain ShellSort to Mom, Dad and Sasha (and implement it)
+3. Do assignment 2 from list_of_assignments.txt
+4. Optimize assignment 3 from list_of_assignments.txt (Add lambda function for extra credit)
