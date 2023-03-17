@@ -16,6 +16,4 @@ def list_neighbours(lst: list) -> int:
         for i in range(1, len(lst)-1):
             if lst[i] > lst[i-1] and lst[i] > lst[i+1]:
                 counter += 1
-        return counter
-    else:
-        return 0
+    return counter
