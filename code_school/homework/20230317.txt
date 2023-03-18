@@ -1,0 +1,4 @@
+1. Watch this following video (use subtitles if you dont understand it)
+https://www.youtube.com/watch?v=NOaSY5pJmyc
+2.
+Write a recursive function that returns the sum of numbers in a range
