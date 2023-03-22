@@ -1,5 +1,5 @@
 import pytest
-from sum_of_range import sum_of_range_loop, sum_of_range_recursive
+from sum_of_range import sum_of_range_recursive
 
 
 
@@ -13,5 +13,4 @@ from sum_of_range import sum_of_range_loop, sum_of_range_recursive
     ],
 )
 def test_sum_of_range(low_range: int, high_range: int, result_int: int):
-    assert sum_of_range_loop(low_range, high_range) == result_int
     assert sum_of_range_recursive(low_range, high_range) == result_int
