@@ -25,3 +25,5 @@ def fib(fib_number: int) -> int:
         return 1
     else:
         return fib(fib_number-1)+fib(fib_number-2)
+    
+print(fib())
