@@ -7,7 +7,10 @@ from is_palindrome_int import is_palindrome_int
         (101, True),
         (234, False),
         (1010101, True),
-        (5, True),
+        (55, True),
+        (524, False),
+        (1241, False),
+        (9, True),
     ],
 )
 def test_is_palindrome_int(number: int, expected_result: bool):
