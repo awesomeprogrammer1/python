@@ -11,10 +11,14 @@ index()
 """
 
 
+
+
 def max_index(lst: list) -> int:
+    max_elem = __max_element(lst)
     for i in range(len(lst)):
-        if lst[i] == __max_element(lst):
+        if lst[i] == max_elem:
             return i
+
 
 def __max_element(lst: list) -> int:
     if len(lst) == 0:
