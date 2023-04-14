@@ -1,2 +1,6 @@
 1.
 https://stepik.org/lesson/3366/step/3?unit=949
+2.
+Finish sequence_of_numbers.py with a list
+3.
+https://stepik.org/lesson/3369/step/11?unit=952
