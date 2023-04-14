@@ -9,6 +9,7 @@ index()
 
 """
 
+
 def largest_element_index(lst: list) -> int:
     longest_elem = __largest_element(lst)
     for i in range(len(lst)):
