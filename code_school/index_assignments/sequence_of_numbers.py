@@ -28,7 +28,8 @@ def sequence_of_numbers(n: int) -> list:
     num_list: list = []
     if n == 1:
         return [n]
-    
+    while len(num_list) != n:
+        for i in range(1, len(num_list)):
 
 
 print(sequence_of_numbers(7))
