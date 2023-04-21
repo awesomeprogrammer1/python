@@ -27,9 +27,13 @@ For example, if n = 7, then the program should output 1 2 2 3 3 3 4
 def sequence_of_numbers(n: int) -> list:
     num_list: list = []
     if n == 1:
-        return [n]
-    while len(num_list) != n:
-        for i in range(1, len(num_list)):
+        return [str(n)]
+    for i in range(1, n):
+        if n * 2 - len(num_list) < i * 2:
+            break
+        else:
+            num_list += (str(i)) * i
+    return num_list[: n]
 
 
 print(sequence_of_numbers(7))
