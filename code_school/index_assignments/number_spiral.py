@@ -1,22 +1,43 @@
-"""
-Output a table of size
-n*n, filled with numbers from 1 to n^2 in a spiral
-coming out of the upper left corner and twisting clockwise, 
-as shown in the example (here n=5):
+'''
+Given a number n, create a str with numbers that go from 1 to n^2
+If you aren't able to print it in a spiral-ordered format (see output example 1)
+You may do it in a list format (see output example 2)
 
+Example:
+
+Input: 5 (n=5)
+
+Output (example 1):
 1  2  3  4  5
 16 17 18 19 6
 15 24 25 20 7
 14 23 22 21 8
 13 12 11 10 9
 
+Output (example 2):
 [1, 2, 3, 4, 5, 16, 17, 18, 19, 6, 15, 24, 25, 20, 7, 14, 23, 22, 21, 8, 13, 12, 11, 10, 9]
-"""
+'''
 
+# explain: https://chat.openai.com/?model=text-davinci-002-render-sha
 
-def number_sprial(n: int) -> list:
-    num_spiral: list = []
-    for i in range(1, n ^ 2 + 1):
-        num_spiral.append[i]
-    
- 
+n = int(input("Enter the size of the spiral: "))
+
+# Create an empty n x n matrix
+matrix = [[0] * n for i in range(n)]
+
+# Initialize variables
+x, y = 0, 0
+dx, dy = 0, 1
+
+# Fill the matrix with numbers in spiral order
+for i in range(n*n):
+    matrix[x][y] = i + 1
+    if x + dx < 0 or x + dx == n or y + dy < 0 or y + dy == n or matrix[x+dx][y+dy]:
+        dx, dy = dy, -dx
+    x, y = x + dx, y + dy
+
+# Print the matrix
+for row in matrix:
+    for val in row:
+        print('{:2d}'.format(val), end=' ')
+    print()
