@@ -1,0 +1,2 @@
+import pytest
+from sum_of_squares import sum_of_squares
