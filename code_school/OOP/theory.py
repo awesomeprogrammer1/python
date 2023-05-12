@@ -36,13 +36,17 @@ str_var = "hello world"
 
 
 class Tiger:
-    def growl(self, name):
-        return f"Tiger {name} grrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr"
+    def __init__(self, name):
+        self.name = name
+
+    def growl(self):
+        return f"Tiger {self.name}: rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr"
 
 
-tiger_andrew = Tiger()
-tiger_sergei = Tiger()
+tiger_andrew = Tiger("Andrew")
+tiger_sergei = Tiger("Sergei")
 
 print(type(tiger_andrew), type(tiger_sergei), type(str_var))
-print(tiger_andrew.growl("Andrew"))
+print(tiger_andrew.growl())
+print(tiger_sergei.growl())
 print(str_var.upper())
