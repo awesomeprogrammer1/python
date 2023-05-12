@@ -22,11 +22,21 @@ Output:
 
 
 def sum_of_squares(list_of_num: list) -> int:
-    return 0
+    sum_squares = 0
+    for num in list_of_num:
+        sum_squares += num ** 2
+    return sum_squares
 
 
 def read_numbers() -> list:
-    return []
+    list_of_num = []
+    sum_of_num = 1
+    while sum_of_num != 0:
+        current_num_input = int(input("Enter positive or negative numbers to square. Once the sum of all the numbers you have entered reaches zero, the program will stop. "))
+        list_of_num.append(current_num_input)
+        sum_of_num = sum(list_of_num)
+    return list_of_num
+        
 
 
 def main():
