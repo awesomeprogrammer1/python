@@ -1,0 +1,4 @@
+1:
+Learn methods __str__ and __repr__
+2:
+Finish assignment in book_reviews

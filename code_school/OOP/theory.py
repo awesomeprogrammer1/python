@@ -40,7 +40,7 @@ class Tiger:
         self.name = name
 
     def growl(self):
-        return f"Tiger {self.name}: rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr"
+        return f"Tiger {self.name}: grrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr"
 
 
 tiger_andrew = Tiger("Andrew")
